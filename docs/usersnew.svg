@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-4352 65 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-_users_new);
+      }
+
+      .cls-2 {
+        fill: #ff7979;
+      }
+
+      .cls-3 {
+        fill: #4294c1;
+      }
+
+      .cls-10, .cls-4, .cls-5, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        font-size: 40px;
+      }
+
+      .cls-5, .cls-7, .cls-9 {
+        font-family: HelveticaNeue, Helvetica Neue;
+      }
+
+      .cls-11, .cls-13, .cls-6, .cls-8 {
+        fill: none;
+      }
+
+      .cls-6, .cls-8 {
+        stroke: #fff;
+      }
+
+      .cls-6 {
+        stroke-width: 5px;
+      }
+
+      .cls-7, .cls-9 {
+        font-size: 20px;
+      }
+
+      .cls-11, .cls-8 {
+        stroke-width: 2px;
+      }
+
+      .cls-9 {
+        fill: #666;
+      }
+
+      .cls-10 {
+        stroke: #95989a;
+      }
+
+      .cls-11 {
+        stroke: #666;
+      }
+
+      .cls-12 {
+        stroke: none;
+      }
+
+      .cls-14 {
+        fill: #d6aabe;
+      }
+
+      .cls-15 {
+        filter: url(#Rectangle_21);
+      }
+
+      .cls-16 {
+        filter: url(#Create_Account);
+      }
+
+      .cls-17 {
+        filter: url(#Repeat_Password:);
+      }
+
+      .cls-18 {
+        filter: url(#Password:);
+      }
+
+      .cls-19 {
+        filter: url(#Displayname_optional_:);
+      }
+
+      .cls-20 {
+        filter: url(#Username:);
+      }
+
+      .cls-21 {
+        filter: url(#already_has_an_account_);
+      }
+
+      .cls-22 {
+        filter: url(#Rectangle_16);
+      }
+
+      .cls-23 {
+        filter: url(#Home);
+      }
+
+      .cls-24 {
+        filter: url(#Sign_Up);
+      }
+
+      .cls-25 {
+        filter: url(#Rectangle_15);
+      }
+
+      .cls-26 {
+        filter: url(#Rectangle_14);
+      }
+
+      .cls-27 {
+        filter: url(#Rectangle_13);
+      }
+
+      .cls-28 {
+        filter: url(#Rectangle_12);
+      }
+
+      .cls-29 {
+        filter: url(#Rectangle_11);
+      }
+    </style>
+    <filter id="Rectangle_11" x="-3505.298" y="2.289" width="1362.595" height="1212.421" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_12" x="-3794.298" y="2.289" width="1362.595" height="1212.421" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_13" x="-4466.298" y="2.289" width="1362.595" height="1212.421" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_14" x="-4764.298" y="2.289" width="1362.595" height="1212.421" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_15" x="-3795" y="340" width="939" height="537" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Sign_Up" x="-3794" y="278" width="162" height="65" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Home" x="-3388" y="1046" width="126" height="65" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_16" x="-3407" y="1035" width="165" height="87" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-8"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="already_has_an_account_" x="-3092" y="302" width="237" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-9"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Username:" x="-3553" y="400" width="116" height="41" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-10"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Displayname_optional_:" x="-3552" y="487" width="227" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-11"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Password:" x="-3553" y="574" width="113" height="41" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-12"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Repeat_Password:" x="-3553" y="661" width="182" height="41" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-13"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Create_Account" x="-3403" y="757" width="158" height="41" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-14"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_21" x="-3414" y="748" width="179" height="59" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-15"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-_users_new">
+      <rect x="-4352" y="65" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="_users_new" data-name="/users/new" class="cls-1">
+    <rect class="cls-14" x="-4352" y="65" width="1920" height="1080"/>
+    <g class="cls-29" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_11-2" data-name="Rectangle 11" class="cls-2" width="1288" height="525" transform="matrix(0.8, -0.6, 0.6, 0.8, -3496.3, 783.43)"/>
+    </g>
+    <g class="cls-28" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_12-2" data-name="Rectangle 12" class="cls-3" width="1288" height="525" transform="matrix(0.8, -0.6, 0.6, 0.8, -3785.3, 783.43)"/>
+    </g>
+    <g class="cls-27" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_13-2" data-name="Rectangle 13" class="cls-2" width="1288" height="525" transform="matrix(0.8, -0.6, 0.6, 0.8, -4457.3, 783.43)"/>
+    </g>
+    <g class="cls-26" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_14-2" data-name="Rectangle 14" class="cls-3" width="1288" height="525" transform="matrix(0.8, -0.6, 0.6, 0.8, -4755.3, 783.43)"/>
+    </g>
+    <g class="cls-25" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_15-2" data-name="Rectangle 15" class="cls-4" width="921" height="519" transform="translate(-3786 346)"/>
+    </g>
+    <g class="cls-24" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Sign_Up-2" data-name="Sign Up" class="cls-5" transform="translate(-3785 322)"><tspan x="0" y="0">Sign Up</tspan></text>
+    </g>
+    <g class="cls-23" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Home-2" data-name="Home" class="cls-5" transform="translate(-3379 1090)"><tspan x="0" y="0">Home</tspan></text>
+    </g>
+    <g class="cls-22" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <g id="Rectangle_16-2" data-name="Rectangle 16" class="cls-6" transform="translate(-3398 1041)">
+        <rect class="cls-12" width="147" height="69"/>
+        <rect class="cls-13" x="2.5" y="2.5" width="142" height="64"/>
+      </g>
+    </g>
+    <g class="cls-21" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="already_has_an_account_2" data-name="already has an account?" class="cls-7" transform="translate(-3083 327)"><tspan x="0" y="0">already has an account?</tspan></text>
+    </g>
+    <line id="Line_2" data-name="Line 2" class="cls-8" x1="219" transform="translate(-3082.5 331.5)"/>
+    <g class="cls-20" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Username:-2" data-name="Username:" class="cls-9" transform="translate(-3544 425)"><tspan x="0" y="0">Username:</tspan></text>
+    </g>
+    <g id="Rectangle_17" data-name="Rectangle 17" class="cls-10" transform="translate(-3544 444)">
+      <rect class="cls-12" width="436" height="34"/>
+      <rect class="cls-13" x="0.5" y="0.5" width="435" height="33"/>
+    </g>
+    <g class="cls-19" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Displayname_optional_:-2" data-name="Displayname (optional):" class="cls-9" transform="translate(-3543 512)"><tspan x="0" y="0">Displayname (optional):</tspan></text>
+    </g>
+    <g id="Rectangle_18" data-name="Rectangle 18" class="cls-10" transform="translate(-3543 531)">
+      <rect class="cls-12" width="436" height="34"/>
+      <rect class="cls-13" x="0.5" y="0.5" width="435" height="33"/>
+    </g>
+    <g class="cls-18" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Password:-2" data-name="Password:" class="cls-9" transform="translate(-3544 599)"><tspan x="0" y="0">Password:</tspan></text>
+    </g>
+    <g id="Rectangle_19" data-name="Rectangle 19" class="cls-10" transform="translate(-3544 618)">
+      <rect class="cls-12" width="436" height="34"/>
+      <rect class="cls-13" x="0.5" y="0.5" width="435" height="33"/>
+    </g>
+    <g class="cls-17" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Repeat_Password:-2" data-name="Repeat Password:" class="cls-9" transform="translate(-3544 686)"><tspan x="0" y="0">Repeat Password:</tspan></text>
+    </g>
+    <g id="Rectangle_20" data-name="Rectangle 20" class="cls-10" transform="translate(-3544 705)">
+      <rect class="cls-12" width="436" height="34"/>
+      <rect class="cls-13" x="0.5" y="0.5" width="435" height="33"/>
+    </g>
+    <g class="cls-16" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Create_Account-2" data-name="Create Account" class="cls-9" transform="translate(-3394 782)"><tspan x="0" y="0">Create Account</tspan></text>
+    </g>
+    <g class="cls-15" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <g id="Rectangle_21-2" data-name="Rectangle 21" class="cls-11" transform="translate(-3405 754)">
+        <rect class="cls-12" width="161" height="41"/>
+        <rect class="cls-13" x="1" y="1" width="159" height="39"/>
+      </g>
+    </g>
+  </g>
+</svg>

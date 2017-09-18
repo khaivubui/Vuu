@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6347 1220 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-_messages);
+      }
+
+      .cls-3 {
+        fill: #fbf5ff;
+      }
+
+      .cls-4 {
+        fill: #999;
+        font-family: STHeitiSC-Light, Heiti SC;
+        font-weight: 300;
+      }
+
+      .cls-13, .cls-23, .cls-4, .cls-5, .cls-8 {
+        font-size: 20px;
+      }
+
+      .cls-12, .cls-5 {
+        fill: #58bcff;
+      }
+
+      .cls-5, .cls-9 {
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+      }
+
+      .cls-22, .cls-5, .cls-9 {
+        font-weight: 700;
+      }
+
+      .cls-19, .cls-22, .cls-23, .cls-6, .cls-8 {
+        fill: #666;
+      }
+
+      .cls-10, .cls-12, .cls-16, .cls-6, .cls-8 {
+        font-family: HelveticaNeue, Helvetica Neue;
+      }
+
+      .cls-10, .cls-6 {
+        font-weight: 400;
+      }
+
+      .cls-7 {
+        fill: #fcfff5;
+      }
+
+      .cls-13, .cls-16, .cls-9 {
+        fill: #95989a;
+      }
+
+      .cls-9 {
+        font-size: 25px;
+      }
+
+      .cls-11 {
+        fill: none;
+        stroke: #58bcff;
+        stroke-width: 3px;
+      }
+
+      .cls-12, .cls-19, .cls-22 {
+        font-size: 30px;
+      }
+
+      .cls-13 {
+        font-family: HelveticaNeue-UltraLightItalic, Helvetica Neue;
+        font-weight: 100;
+        font-style: italic;
+      }
+
+      .cls-14 {
+        fill: #8eff6c;
+      }
+
+      .cls-15 {
+        fill: #959595;
+      }
+
+      .cls-16 {
+        font-size: 50px;
+      }
+
+      .cls-17 {
+        fill: #ff7979;
+      }
+
+      .cls-18 {
+        fill: #4294c1;
+      }
+
+      .cls-19 {
+        font-family: MyanmarMN, Myanmar MN;
+      }
+
+      .cls-20 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-21 {
+        fill: #010002;
+      }
+
+      .cls-22 {
+        font-family: KannadaSangamMN-Bold, Kannada Sangam MN;
+      }
+
+      .cls-23 {
+        font-family: KannadaSangamMN, Kannada Sangam MN;
+      }
+
+      .cls-24 {
+        filter: url(#Vuu);
+      }
+
+      .cls-25 {
+        filter: url(#Rectangle_36);
+      }
+
+      .cls-26 {
+        filter: url(#Rectangle_35);
+      }
+
+      .cls-27 {
+        filter: url(#Rectangle_34);
+      }
+
+      .cls-28 {
+        filter: url(#Rectangle_33);
+      }
+
+      .cls-29 {
+        filter: url(#Rectangle_4);
+      }
+
+      .cls-30 {
+        filter: url(#Rectangle_3);
+      }
+    </style>
+    <filter id="Rectangle_3" x="-6306" y="1425" width="440" height="219" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_4" x="-6306" y="1656" width="440" height="219" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_33" x="-6294.376" y="2236" width="48.83" height="45.386" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_34" x="-6301.002" y="2236" width="48.83" height="45.386" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_35" x="-6317.374" y="2236" width="48.83" height="45.386" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_36" x="-6324" y="2236" width="48.83" height="45.386" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Vuu" x="-6264" y="2229" width="73" height="60" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_41" data-name="Rectangle 41" class="cls-1" width="120" height="120" transform="translate(29 28)"/>
+    </clipPath>
+    <clipPath id="clip-_messages">
+      <rect x="-6347" y="1220" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="_messages" data-name="/messages" class="cls-2">
+    <rect class="cls-1" x="-6347" y="1220" width="1920" height="1080"/>
+    <rect id="Rectangle_43" data-name="Rectangle 43" class="cls-1" width="352" height="133" transform="translate(-6300 1260)"/>
+    <rect id="Rectangle_37" data-name="Rectangle 37" class="cls-1" width="118" height="42" transform="translate(-6315 2235)"/>
+    <g class="cls-30" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_3-2" data-name="Rectangle 3" class="cls-3" width="422" height="201" rx="17" transform="translate(-6297 1431)"/>
+    </g>
+    <text id="Channels" class="cls-4" transform="translate(-6131 1459)"><tspan x="0" y="0">Channels</tspan></text>
+    <text id="_the_nights_watch_app_academy_rick_and_morty" data-name="# the_nights_watch
+# app_academy
+# rick_and_morty" class="cls-5" transform="translate(-6288 1488)"><tspan x="0" y="0"># the_nights_watch</tspan><tspan class="cls-6"><tspan x="0" y="40"># app_academy</tspan><tspan x="0" y="80"># rick_and_morty</tspan></tspan></text>
+    <g class="cls-29" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_4-2" data-name="Rectangle 4" class="cls-7" width="422" height="201" rx="17" transform="translate(-6297 1662)"/>
+    </g>
+    <text id="Direct_Messages" data-name="Direct Messages" class="cls-4" transform="translate(-6164 1689)"><tspan x="0" y="0">Direct Messages</tspan></text>
+    <text id="Rick_Sanchez_Jon_Snow" data-name="Rick Sanchez
+Jon Snow" class="cls-8" transform="translate(-6258 1721)"><tspan x="0" y="0">Rick Sanchez</tspan><tspan x="0" y="40">Jon Snow</tspan></text>
+    <text id="John_Snow:_Welcome_to_the_Night_s_Watch_s_official_chat_Rick_Sanchez:_WTF_is_this_crap_John_Snow:_Please_be_respectful_Lord_Sanchez" data-name="John Snow: Welcome to the Night’s Watch’s official chat!!
+Rick Sanchez: WTF is this crap?
+John Snow: Please be respectful, Lord Sanchez" class="cls-9" transform="translate(-5818 2038)"><tspan x="0" y="0">John Snow:</tspan><tspan class="cls-10" y="0" xml:space="preserve"> Welcome to the Night’s Watch’s official chat!!</tspan><tspan x="0" y="40">Rick Sanchez: </tspan><tspan class="cls-10" y="40">WTF is this crap?</tspan><tspan x="0" y="80">John Snow:</tspan><tspan class="cls-10" y="80" xml:space="preserve"> Please be respectful, Lord Sanchez</tspan></text>
+    <line id="Line_1" data-name="Line 1" class="cls-11" y1="1" x2="1162" transform="translate(-5818.5 2223.5)"/>
+    <text id="SEND" class="cls-12" transform="translate(-4591 2218)"><tspan x="0" y="0">SEND</tspan></text>
+    <text id="Enter_a_message_" data-name="Enter a message…" class="cls-13" transform="translate(-5788 2213)"><tspan x="0" y="0">Enter a message…</tspan></text>
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-14" cx="10" cy="10" r="10" transform="translate(-6288 1702)"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-15" cx="10" cy="10" r="10" transform="translate(-6288 1745)"/>
+    <text id="The_Night_s_Watch" data-name="The Night’s Watch" class="cls-16" transform="translate(-5374 1318)"><tspan x="0" y="0">The Night’s Watch</tspan></text>
+    <g class="cls-28" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_33-2" data-name="Rectangle 33" class="cls-17" width="29.532" height="12.038" transform="matrix(0.8, -0.6, 0.6, 0.8, -6285.38, 2259.77)"/>
+    </g>
+    <g class="cls-27" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_34-2" data-name="Rectangle 34" class="cls-18" width="29.532" height="12.038" transform="matrix(0.8, -0.6, 0.6, 0.8, -6292, 2259.77)"/>
+    </g>
+    <g class="cls-26" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_35-2" data-name="Rectangle 35" class="cls-17" width="29.532" height="12.038" transform="matrix(0.8, -0.6, 0.6, 0.8, -6308.37, 2259.77)"/>
+    </g>
+    <g class="cls-25" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_36-2" data-name="Rectangle 36" class="cls-18" width="29.532" height="12.038" transform="matrix(0.8, -0.6, 0.6, 0.8, -6315, 2259.77)"/>
+    </g>
+    <g class="cls-24" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <text id="Vuu-2" data-name="Vuu" class="cls-19" transform="translate(-6255 2264)"><tspan x="0" y="0">Vuu</tspan></text>
+    </g>
+    <g id="Mask_Group_3" data-name="Mask Group 3" class="cls-20" transform="translate(-6326 1242)">
+      <g id="user" transform="translate(29 28)">
+        <g id="Group_3" data-name="Group 3">
+          <path id="Path_5" data-name="Path 5" class="cls-21" d="M4.81,116.6H115.19a5,5,0,0,0,3.771-1.651,4.068,4.068,0,0,0,1-3.248A60.721,60.721,0,0,0,88,65.768a39.553,39.553,0,0,1-56,0A60.711,60.711,0,0,0,.034,111.7a4.074,4.074,0,0,0,1,3.248A5,5,0,0,0,4.81,116.6Z"/>
+          <path id="Path_6" data-name="Path 6" class="cls-21" d="M35.127,61.409c.644.675,1.317,1.319,2.013,1.942a34.155,34.155,0,0,0,45.718,0c.7-.623,1.369-1.267,2.013-1.942s1.267-1.366,1.855-2.092a34.362,34.362,0,1,0-53.455,0C33.858,60.042,34.483,60.731,35.127,61.409Z"/>
+        </g>
+      </g>
+    </g>
+    <text id="Khai_Bui" data-name="Khai Bui" class="cls-22" transform="translate(-6157 1299)"><tspan x="0" y="0">Khai Bui</tspan></text>
+    <text id="khaivubui_gmail.com" data-name="khaivubui@gmail.com" class="cls-23" transform="translate(-6157 1330)"><tspan x="0" y="0">khaivubui@gmail.com</tspan></text>
+    <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-14" cx="10" cy="10" r="10" transform="translate(-6156 1352)"/>
+    <text id="Online" class="cls-23" transform="translate(-6115 1368)"><tspan x="0" y="0">Online</tspan></text>
+  </g>
+</svg>
