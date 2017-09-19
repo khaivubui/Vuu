@@ -1,0 +1,89 @@
+.register {
+  display: flex;
+  width: 80vw;
+  min-width: 400px;
+  max-width: 600px;
+  height: 80vh;
+  margin: 10vh auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  text-shadow: 0.5px 0px 0.5px #666;
+}
+
+.register .header h1 {
+  font-size: 2em;
+  color: white;
+  cursor: default;
+}
+
+.register .header a {
+  color: white;
+  transition: text-shadow 0.3s;
+}
+
+.register .header a:hover {
+  text-shadow: 2px 0px 2px #666;
+}
+
+.register form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 10vw;
+  margin-bottom: 10px;
+}
+
+.register form input {
+  height: 30px;
+  margin: 10px 0;
+}
+
+.register form input[type=submit] {
+  height: 40px;
+  font-size: 1em;
+  color: #666;
+  border: 1px #666 solid;
+  border-radius: 0;
+  background: transparent;
+  width: 150px;
+  margin: 10px auto;
+  transition: color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.register form input[type=submit]:hover {
+  color: #4294C1;
+  border-color: #4294C1;
+}
+
+.register button {
+  background: transparent;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 200;
+  border: 2px white solid;
+  margin: 10px 5px 0 0;
+  width: 100px;
+  height: 40px;
+  text-shadow: 1px 0px 2px #666;
+  box-shadow: 1px 0px 2px #666;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+.register button:hover {
+  background: white;
+  color: #4294C1;
+  text-shadow: none;
+}

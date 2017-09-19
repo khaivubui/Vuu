@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class RegisterForm extends React.Component {
   constructor (props) {
@@ -24,27 +25,34 @@ export default class RegisterForm extends React.Component {
   render () {
     return (
       <div className='register'>
+        <div className='header'>
+          <h1>Register</h1>
+          <Link to='/signin'>already have an account?</Link>
+        </div>
+
         <form onSubmit={e => this.register(e)}>
-          <label>Username:
-            <input
+          <label htmlFor='username'>Username:</label>
+          <input
+            id='username'
             type='text'
             value={this.state.username}
             onChange={e => this.update(e, 'username')}/>
-          </label>
-          <label>Display Name: (optional)
-            <input
+          <label htmlFor='displayname'>Display Name: (optional)</label>
+          <input
+            id='displayname'
             type='text'
             value={this.state.displayname}
             onChange={e => this.update(e, 'displayname')}/>
-          </label>
-          <label>Password:
-            <input
+          <label htmlFor='password'>Password:</label>
+          <input
+            id='password'
             type='password'
             value={this.state.password}
             onChange={e => this.update(e, 'password')}/>
-          </label>
           <input type='submit' value='Create Account'/>
         </form>
+
+        <Link to='/'><button>Home</button></Link>
       </div>
     );
   }

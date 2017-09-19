@@ -3,7 +3,7 @@ body {
 }
 
 .blue-rect, .orange-rect {
-  position: fixed;
+  position: absolute;
   width: 400px;
   height: 900px;
   transform: rotate(50deg);
