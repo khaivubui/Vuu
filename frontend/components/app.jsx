@@ -5,12 +5,12 @@ import {
   AuthRoute, ProtectedRoute
 } from './custom_routes/custom_routes';
 import Splash from './auth_components/splash';
-import RegisterFormComponent from './auth_components/register_form_component';
+import RegisterFormContainer from './auth_components/register_form_container';
 
 const App = () => (
   <div>
     <AuthRoute exact path="/" component={Splash}/>
-    <AuthRoute exact path="/register" component={RegisterFormComponent}/>
+    <AuthRoute exact path="/register" component={RegisterFormContainer}/>
   </div>
 );
 
