@@ -1,0 +1,61 @@
+.sign-in {
+  display: flex;
+  width: 50vw;
+  min-width: 400px;
+  max-width: 600px;
+  height: 80vh;
+  min-height: 400px;
+  margin: 10vh auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in h1 {
+  font-size: 2em;
+  color: white;
+  cursor: default;
+  margin-bottom: 20px;
+}
+
+.sign-in a {
+  color: white;
+  margin-bottom: 20px;
+  transition: text-shadow 0.3s;
+}
+
+.sign-in a:hover {
+  text-shadow: 2px 0px 2px #666;
+}
+
+.sign-in form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sign-in form input {
+  height: 30px;
+  margin: 10px 0;
+}
+
+.sign-in form label {
+  color: white;
+}
+
+.sign-in form input[type=submit] {
+  background: white;
+  height: 40px;
+  font-size: 1em;
+  color: #666;
+  border: 0;
+  width: 150px;
+  margin: 10px auto;
+  transition: color 0.3s;
+  transition: box-shadow 0.3s;
+}
+
+.sign-in form input[type=submit]:hover {
+  color: #4294C1;
+  box-shadow: 1px 1px 2px #666;
+}

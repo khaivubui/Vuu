@@ -25,7 +25,7 @@ export default class SignInForm extends React.Component {
     return (
       <div className='sign-in'>
         <h1>Sign In</h1>
-        <Link to='/signin'>don't have an account?</Link>
+        <Link to='/register'>don't have an account?</Link>
 
         <form onSubmit={e => this.register(e)}>
           <label htmlFor='username'>Username:</label>
