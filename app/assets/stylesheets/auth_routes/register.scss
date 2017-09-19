@@ -65,25 +65,3 @@
   color: #4294C1;
   border-color: #4294C1;
 }
-
-.register button {
-  background: transparent;
-  color: white;
-  font-size: 1.3em;
-  font-weight: 200;
-  border: 2px white solid;
-  margin: 10px 5px 0 0;
-  width: 100px;
-  height: 40px;
-  text-shadow: 1px 0px 2px #666;
-  box-shadow: 1px 0px 2px #666;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  transition: color 0.3s;
-}
-
-.register button:hover {
-  background: white;
-  color: #4294C1;
-  text-shadow: none;
-}
