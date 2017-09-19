@@ -16,3 +16,5 @@ module Vuu
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Jbuilder.key_format camelize: :lower
