@@ -5,9 +5,12 @@ export default class CurrentUser extends React.Component {
     const { currentUser } = this.props;
     return (
       <div className='current-user side-panel-component'>
-        {currentUser.displayname || currentUser.username}
-        <br/>
-        <span className='username'>{currentUser.username}</span>
+        <i className="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+        <div>
+          {currentUser.displayname || currentUser.username}
+          <br/>
+          <span className='username'>{currentUser.username}</span>
+        </div>
       </div>
     );
   }

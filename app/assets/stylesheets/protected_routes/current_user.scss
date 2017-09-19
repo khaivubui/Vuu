@@ -1,7 +1,12 @@
 .current-user {
   background-color: rgba(#FFF, 0.9);
+  display: flex;
 }
 
 .username {
   font-size: 0.8em;
+}
+
+i {
+  margin-right: 5px;
 }
