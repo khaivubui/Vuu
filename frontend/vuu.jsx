@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+// ------ testing ------
+import {
+  register, signIn, signOut
+} from './actions/session/session_actions';
+[window.register, window.signIn, window.signOut] =
+[register, signIn, signOut];
+// ------ testing ------
+
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = {
     session: {
@@ -18,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const store = configureStore(preloadedState);
   window.store = store;
-
 
   const root = document.getElementById('root');
   ReactDOM.render(

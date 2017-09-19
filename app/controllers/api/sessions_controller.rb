@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(user_params)
     if @user
-      log_in!(@user)
+      sign_in!(@user)
       render :show
     else
       render json: ["Invalid username or password"], status: 400
@@ -10,8 +10,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    if logged_in?
-      log_out!
+    if current_user
+      sign_out!
       render json: {}
     else
       render json: ['No session exists'], status: 404
