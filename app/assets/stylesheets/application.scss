@@ -16,7 +16,13 @@
 
 @import 'reset';
 @import 'pretty_background/pretty_background';
+
+// AuthRoutes
 @import 'auth_routes/splash';
 @import 'auth_routes/register';
 @import 'auth_routes/sign_in';
-@import 'auth_routes/home_button';
+@import 'auth_routes/home_button'; // also applies to button.sign-out
+
+// ProtectedRoutes
+@import 'protected_routes/side_panel';
+@import 'protected_routes/current_user';

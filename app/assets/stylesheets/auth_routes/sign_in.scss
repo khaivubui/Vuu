@@ -1,8 +1,8 @@
 .sign-in {
   display: flex;
   width: 50vw;
-  min-width: 400px;
-  max-width: 600px;
+  min-width: 300px;
+  max-width: 400px;
   height: 80vh;
   min-height: 400px;
   margin: 10vh auto;
@@ -44,18 +44,22 @@
 }
 
 .sign-in form input[type=submit] {
-  background: white;
+  background: transparent;
   height: 40px;
   font-size: 1em;
-  color: #666;
-  border: 0;
+  font-weight: 200;
+  color: white;
+  border: 2px white solid;
   width: 150px;
   margin: 10px auto;
+  text-shadow: 1px 0px 2px #666;
+  box-shadow: 1px 0px 2px #666;
   transition: color 0.3s;
-  transition: box-shadow 0.3s;
+  transition: background-color 0.3s;
 }
 
 .sign-in form input[type=submit]:hover {
+  text-shadow: none;
+  background: white;
   color: #4294C1;
-  box-shadow: 1px 1px 2px #666;
 }

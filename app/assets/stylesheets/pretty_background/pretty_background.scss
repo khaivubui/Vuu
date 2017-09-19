@@ -7,9 +7,12 @@ body {
   position: absolute;
   width: 400px;
   height: 900px;
-  transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+      -ms-transform: rotate(50deg);
+          transform: rotate(50deg);
   z-index: -100;
-  box-shadow: 1px 0px 2px #666;
+  -webkit-box-shadow: 1px 0px 2px #666;
+          box-shadow: 1px 0px 2px #666;
 }
 
 .blue-rect {
