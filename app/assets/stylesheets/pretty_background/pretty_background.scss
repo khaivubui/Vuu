@@ -1,0 +1,36 @@
+body {
+  background: #D6AABE;
+}
+
+.blue-rect, .orange-rect {
+  position: fixed;
+  width: 400px;
+  height: 900px;
+  transform: rotate(50deg);
+  z-index: -100;
+  box-shadow: 1px 0px 2px #666;
+}
+
+.blue-rect {
+  background: #4294C1;
+}
+
+.orange-rect {
+  background: #FF7979;
+}
+
+.rect1 {
+  right: 0;
+}
+
+.rect2 {
+  right: 200px;
+}
+
+.rect3 {
+  right: 700px;
+}
+
+.rect4 {
+  right: 900px;
+}

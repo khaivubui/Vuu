@@ -1,0 +1,45 @@
+.splash {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  text-shadow: 1px 0px 2px #666;
+  cursor: default;
+}
+
+.splash div {
+  padding-top: 70px;
+  margin-left: 5px;
+  font-weight: 100;
+}
+
+.splash h1 {
+  font-family: Myanmar;
+  font-size: 7em;
+}
+
+.splash button {
+  background: transparent;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 200;
+  border: 3px white solid;
+  margin: 10px 5px 0 0;
+  width: 180px;
+  height: 80px;
+  text-shadow: 1px 0px 2px #666;
+  box-shadow: 1px 0px 2px #666;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+.splash button:hover {
+  background: white;
+  color: #4294C1;
+  text-shadow: none;
+}

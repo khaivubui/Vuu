@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
-const Auth = ({ component: Component, path, loggedIn }) => (
+const Auth = ({ component: Component, path, exact, loggedIn }) => (
   <Route
     path={path}
+    exact={exact}
     render={props => {
       if (loggedIn) {
         return <Redirect to='/messages'/>;
