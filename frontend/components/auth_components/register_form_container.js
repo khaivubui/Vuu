@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import RegisterForm from './register_form.jsx';
+import RegisterForm from './register_form';
 import { register } from '../../actions/session/session_actions';
 
 // const mapStateToProps = state => ({
