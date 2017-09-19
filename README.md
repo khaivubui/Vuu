@@ -22,4 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ... -->
-[Vuu](vuu.herokuapp.com/)
+[Vuu](http://vuu.herokuapp.com/)
