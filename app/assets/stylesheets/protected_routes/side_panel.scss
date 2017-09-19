@@ -3,3 +3,14 @@
   width: 200px;
   padding: 10px;
 }
+
+.side-panel-component {
+  box-shadow: 0px 0px 2px #666;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.side-panel-component:hover {
+  box-shadow: 1px 1px 3px #777;
+}
