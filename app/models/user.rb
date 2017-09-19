@@ -19,6 +19,11 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :channel_memberships
+
+  has_many :channels,
+           through: :channel_memberships
+
   def self.find_by_credentials(user_params)
     user = User.find_by(username: user_params[:username])
     return nil unless user

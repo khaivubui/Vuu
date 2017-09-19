@@ -7,8 +7,9 @@ export default class CurrentUser extends React.Component {
       <div className='current-user side-panel-component'>
         <i className="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
         <div>
-          {currentUser.displayname || currentUser.username}
-          <br/>
+          <h1>
+            {currentUser.displayname || currentUser.username}
+          </h1>
           <span className='username'>{currentUser.username}</span>
         </div>
       </div>

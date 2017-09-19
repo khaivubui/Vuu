@@ -1,9 +1,9 @@
-const entitiesReducer = (state = {}, action) => {
-  Object.freeze(state);
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import { combineReducers } from 'redux';
+
+import channelsReducer from './entities/channels_reducer';
+
+const entitiesReducer = combineReducers({
+  channels: channelsReducer
+});
 
 export default entitiesReducer;
