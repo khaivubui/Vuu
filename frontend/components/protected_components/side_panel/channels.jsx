@@ -9,7 +9,8 @@ export default class Channels extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false,
+      newFormIsOpen: false,
+      settingsIsOpen: false,
       modalStyle: {
         content : {
           top                   : '50%',
@@ -27,12 +28,20 @@ export default class Channels extends React.Component {
     this.props.fetchChannels();
   }
 
-  openModal () {
-    this.setState({modalIsOpen: true});
+  openNewChannelForm () {
+    this.setState({newFormIsOpen: true});
   }
 
-  closeModal () {
-    this.setState({modalIsOpen: false});
+  closeNewChannelForm () {
+    this.setState({newFormIsOpen: false});
+  }
+
+  openChannelSettings () {
+    this.setState({settingsIsOpen: true});
+  }
+
+  closeChannelSettings () {
+    this.setState({settingsIsOpen: false});
   }
 
   render () {
@@ -40,12 +49,17 @@ export default class Channels extends React.Component {
     if (this.props.channels) {
       channels = this.props.channels.map(channel =>
         <li key={channel.id}>
+          <div className='channel-display-name'>
           <NavLink
             to={`/messages/channels/${channel.id}`}>
-            <div className='channel-display-name'>
-              {channel.displayname || channel.channelname}
-            </div>
+            {channel.displayname || channel.channelname}
           </NavLink>
+        </div>
+        <i
+          className="fa fa-cog"
+          aria-hidden="true"
+          onClick={e => this.openChannelSettings()}>
+        </i>
         </li>
       );
     } else {
@@ -58,7 +72,7 @@ export default class Channels extends React.Component {
             <i
               className="fa fa-plus-square-o"
               aria-hidden="true"
-              onClick={e => this.openModal()}>
+              onClick={e => this.openNewChannelForm()}>
             </i>
         </h1>
         <ul>
@@ -66,9 +80,16 @@ export default class Channels extends React.Component {
         </ul>
         <Modal
           contentLabel='NewChannelFormContainer'
-          isOpen={this.state.modalIsOpen}
+          isOpen={this.state.newFormIsOpen}
           style={this.state.modalStyle}>
-          <NewChannelFormContainer closeModal={() => this.closeModal()}/>
+          <NewChannelFormContainer
+            closeModal={() => this.closeNewChannelForm()}/>
+        </Modal>
+        <Modal
+          contentLabel='ChannelSettingsContainer'
+          isOpen={this.state.settingsIsOpen}
+          style={this.state.modalStyle}>
+          'SETTINGS GO HERE'
         </Modal>
       </div>
     );

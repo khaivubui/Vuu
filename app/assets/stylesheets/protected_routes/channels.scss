@@ -10,27 +10,34 @@
   justify-content: space-between;
 }
 
-.channels i {
+.channels h1 i {
   color: #666;
   cursor: pointer;
   transition: transform 0.3s;
 }
 
-.channels i:hover {
+.channels h1 i:hover {
   color: #4294C1;
-  transform: rotate(90deg);
+  transform: scale(1.2, 1.2);
+}
+
+.channels li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.channels li i {
+  cursor: pointer;
+}
+
+.channels li i:hover {
+  color: #4294C1;
 }
 
 .channel-display-name {
   display: inline-flex;
   font-size: 1.2em;
   margin-top: 10px;
-}
-
-.channels a:hover .channel-display-name {
-  color: #4294C1;
-}
-
-.active .channel-display-name {
-  color: #4294C1;
 }

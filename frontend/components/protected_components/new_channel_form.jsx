@@ -21,11 +21,18 @@ export default class NewChannelForm extends React.Component {
     this.props.closeModal();
   }
 
+  handleKeyDown (e) {
+    if (e.keyCode === 27) {
+      this.props.closeModal();
+    }
+  }
+
   render () {
     return (
       <form
         className='new-channel-form'
-        onSubmit={e => this.handleSubmit(e)}>
+        onSubmit={e => this.handleSubmit(e)}
+        onKeyDown={e => this.handleKeyDown(e)}>
 
         <h1>
           <span>New Channel</span>
