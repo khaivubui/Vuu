@@ -10,17 +10,33 @@
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 3px;
-  transition: box-shadow 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  // transition: box-shadow 0.3s ease-in-out;
+  // transition: transform 0.3s ease-in-out;
 }
 
-.side-panel-component:hover {
-  box-shadow: 2px 2px 4px #666;
-  transform: translate(-1px, -1px);
-}
+// .side-panel-component:hover {
+//   box-shadow: 2px 2px 4px #666;
+//   transform: translate(-1px, -1px);
+// }
 
 .side-panel-component h1 {
   font-size: 1.2em;
+}
+
+.side-panel-component button {
+  margin: 10px auto 0 auto;
+  height: 35px;
+  font-size: 1em;
+  border: none;
+  background: #4294C1;
+  color: white;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-top: 15px;
+}
+
+.side-panel-component button:hover {
+  box-shadow: 0.5px 0.5px 0.5px #666;
 }
 
 h1 {
