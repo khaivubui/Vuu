@@ -9,6 +9,10 @@ export default class NewChannelForm extends React.Component {
     };
   }
 
+  componentDidMount () {
+    this.refs.channelname.focus();
+  }
+
   update (e, fieldType) {
     this.setState({
       [fieldType]: e.target.value
@@ -43,6 +47,7 @@ export default class NewChannelForm extends React.Component {
         </h1>
         <label htmlFor='channelname'>channelname:</label>
         <input id='channelname'
+          ref='channelname'
           type='text'
           value={this.state.channelname}
           onChange={e => this.update(e, 'channelname')}/>

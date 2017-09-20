@@ -14,6 +14,15 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def leave
+    @channel = Channel.find(params[:id])
+    @channel.users.delete current_user
+    if @channel.users.empty?
+      @channel.delete
+    end
+    render json: params[:id]
+  end
+
   private
 
   def channel_params

@@ -1,5 +1,5 @@
 import {
-  RECEIVE_CHANNELS, RECEIVE_CHANNEL
+  RECEIVE_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL
 } from '../../actions/channels/channels_actions';
 import merge from 'lodash/merge';
 
@@ -10,6 +10,10 @@ const channelsReducer = (state = {}, action) => {
       return action.channels;
     case RECEIVE_CHANNEL:
       return merge({}, state, {[action.channel.id]: action.channel});
+    case REMOVE_CHANNEL:
+      const newState = merge({}, state);
+      delete newState[action.channelId];
+      return newState;
     default:
       return state;
   }

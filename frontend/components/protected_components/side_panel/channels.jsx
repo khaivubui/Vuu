@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 
 import NewChannelFormContainer from '../new_channel_form_container';
+import ChannelSettingsContainer from '../channel_settings_container';
 
 export default class Channels extends React.Component {
   constructor (props) {
@@ -11,6 +12,7 @@ export default class Channels extends React.Component {
     this.state = {
       newFormIsOpen: false,
       settingsIsOpen: false,
+      settingsChannelId: null,
       modalStyle: {
         content : {
           top                   : '50%',
@@ -36,8 +38,11 @@ export default class Channels extends React.Component {
     this.setState({newFormIsOpen: false});
   }
 
-  openChannelSettings () {
-    this.setState({settingsIsOpen: true});
+  openChannelSettings (channelId) {
+    this.setState({
+      settingsIsOpen: true,
+      settingsChannelId: channelId
+    });
   }
 
   closeChannelSettings () {
@@ -58,7 +63,7 @@ export default class Channels extends React.Component {
         <i
           className="fa fa-cog"
           aria-hidden="true"
-          onClick={e => this.openChannelSettings()}>
+          onClick={e => this.openChannelSettings(channel.id)}>
         </i>
         </li>
       );
@@ -78,19 +83,24 @@ export default class Channels extends React.Component {
         <ul>
           {channels}
         </ul>
-        <Modal
-          contentLabel='NewChannelFormContainer'
-          isOpen={this.state.newFormIsOpen}
-          style={this.state.modalStyle}>
-          <NewChannelFormContainer
-            closeModal={() => this.closeNewChannelForm()}/>
-        </Modal>
-        <Modal
-          contentLabel='ChannelSettingsContainer'
-          isOpen={this.state.settingsIsOpen}
-          style={this.state.modalStyle}>
-          'SETTINGS GO HERE'
-        </Modal>
+
+        <div className='modals'>
+          <Modal
+            contentLabel='NewChannelFormContainer'
+            isOpen={this.state.newFormIsOpen}
+            style={this.state.modalStyle}>
+            <NewChannelFormContainer
+              closeModal={() => this.closeNewChannelForm()}/>
+          </Modal>
+          <Modal
+            contentLabel='ChannelSettingsContainer'
+            isOpen={this.state.settingsIsOpen}
+            style={this.state.modalStyle}>
+            <ChannelSettingsContainer
+              closeModal={() => this.closeChannelSettings()}
+              channelId={this.state.settingsChannelId}/>
+          </Modal>
+        </div>
       </div>
     );
   }

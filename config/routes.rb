@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :channels, except: [:new, :edit]
   end
 
+  delete '/api/channels/leave/:id' => 'api/channels#leave'
+
   root to: 'static_pages#root'
 end
