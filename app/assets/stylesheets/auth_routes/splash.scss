@@ -11,9 +11,16 @@
 }
 
 .splash div {
-  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 5px;
   font-weight: 100;
+}
+
+.splash div div {
+  display: flex;
+  flex-direction: row;
 }
 
 .splash h1 {
@@ -46,5 +53,9 @@
 @media only screen and (max-width: 768px) {
   .splash {
     flex-direction: column;
+  }
+  .splash button {
+    width: 135px;
+    height: 60px;
   }
 }

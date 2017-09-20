@@ -8,9 +8,10 @@ export default class Splash extends React.Component {
         <h1>Vuu</h1>
         <div>
           Your one stop for all group chat solutions
-          <br/>
-          <Link to='/register'><button>Register</button></Link>
-          <Link to='/signin'><button>Sign In</button></Link>
+          <div>
+            <Link to='/register'><button>Register</button></Link>
+            <Link to='/signin'><button>Sign In</button></Link>
+          </div>
         </div>
       </div>
     );
