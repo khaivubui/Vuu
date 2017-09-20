@@ -16,10 +16,12 @@
 .new-channel-form i {
   color: #FF7979;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .new-channel-form i:hover {
   color: #ff3535;
+  transform: rotate(90deg);
 }
 
 .new-channel-form input[type=text] {
@@ -31,6 +33,7 @@
 }
 
 .new-channel-form input[type=text]:focus {
+  font-size: 1.1em;
   font-weight: 100;
   margin-bottom: 9px;
   border: none;
