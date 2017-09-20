@@ -40,7 +40,8 @@
 // }
 
 body {
-  // background: linear-gradient(-50deg, #4294C1, #4294C1, #FF7979, #FF7979, #4294C1, #4294C1, #FF7979, #FF7979);
+  background: -webkit-linear-gradient(140deg, #FF7979, #4294C1, #FF7979);
+  background: -o-linear-gradient(140deg, #FF7979, #4294C1, #FF7979);
   background: linear-gradient(-50deg, #FF7979, #4294C1, #FF7979);
   background-repeat: no-repeat;
   background-attachment: fixed;
