@@ -14,6 +14,15 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def update
+    @channel = Channel.find(params[:id])
+    if @channel.update(channel_params)
+      render :show
+    else
+      render json: @channel.errors.full_messages, status: 422
+    end
+  end
+
   def leave
     @channel = Channel.find(params[:id])
     @channel.users.delete current_user

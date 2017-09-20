@@ -1,3 +1,8 @@
+.channel-settings {
+  display: flex;
+  flex-direction: column;
+}
+
 .channel-settings form {
   display: flex;
   flex-direction: column;
@@ -37,7 +42,7 @@
   border-bottom: 2px solid #4294C1;
 }
 
-.channel-settings input[type=submit] {
+.channel-settings input[type=submit]{
   height: 35px;
   font-size: 1em;
   color: #666;
@@ -45,6 +50,7 @@
   border-radius: 0;
   background: transparent;
   cursor: pointer;
+  width: 100%;
   transition: color 0.3s;
   transition: border-color 0.3s;
 }
@@ -52,4 +58,18 @@
 .channel-settings input[type=submit]:hover {
   color: #4294C1;
   border-color: #4294C1;
+}
+
+.channel-settings button {
+  margin: 10px auto 0 auto;
+  height: 35px;
+  font-size: 1em;
+  border: none;
+  background: #FF7979;
+  color: white;
+  border-radius: 5px;
+}
+
+.channel-settings button:hover {
+  box-shadow: 0.5px 0px 0.5px #666;
 }

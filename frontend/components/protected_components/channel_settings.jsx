@@ -1,9 +1,10 @@
 import React from 'react';
 
+import UpdateChannelForm from './update_channel_form';
+
 export default class ChannelSettings extends React.Component {
   constructor (props) {
     super(props);
-    this.state = this.props.channel;
   }
 
   leaveChannel () {
@@ -20,20 +21,12 @@ export default class ChannelSettings extends React.Component {
             className="fa fa-times"
             aria-hidden="true"
             onClick={this.props.closeModal}></i>
-          </h1>
-        <form>
-          <label htmlFor='channelname'>channelname</label>
-          <input
-            id='channelname'
-            type='text'
-            value={this.state.channelname}/>
-          <label htmlFor='displayname'>displayname</label>
-          <input
-            id='displayname'
-            type='text'
-            value={this.state.displayname}/>
-          <input type='submit' value='Update Channel'/>
-        </form>
+        </h1>
+
+        <UpdateChannelForm
+          channel={this.props.channel}
+          updateChannel={this.props.updateChannel}/>
+
         <button
           onClick={e => this.leaveChannel()}>
           Leave Channel
