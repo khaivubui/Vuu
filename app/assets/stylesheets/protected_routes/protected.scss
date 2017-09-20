@@ -1,0 +1,10 @@
+.protected {
+  display: flex;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+  .protected {
+    flex-direction: column;
+  }
+}

@@ -24,9 +24,11 @@
 @import 'auth_routes/home_button'; // also applies to button.sign-out
 
 // ProtectedRoutes
+@import 'protected_routes/protected';
 @import 'protected_routes/side_panel';
 @import 'protected_routes/current_user';
 @import 'protected_routes/channels';
+@import 'protected_routes/new_channel_form';
 
 // f-a
 @import "font-awesome-sprockets";

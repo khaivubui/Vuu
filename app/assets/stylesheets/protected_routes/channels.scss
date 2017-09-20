@@ -1,3 +1,21 @@
 .channels {
   background-color: rgba(#ffdfdf, 0.9);
 }
+
+.channels h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channels i {
+  color: #666;
+}
+
+.channels i:hover {
+  color: #4294C1;
+}
+
+.channels a.active i {
+  color: #4294C1;
+}

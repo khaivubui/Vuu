@@ -1,7 +1,8 @@
 .side-panel {
-  height: 85vh;
+  display: inline-flex;
+  flex-direction: column;
+  margin-right: 20px;
   width: 300px;
-  padding: 20px;
 }
 
 .side-panel-component {
@@ -34,4 +35,10 @@ a {
   font-weight: 700;
   border-left: 3px solid;
   padding-left: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+  .side-panel {
+    width: 100%;
+  }
 }

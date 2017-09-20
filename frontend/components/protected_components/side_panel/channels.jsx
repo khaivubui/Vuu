@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export default class Channels extends React.Component {
   componentDidMount () {
@@ -22,7 +22,11 @@ export default class Channels extends React.Component {
     }
     return (
       <div className='channels side-panel-component'>
-        <h1>Channels</h1>
+        <h1>Channels
+          <NavLink to='/messages/channels/new'>
+            <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+          </NavLink>
+        </h1>
         <ul>
           {channels}
         </ul>
