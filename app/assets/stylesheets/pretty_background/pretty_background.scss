@@ -39,6 +39,24 @@
 //   right: 900px;
 // }
 
+// @keyframes example {
+//     0%   {
+//       background: linear-gradient(-50deg, #FF7979, #4294C1, #FF7979);
+//     }
+//     25%  {
+//       background: linear-gradient(-50deg, #FF7979, #FF7979, #4294C1, #FF7979);
+//     }
+//     50%  {
+//       background: linear-gradient(-50deg, #4294C1, #FF7979, #4294C1);
+//     }
+//     75%  {
+//       background: linear-gradient(-50deg, #4294C1, #4294C1, #FF7979, #4294C1);
+//     }
+//     100% {
+//       background: linear-gradient(-50deg, #FF7979, #4294C1, #FF7979);
+//     }
+// }
+
 body {
   background: -webkit-linear-gradient(140deg, #FF7979, #4294C1, #FF7979);
   background: -o-linear-gradient(140deg, #FF7979, #4294C1, #FF7979);
@@ -46,4 +64,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
+  // animation-name: example;
+  // animation-duration: 4s;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear;
+  // transition-timing-function: linear;
 }
