@@ -44,11 +44,18 @@ export const leaveChannel = channelId => dispatch => (
   )
 );
 
-export const searchChannels = query => dispatch => (
-  ChannelsUtils.searchChannels(query).then(
-    channelSearchResults => dispatch({
+export const searchChannels = query => dispatch => {
+  if (query) {
+    ChannelsUtils.searchChannels(query).then(
+      channelSearchResults => dispatch({
+        type: UPDATE_CHANNEL_SEARCH_RESULTS,
+        channelSearchResults
+      })
+    );
+  } else {
+    dispatch({
       type: UPDATE_CHANNEL_SEARCH_RESULTS,
-      channelSearchResults
-    })
-  )
-);
+      channelSearchResults: {}
+    });
+  }
+};

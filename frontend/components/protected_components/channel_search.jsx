@@ -17,8 +17,8 @@ export default class ChannelSearch extends React.Component {
           onChange={e => this.searchChannels(e.target.value)}/>
         <ul className='channel-search-results'>
           {this.props.channelSearchResults.map(result =>
-            <li>
-              {result.channelname}
+            <li key={result.id}>
+              {result.channelname}<br/>
               {result.displayname}
             </li>
           )}
