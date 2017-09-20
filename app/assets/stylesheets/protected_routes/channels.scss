@@ -17,6 +17,18 @@
   color: #4294C1;
 }
 
-.channels a.active i {
+.channel-display-name {
+  display: inline-flex;
+  font-size: 1.2em;
+  margin-top: 10px;
+  border-bottom: 1px #666 solid;
+}
+
+.channel-display-name:hover {
+  color: #4294C1;
+}
+
+.active .channel-display-name {
+  border-bottom: none;
   color: #4294C1;
 }

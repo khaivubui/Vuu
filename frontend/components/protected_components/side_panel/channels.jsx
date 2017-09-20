@@ -42,6 +42,9 @@ export default class Channels extends React.Component {
         <li key={channel.id}>
           <NavLink
             to={`/messages/channels/${channel.id}`}>
+            <div className='channel-display-name'>
+              {channel.displayname || channel.channelname}
+            </div><br/>
             {channel.channelname}
           </NavLink>
         </li>

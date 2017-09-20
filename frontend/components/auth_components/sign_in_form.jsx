@@ -20,9 +20,20 @@ export default class SignInForm extends React.Component {
     });
   }
 
-  register (e) {
+  signIn (e) {
     e.preventDefault();
     this.props.signIn(this.state);
+  }
+
+  guestLogin (e) {
+    this.setState({
+      username: 'guest',
+      password: 'password'
+    });
+    this.props.signIn({
+      username: 'guest',
+      password: 'password'
+    });
   }
 
   render () {
@@ -31,7 +42,7 @@ export default class SignInForm extends React.Component {
         <h1>Sign In</h1>
         <Link to='/register'>don't have an account?</Link>
 
-        <form onSubmit={e => this.register(e)}>
+        <form onSubmit={e => this.signIn(e)}>
           <ul className='errors'>
             {this.props.errors.map(error =>
               <li key={error}>{error}</li>
@@ -52,6 +63,7 @@ export default class SignInForm extends React.Component {
             onChange={e => this.update(e, 'password')}/>
           <input type='submit' value='Sign In'/>
         </form>
+        <a onClick={e => this.guestLogin()}>Guest Login</a>
 
         <Link to='/'><button>Home</button></Link>
       </div>
