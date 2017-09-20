@@ -4,6 +4,8 @@ export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 
+export const UPDATE_CHANNEL_SEARCH_RESULTS = 'UPDATE_CHANNEL_SEARCH_RESULTS';
+
 export const fetchChannels = () => dispatch => (
   ChannelsUtils.fetchChannels().then(
     channels => dispatch({
@@ -38,6 +40,15 @@ export const updateChannel = channelData => dispatch => (
 
 export const leaveChannel = channelId => dispatch => (
   ChannelsUtils.leaveChannel(channelId).then(
-    id => dispatch(removeChannel(id)) 
+    id => dispatch(removeChannel(id))
+  )
+);
+
+export const searchChannels = query => dispatch => (
+  ChannelsUtils.searchChannels(query).then(
+    channelSearchResults => dispatch({
+      type: UPDATE_CHANNEL_SEARCH_RESULTS,
+      channelSearchResults
+    })
   )
 );

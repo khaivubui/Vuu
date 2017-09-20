@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import NewChannelFormContainer from '../new_channel_form_container';
 import ChannelSettingsContainer from '../channel_settings_container';
+import ChannelSearchContainer from '../channel_search_container';
 
 export default class Channels extends React.Component {
   constructor (props) {
@@ -13,6 +14,7 @@ export default class Channels extends React.Component {
       newFormIsOpen: false,
       settingsIsOpen: false,
       settingsChannelId: null,
+      searchIsOpen: false,
       modalStyle: {
         content : {
           top                   : '50%',
@@ -49,6 +51,14 @@ export default class Channels extends React.Component {
     this.setState({settingsIsOpen: false});
   }
 
+  openChannelSearch () {
+    this.setState({searchIsOpen: true});
+  }
+
+  closeChannelSearch () {
+    this.setState({searchIsOpen: false});
+  }
+
   render () {
     let channels;
     if (this.props.channels) {
@@ -83,6 +93,9 @@ export default class Channels extends React.Component {
         <ul>
           {channels}
         </ul>
+        <button onClick={() => this.openChannelSearch()}>
+          Join new channel
+        </button>
 
         <div className='modals'>
           <Modal
@@ -99,6 +112,13 @@ export default class Channels extends React.Component {
             <ChannelSettingsContainer
               closeModal={() => this.closeChannelSettings()}
               channelId={this.state.settingsChannelId}/>
+          </Modal>
+          <Modal
+            contentLabel='ChannelSearchContainer'
+            isOpen={this.state.searchIsOpen}
+            style={this.state.modalStyle}>
+            <ChannelSearchContainer
+              closeModal={() => this.closeChannelSearch()}/>
           </Modal>
         </div>
       </div>
