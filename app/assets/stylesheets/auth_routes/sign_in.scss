@@ -29,6 +29,14 @@
   text-shadow: 2px 0px 2px #666;
 }
 
+.sign-in .errors {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+}
+
 .sign-in form {
   display: flex;
   flex-direction: column;

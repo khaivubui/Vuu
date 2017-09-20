@@ -28,6 +28,11 @@ export default class SignInForm extends React.Component {
         <Link to='/register'>don't have an account?</Link>
 
         <form onSubmit={e => this.register(e)}>
+          <ul className='errors'>
+            {this.props.errors.map(error =>
+              <li key={error}>{error}</li>
+            )}
+          </ul>
           <label htmlFor='username'>Username:</label>
           <input
             id='username'

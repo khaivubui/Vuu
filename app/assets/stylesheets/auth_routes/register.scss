@@ -35,6 +35,10 @@
   text-shadow: 2px 0px 2px #666;
 }
 
+.register .errors li{
+  font-style: italic;
+}
+
 .register form {
   background: white;
   display: flex;
