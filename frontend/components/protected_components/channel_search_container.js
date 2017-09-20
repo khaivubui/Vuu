@@ -5,7 +5,14 @@ import {
 } from '../../actions/channels/channels_actions';
 import ChannelSearch from './channel_search';
 
-const mapStateToProps = (state, ownProps) => ({
+const arrayChannelSearchResults = state => (
+  Object.keys(state.ui.channelSearchResults).map(
+    id => state.ui.channelSearchResults[id]
+  )
+);
+
+const mapStateToProps = state => ({
+  channelSearchResults: arrayChannelSearchResults(state)
 });
 
 const mapDispatchToProps = dispatch => ({

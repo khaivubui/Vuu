@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     entities: {},
     ui: {
-      loading: false
+      channelSearchResults: {}
     },
     errors: []
   };

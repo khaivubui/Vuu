@@ -1,9 +1,10 @@
-const uiReducer = (state = {loading: false}, action) => {
-  Object.freeze(state);
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import { combineReducers } from 'redux';
+
+import channelSearchResultsReducer
+from './channel_search_results_reducer';
+
+const uiReducer = combineReducers({
+  channelSearchResults: channelSearchResultsReducer
+});
 
 export default uiReducer;
