@@ -15,8 +15,8 @@ import SidePanel
 from './protected_components/side_panel';
 import SignOutButtonContainer
 from './protected_components/sign_out_button_container';
-import NewChannelFormContainer
-from './protected_components/new_channel_form_container';
+// import NewChannelFormContainer
+// from './protected_components/new_channel_form_container';
 
 const App = () => (
   <div>
@@ -26,7 +26,6 @@ const App = () => (
 
     <div className='protected'>
       <ProtectedRoute path='/messages' component={SidePanel}/>
-      <ProtectedRoute path='/messages/channels/new' component={NewChannelFormContainer}/>
     </div>
 
     <ProtectedRoute path='/messages' component={SignOutButtonContainer}/>
@@ -34,3 +33,6 @@ const App = () => (
 );
 
 export default App;
+
+// <ProtectedRoute
+// path='/messages/channels/new' component={NewChannelFormContainer}/>

@@ -18,6 +18,7 @@ export default class NewChannelForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.createChannel(this.state);
+    this.props.closeModal();
   }
 
   render () {
@@ -26,7 +27,13 @@ export default class NewChannelForm extends React.Component {
         className='new-channel-form'
         onSubmit={e => this.handleSubmit(e)}>
 
-        <h1>New Channel</h1>
+        <h1>
+          <span>New Channel</span>
+          <i
+            className="fa fa-times"
+            aria-hidden="true"
+            onClick={this.props.closeModal}></i>
+        </h1>
         <label htmlFor='channelname'>channelname:</label>
         <input id='channelname'
           type='text'
