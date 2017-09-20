@@ -6,14 +6,17 @@
 }
 
 .side-panel-component {
-  box-shadow: 0.5px 0.5px 0.5px #666;
+  box-shadow: 1px 1px 1px #666;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 3px;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .side-panel-component:hover {
-  box-shadow: 1px 1px 3px #777;
+  box-shadow: 2px 2px 4px #666;
+  transform: translate(-1px, -1px);
 }
 
 .side-panel-component h1 {
