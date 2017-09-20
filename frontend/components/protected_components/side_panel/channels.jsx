@@ -44,8 +44,7 @@ export default class Channels extends React.Component {
             to={`/messages/channels/${channel.id}`}>
             <div className='channel-display-name'>
               {channel.displayname || channel.channelname}
-            </div><br/>
-            {channel.channelname}
+            </div>
           </NavLink>
         </li>
       );

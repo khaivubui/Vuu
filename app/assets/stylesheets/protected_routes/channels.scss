@@ -3,6 +3,7 @@
 }
 
 .channels h1 {
+  color: #8a0000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,14 +22,12 @@
   display: inline-flex;
   font-size: 1.2em;
   margin-top: 10px;
-  border-bottom: 1px #666 solid;
 }
 
-.channel-display-name:hover {
+.channels a:hover .channel-display-name {
   color: #4294C1;
 }
 
 .active .channel-display-name {
-  border-bottom: none;
   color: #4294C1;
 }
