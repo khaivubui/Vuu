@@ -2,6 +2,7 @@ import * as SessionUtils from './session_utils';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERROR = 'RECEIVE_ERROR';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
@@ -11,6 +12,10 @@ export const receiveCurrentUser = user => ({
 export const receiveError = error => ({
   type: RECEIVE_ERROR,
   error
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
 
 export const register = user => dispatch => (

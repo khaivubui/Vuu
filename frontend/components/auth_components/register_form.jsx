@@ -10,6 +10,10 @@ export default class RegisterForm extends React.Component {
       password: ''
     };
   }
+  
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
 
   update (e, fieldType) {
     this.setState({
