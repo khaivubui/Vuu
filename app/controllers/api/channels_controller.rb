@@ -32,6 +32,11 @@ class Api::ChannelsController < ApplicationController
     render json: params[:id]
   end
 
+  def search
+    @channels = Channel.search params[:query]
+    render :index
+  end
+
   private
 
   def channel_params

@@ -17,6 +17,10 @@ class Channel < ApplicationRecord
   has_many :users,
            through: :channel_memberships
 
+  def self.search(query)
+    self.where("channelname ILIKE ?", "%#{query}%")
+  end
+
   def add_admin(user)
     self.channel_memberships.create user_id: user.id,
                                     admin: true
@@ -24,5 +28,11 @@ class Channel < ApplicationRecord
 
   def admins
     self.users.where(channel_memberships: {admin: true})
+  end
+
+  def admin_ids
+    self.admins.map do |admin|
+      admin.id
+    end
   end
 end

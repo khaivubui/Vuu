@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     resources :channels, except: [:new, :edit]
   end
 
-  delete '/api/channels/leave/:id' => 'api/channels#leave'
+  delete '/api/channels/leave/:id' => 'api/channels#leave',
+         as: 'api_channel_leave',
+         defaults: { format: :json }
+  get '/api/channels/search/:query' => 'api/channels#search',
+      as: 'api_channel_search',
+      defaults: { format: :json }
 
   root to: 'static_pages#root'
 end
