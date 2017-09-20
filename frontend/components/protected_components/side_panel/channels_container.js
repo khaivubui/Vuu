@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannels: userId => dispatch(fetchChannels(userId))
+  fetchChannels: () => dispatch(fetchChannels())
 });
 
 export default withRouter(connect(

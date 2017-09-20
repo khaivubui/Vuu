@@ -65,11 +65,6 @@ class User < ApplicationRecord
                                     admin: true
   end
 
-  def create_channel(channel_hash)
-    channel = Channel.create(channel_hash)
-    self.become_admin(channel)
-  end
-
   def admined_channels
     self.channels.where(channel_memberships: {admin: true})
   end

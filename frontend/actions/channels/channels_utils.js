@@ -1,5 +1,5 @@
-export const fetchChannels = userId => (
+export const fetchChannels = () => (
   $.ajax({
-    url: `/api/users/${userId}/channels`
+    url: `/api/channels`
   })
 );

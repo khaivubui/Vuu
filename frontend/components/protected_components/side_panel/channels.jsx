@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default class Channels extends React.Component {
   componentDidMount () {
-    this.props.fetchChannels(this.props.currentUser.id);
+    this.props.fetchChannels();
   }
 
   render () {
