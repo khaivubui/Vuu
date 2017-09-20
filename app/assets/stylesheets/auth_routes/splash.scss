@@ -42,3 +42,9 @@
   color: #4294C1;
   text-shadow: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .splash {
+    flex-direction: column;
+  }
+}
