@@ -24,6 +24,8 @@ class User < ApplicationRecord
   has_many :channels,
            through: :channel_memberships
 
+  # ---------- Auth stuff ----------
+
   def self.find_by_credentials(user_params)
     user = User.find_by(username: user_params[:username])
     return nil unless user
@@ -54,5 +56,21 @@ class User < ApplicationRecord
   def reset_session_token!
     self.update(session_token: User.new_unique_token)
     self.session_token
+  end
+
+  # ---------- Channel stuff ----------
+
+  def become_admin(channel)
+    self.channel_memberships.create channel_id: channel.id,
+                                    admin: true
+  end
+
+  def create_channel(channel_hash)
+    channel = Channel.create(channel_hash)
+    self.become_admin(channel)
+  end
+
+  def admined_channels
+    self.channels.where(channel_memberships: {admin: true})
   end
 end

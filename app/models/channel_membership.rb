@@ -13,6 +13,8 @@
 class ChannelMembership < ApplicationRecord
   validates :user_id, :channel_id, presence: true
   validates_inclusion_of :admin, in: [true, false]
+  validates :user, uniqueness: { scope: :channel,
+    message: "%{value} is already in this channel" }
 
   belongs_to :user
 

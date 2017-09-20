@@ -16,4 +16,13 @@ class Channel < ApplicationRecord
 
   has_many :users,
            through: :channel_memberships
+
+  def add_admin(user)
+    self.channel_memberships.create user_id: user.id,
+                                    admin: true
+  end
+
+  def admins
+    self.users.where(channel_memberships: {admin: true})
+  end
 end

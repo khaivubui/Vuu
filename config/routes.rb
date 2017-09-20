@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     # channels
-    resources :channels, except: [:new, :edit, :index]
+    resources :channels, except: [:new, :edit, :index, :create]
     resources :users, only: [] do
-      resources :channels, only: :index
+      resources :channels, only: [:index, :create]
     end
   end
 
