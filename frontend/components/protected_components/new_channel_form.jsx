@@ -45,16 +45,16 @@ export default class NewChannelForm extends React.Component {
             aria-hidden="true"
             onClick={this.props.closeModal}></i>
         </h1>
-        <label htmlFor='channelname'>channelname:</label>
-        <input id='channelname'
+        <input
           ref='channelname'
           type='text'
+          placeholder='channelname'
           value={this.state.channelname}
           onChange={e => this.update(e, 'channelname')}/>
-        <label htmlFor='displayname'>displayname: (optional)</label>
-        <input id='displayname'
+        <input
           type='text'
           value={this.state.displayname}
+          placeholder='displayname(optional)'
           onChange={e => this.update(e, 'displayname')}/>
         <input type='submit' value='Create New Channel'/>
 

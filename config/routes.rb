@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   delete '/api/channels/leave/:id' => 'api/channels#leave',
          as: 'api_channel_leave',
          defaults: { format: :json }
+  post '/api/channels/join/:id' => 'api/channels#join',
+         as: 'api_channel_join',
+         defaults: { format: :json }
   get '/api/channels/search/:query' => 'api/channels#search',
       as: 'api_channel_search',
       defaults: { format: :json }
