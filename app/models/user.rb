@@ -30,6 +30,8 @@ class User < ApplicationRecord
   has_many :channels,
            through: :channel_memberships
 
+  has_many :messages
+
   # ---------- Auth stuff ----------
 
   def self.find_by_credentials(user_params)

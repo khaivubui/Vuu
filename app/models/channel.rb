@@ -23,6 +23,9 @@ class Channel < ApplicationRecord
   has_many :users,
            through: :channel_memberships
 
+  has_many :messages,
+           as: :context
+
   def self.search(query)
     self.where("channelname ILIKE ?", "%#{query}%")
   end
