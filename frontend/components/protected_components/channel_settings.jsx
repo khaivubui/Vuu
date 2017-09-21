@@ -46,15 +46,18 @@ export default class ChannelSettings extends React.Component {
           </button> :
           '';
 
+    console.log(channel);
     return (
       <div className='channel-settings'>
         <h1>{channel.displayname || channel.channelname}
           <i
             className="fa fa-times"
             aria-hidden="true"
-            onClick={this.props.closeModal}></i>
+            onClick={this.props.closeModal}>
+          </i>
         </h1>
-        #{channel.channelname}
+        #{channel.channelname}<br/>
+        {channel.userIds.length} users
 
         {updateChannel}
 
