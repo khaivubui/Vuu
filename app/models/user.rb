@@ -16,6 +16,12 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :session_token, uniqueness: true
+  validates :username,
+            format: {
+              with: /\A[a-zA-Z0-9_]+\Z/,
+              message: "can only have alphanumeric characters"
+            }
+
   attr_reader :password
   after_initialize :ensure_session_token
 
