@@ -11,14 +11,13 @@
 }
 
 .channels h1 i {
-  color: #666;
+  color: #4294C1;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: text-shadow 0.3s;
 }
 
 .channels h1 i:hover {
-  color: #4294C1;
-  transform: scale(1.2, 1.2);
+  text-shadow: 0.5px 0.5px 0.5px #666;
 }
 
 .channels li {

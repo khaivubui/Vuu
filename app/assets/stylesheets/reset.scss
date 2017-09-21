@@ -63,3 +63,9 @@ body {
 button {
 	cursor: pointer;
 }
+
+*::placeholder {
+	font-weight: 100;
+	font-style: italic;
+	color: #CCC;
+}

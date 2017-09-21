@@ -85,7 +85,7 @@ export default class Channels extends React.Component {
       <div className='channels side-panel-component'>
         <h1>Channels
             <i
-              className="fa fa-plus-square-o"
+              className="fa fa-plus-square-o fa-lg"
               aria-hidden="true"
               onClick={e => this.openNewChannelForm()}>
             </i>
@@ -94,7 +94,7 @@ export default class Channels extends React.Component {
           {channels}
         </ul>
         <button onClick={() => this.openChannelSearch()}>
-          Join new channel
+          Join a channel
         </button>
 
         <div className='modals'>
