@@ -1,0 +1,50 @@
+.updateChannelForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.updateChannelForm i {
+  font-size: 1.3em;
+  margin-left: auto;
+  color: #FF7979;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.channel-settings i:hover {
+  text-shadow: 0.5px 0px 0.5px #666;
+}
+
+.updateChannelForm input[type=text] {
+  font-size: 1em;
+  height: 20px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #4294C1;
+}
+
+.updateChannelForm input[type=text]:focus {
+  font-size: 1.1em;
+  font-weight: 100;
+  margin-bottom: 9px;
+  border: none;
+  border-bottom: 2px solid #4294C1;
+}
+
+.updateChannelForm input[type=submit]{
+  height: 35px;
+  font-size: 1em;
+  color: #666;
+  border: 1px #666 solid;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  transition: color 0.3s;
+  transition: border-color 0.3s;
+}
+
+.updateChannelForm input[type=submit]:hover {
+  color: #4294C1;
+  border-color: #4294C1;
+}

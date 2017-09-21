@@ -7,7 +7,8 @@ import {
 import ChannelSettings from './channel_settings';
 
 const mapStateToProps = (state, ownProps) => ({
-  channel: state.entities.channels[ownProps.channelId]
+  channel: state.entities.channels[ownProps.channelId],
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -14,7 +14,12 @@ export default class UpdateChannelForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={() => this.props.updateChannel(this.state)}>
+      <form className='updateChannelForm'
+        onSubmit={() => this.props.updateChannel(this.state)}>
+        <i
+          className="fa fa-times"
+          aria-hidden="true"
+          onClick={this.props.closeModal}></i>
         <label htmlFor='channelname'>channelname</label>
         <input
           id='channelname'
