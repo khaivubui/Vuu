@@ -54,10 +54,10 @@ export default class ChannelSearch extends React.Component {
             <ChannelSearchItem
               key={result.id}
               channel={result}
-              joinChannel={() => {
-                this.props.joinChannel(result.id);
-                this.props.searchChannels(this.state.query);
-              }}
+              joinChannel={() =>
+                this.props.joinChannel(result.id).then(
+                  () => this.props.searchChannels(this.state.query)
+                )}
               currentUser={this.props.currentUser}/>
           )}
         </ul>
