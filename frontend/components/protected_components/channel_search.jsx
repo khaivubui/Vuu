@@ -23,6 +23,9 @@ export default class ChannelSearch extends React.Component {
 
   componentDidMount () {
     this.refs.searchBox.focus();
+    if (this.state.query === '') {
+      this.props.clearSearch();
+    }
   }
 
   handleKeyDown (e) {
