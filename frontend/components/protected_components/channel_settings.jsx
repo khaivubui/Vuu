@@ -54,7 +54,7 @@ export default class ChannelSettings extends React.Component {
             aria-hidden="true"
             onClick={this.props.closeModal}></i>
         </h1>
-        {channel.channelname}
+        #{channel.channelname}
 
         {updateChannel}
 

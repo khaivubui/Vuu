@@ -14,8 +14,8 @@ class Channel < ApplicationRecord
             presence: true,
             uniqueness: true,
             format: {
-              with: /\A[a-zA-Z0-9_]+\Z/,
-              message: "can only have alphanumeric characters"
+              with: /\A[a-z0-9_]+\Z/,
+              message: "can only have lowercase alphanumeric characters"
             }
 
   has_many :channel_memberships

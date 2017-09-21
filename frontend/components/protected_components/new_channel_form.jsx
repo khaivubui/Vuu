@@ -54,7 +54,7 @@ export default class NewChannelForm extends React.Component {
         <input
           ref='channelname'
           type='text'
-          placeholder='channelname'
+          placeholder='channelname(alphanumeric only)'
           value={this.state.channelname}
           onChange={e => this.update(e, 'channelname')}/>
         <input

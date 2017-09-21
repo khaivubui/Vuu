@@ -18,8 +18,8 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :username,
             format: {
-              with: /\A[a-zA-Z0-9_]+\Z/,
-              message: "can only have alphanumeric characters"
+              with: /\A[a-z0-9_]+\Z/,
+              message: "can only have lowercase alphanumeric characters"
             }
 
   attr_reader :password
