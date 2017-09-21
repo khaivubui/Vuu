@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import {
-  register, clearErrors
+  register, signIn, clearErrors
 } from '../../actions/session/session_actions';
 import RegisterForm from './register_form';
 
@@ -10,6 +10,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  guestSignIn: () => dispatch(signIn({
+    username: 'guest',
+    password: 'password'
+  })),
   register: user => dispatch(register(user)),
   clearErrors: () => dispatch(clearErrors())
 });

@@ -10,7 +10,7 @@ export default class RegisterForm extends React.Component {
       password: ''
     };
   }
-  
+
   componentWillUnmount () {
     this.props.clearErrors();
   }
@@ -60,6 +60,7 @@ export default class RegisterForm extends React.Component {
             onChange={e => this.update(e, 'password')}/>
           <input type='submit' value='Create Account'/>
         </form>
+        <a onClick={this.props.guestSignIn}>Guest Login</a>
 
         <Link to='/'><button>Home</button></Link>
       </div>

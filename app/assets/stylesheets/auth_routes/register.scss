@@ -25,13 +25,14 @@
   cursor: default;
 }
 
-.register .header a {
+.register a {
   color: white;
+  cursor: pointer;
   text-decoration: underline;
   transition: text-shadow 0.3s;
 }
 
-.register .header a:hover {
+.register a:hover {
   text-shadow: 2px 0px 2px #666;
 }
 
