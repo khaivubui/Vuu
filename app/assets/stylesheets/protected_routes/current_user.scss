@@ -1,13 +1,22 @@
 .current-user {
   background-color: rgba(#FFF, 0.9);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .username {
   font-size: 0.8em;
 }
 
-i {
+i.fa-user-circle-o {
   margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+button.sign-out {
+  font-size: 0.8em;
+  margin: 0;
+  background: #FF7979;
+  height: 30px;
 }

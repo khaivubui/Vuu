@@ -1,4 +1,4 @@
-.register button, .sign-in button, button.sign-out {
+.register button, .sign-in button {
   position: absolute;
   bottom: 20px;
   left: 0;
@@ -18,12 +18,7 @@
   transition: color 0.3s;
 }
 
-button.sign-out {
-  left: 20px;
-  margin: 0;
-}
-
-.register button:hover, .sign-in button:hover, button.sign-out:hover {
+.register button:hover, .sign-in button:hover {
   background: white;
   color: #4294C1;
   text-shadow: none;

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+import { signOut } from '../../../actions/session/session_actions';
 import CurrentUser from './current_user';
 
 const mapStateToProps = state => ({
@@ -7,6 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  signOut: () => dispatch(signOut())
 });
 
 export default connect(
