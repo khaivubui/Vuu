@@ -35,7 +35,7 @@ class Api::ChannelsController < ApplicationController
   def join
     @channel = Channel.find(params[:id])
     @channel.users << current_user
-    render json: params[:id]
+    render :show
   end
 
   def search

@@ -27,6 +27,13 @@ export const leaveChannel = channelId => (
   })
 );
 
+export const joinChannel = channelId => (
+  $.ajax({
+    url: `api/channels/join/${channelId}`,
+    method: 'POST'
+  })
+);
+
 export const searchChannels = query => (
   $.ajax({
     url: `api/channels/search/${query}`

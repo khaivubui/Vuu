@@ -44,6 +44,12 @@ export const leaveChannel = channelId => dispatch => (
   )
 );
 
+export const joinChannel = channelId => dispatch => (
+  ChannelsUtils.joinChannel(channelId).then(
+    channel => dispatch(receiveChannel(channel))
+  )
+);
+
 export const searchChannels = query => dispatch => {
   if (query) {
     ChannelsUtils.searchChannels(query).then(

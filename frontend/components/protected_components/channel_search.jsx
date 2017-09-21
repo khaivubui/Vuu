@@ -3,10 +3,20 @@ import React from 'react';
 import ChannelSearchItem from './channel_search_item';
 
 export default class ChannelSearch extends React.Component {
-  searchChannels (query) {
+  constructor (props) {
+    super(props);
+    this.state = {
+      query: ''
+    };
+  }
+
+  searchChannels (e) {
+    this.setState({
+      query: e.target.value
+    });
     clearTimeout(this.searching);
     this.searching = setTimeout(
-      () => this.props.searchChannels(query),
+      () => this.props.searchChannels(this.state.query),
       200
     );
   }
@@ -37,13 +47,17 @@ export default class ChannelSearch extends React.Component {
           ref='searchBox'
           type='text'
           placeholder='Search...'
-          onChange={e => this.searchChannels(e.target.value)}/>
+          value={this.state.query}
+          onChange={e => this.searchChannels(e)}/>
         <ul className='channel-search-results'>
           {this.props.channelSearchResults.map(result =>
             <ChannelSearchItem
               key={result.id}
               channel={result}
-              joinChannel={() => this.props.joinChannel(result.id)}
+              joinChannel={() => {
+                this.props.joinChannel(result.id);
+                this.props.searchChannels(this.state.query);
+              }}
               currentUser={this.props.currentUser}/>
           )}
         </ul>

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
 import {
-  searchChannels
+  searchChannels,
+  joinChannel
 } from '../../actions/channels/channels_actions';
 import ChannelSearch from './channel_search';
 
@@ -17,7 +18,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchChannels: (query) => dispatch(searchChannels(query))
+  searchChannels: (query) => dispatch(searchChannels(query)),
+  joinChannel: channelId => dispatch(joinChannel(channelId))
 });
 
 export default connect(
