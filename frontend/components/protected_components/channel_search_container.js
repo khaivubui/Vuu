@@ -12,7 +12,8 @@ const arrayChannelSearchResults = state => (
 );
 
 const mapStateToProps = state => ({
-  channelSearchResults: arrayChannelSearchResults(state)
+  channelSearchResults: arrayChannelSearchResults(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
