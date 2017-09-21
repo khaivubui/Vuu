@@ -70,6 +70,7 @@ export default class ChannelSettings extends React.Component {
           <UpdateChannelForm
             closeModal={() => this.closeUpdateForm()}
             channel={this.props.channel}
+            errors={this.props.errors}
             updateChannel={this.props.updateChannel}/>
         </Modal>
       </div>

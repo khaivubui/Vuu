@@ -39,7 +39,8 @@ export const createChannel = channelData => dispatch => (
 
 export const updateChannel = channelData => dispatch => (
   ChannelsUtils.updateChannel(channelData).then(
-    channel => dispatch(receiveChannel(channel))
+    channel => dispatch(receiveChannel(channel)),
+    error => dispatch(receiveError(error))
   )
 );
 
