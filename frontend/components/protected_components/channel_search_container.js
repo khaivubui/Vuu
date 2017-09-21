@@ -17,8 +17,13 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
+// TODO: deal with clearSearch bullshit
 const mapDispatchToProps = dispatch => ({
   searchChannels: (query) => dispatch(searchChannels(query)),
+  clearSearch: () => dispatch({
+    type: 'UPDATE_CHANNEL_SEARCH_RESULTS',
+    channelSearchResults: {}
+  }),
   joinChannel: channelId => dispatch(joinChannel(channelId))
 });
 
