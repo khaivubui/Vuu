@@ -38,6 +38,14 @@ export default class ChannelSettings extends React.Component {
 
   render () {
     const { channel } = this.props;
+    const updateChannel =
+          channel.adminIds.includes(this.props.currentUser.id) ?
+          <button className='updateChannel'
+            onClick={e => this.openUpdateForm()}>
+            Update Channel
+          </button> :
+          '';
+
     return (
       <div className='channel-settings'>
         <h1>{channel.displayname || channel.channelname}
@@ -48,10 +56,7 @@ export default class ChannelSettings extends React.Component {
         </h1>
         {channel.channelname}
 
-        <button className='updateChannel'
-          onClick={e => this.openUpdateForm()}>
-          Update Channel
-        </button>
+        {updateChannel}
 
         <button className='leaveChannel'
           onClick={e => this.leaveChannel()}>

@@ -10,7 +10,13 @@
 #
 
 class Channel < ApplicationRecord
-  validates :channelname, presence: true, uniqueness: true
+  validates :channelname,
+            presence: true,
+            uniqueness: true,
+            format: {
+              with: /\A[a-zA-Z0-9_]+\Z/,
+              message: "can only have alphanumeric characters"
+            }
 
   has_many :channel_memberships
 
