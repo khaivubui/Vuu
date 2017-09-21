@@ -13,6 +13,10 @@ export default class NewChannelForm extends React.Component {
     this.refs.channelname.focus();
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
   update (e, fieldType) {
     this.setState({
       [fieldType]: e.target.value
@@ -21,8 +25,7 @@ export default class NewChannelForm extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.createChannel(this.state);
-    this.props.closeModal();
+    this.props.createChannel(this.state).then(this.props.closeModal);
   }
 
   handleKeyDown (e) {
@@ -45,6 +48,9 @@ export default class NewChannelForm extends React.Component {
             aria-hidden="true"
             onClick={this.props.closeModal}></i>
         </h1>
+        <ul>
+          {this.props.errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
         <input
           ref='channelname'
           type='text'

@@ -1,5 +1,9 @@
 import * as ChannelsUtils from './channels_utils';
 
+import {
+  receiveError, clearErrors
+} from '../session/session_actions';
+
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
@@ -28,7 +32,8 @@ const removeChannel = channelId => ({
 
 export const createChannel = channelData => dispatch => (
   ChannelsUtils.createChannel(channelData).then(
-    channel => dispatch(receiveChannel(channel))
+    channel => dispatch(receiveChannel(channel)),
+    error => dispatch(receiveError(error))
   )
 );
 

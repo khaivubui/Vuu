@@ -35,8 +35,10 @@ export const signIn = user => dispatch => (
 // signOut also needs to clear search results from the ui
 export const signOut = () => dispatch => (
   SessionUtils.signOut().then(
-    emptyUser =>
-      dispatch(receiveCurrentUser(null)),
+    emptyUser => {
+      dispatch(receiveCurrentUser(null));
+      dispatch(clearErrors());
+    },
     error => dispatch(receiveError(error))
   )
 );

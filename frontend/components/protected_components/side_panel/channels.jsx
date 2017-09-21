@@ -24,7 +24,7 @@ export default class Channels extends React.Component {
           marginRight           : '-50%',
           transform             : 'translate(-50%, -50%)',
           'border'              : 'none',
-          'box-shadow'          : '1px 1px 1px #666'
+          'boxShadow'          : '1px 1px 1px #666'
         }
       }
     };
