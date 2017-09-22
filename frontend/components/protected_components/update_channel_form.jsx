@@ -32,7 +32,7 @@ export default class UpdateChannelForm extends React.Component {
           id='channelname'
           type='text'
           value={this.state.channelname}
-          onChange={e => this.update(e, 'channelname')}/>
+          disabled={true}/>
         <label htmlFor='displayname'>displayname</label>
         <input
           id='displayname'

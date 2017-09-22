@@ -46,7 +46,6 @@ export default class ChannelSettings extends React.Component {
           </button> :
           '';
 
-    console.log(channel);
     return (
       <div className='channel-settings'>
         <h1>{channel.displayname || channel.channelname}

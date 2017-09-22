@@ -2,7 +2,6 @@ import React from 'react';
 
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
-    console.log(this.props.match.params.channelId);
     this.props.fetchChannelMessages(this.props.match.params.channelId);
   }
 
