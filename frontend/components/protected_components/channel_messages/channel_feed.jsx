@@ -3,13 +3,15 @@ import React from 'react';
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
     this.props.fetchChannelMessages(this.props.match.params.channelId);
-    // this.props.fetchChannelUsers(this.props.match.params.channelId);
   }
 
   componentWillReceiveProps (newProps) {
     if (this.props.match.params.channelId !==
         newProps.match.params.channelId) {
       this.props.fetchChannelMessages(newProps.match.params.channelId);
+    }
+    if (this.props.messages.length !== newProps.messages.length) {
+      this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
     }
   }
 
@@ -30,7 +32,7 @@ export default class ChannelFeed extends React.Component {
         <div className='channel-feed'>
           <h1>{channel.displayname || channel.channelname}</h1>
           #{channel.channelname}
-          <ul className='messages'>
+          <ul className='messages' ref='messages'>
             {messages}
           </ul>
         </div>
