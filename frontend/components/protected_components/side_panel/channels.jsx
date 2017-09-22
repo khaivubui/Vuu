@@ -2,6 +2,9 @@ import React from 'react';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 
+import {
+  receiveMessage
+} from '../../../actions/messages/messages_actions';
 import NewChannelFormContainer from '../new_channel_form_container';
 import ChannelSettingsContainer from '../channel_settings_container';
 import ChannelSearchContainer from '../channel_search_container';
@@ -30,8 +33,39 @@ export default class Channels extends React.Component {
     };
   }
 
+  // create some kind of function that creates a socket connection
+  // (possibly delete all others) and run that function where needed (onEnter?)
+  setSocket (channelName) {
+    if (window.App.channel) {
+      this.removeSocket();
+    }
+    this.addSocket(channelName);
+  }
+
+  // helper
+  removeSocket () {
+    window.App.cable.subscriptions.remove(window.App.channel);
+  }
+
+  // helper
+  addSocket (channelName) {
+    window.App.channel = window.App.cable.subscriptions.create({
+      channel: 'ChannelChannel',
+      channel_name: channelName
+    }, {
+      connected: () => {},
+      disconnected: () => {},
+      received: (data) => {
+        this.props.store.dispatch(receiveMessage(data.message));
+      }
+    });
+  }
+
   componentDidMount () {
     this.props.fetchChannels();
+    this.props.channels.forEach(channel =>
+      this.setSocket(channel.channelname)
+    );
   }
 
   openNewChannelForm () {
