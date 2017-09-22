@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchChannelMessages
 } from '../../../actions/messages/messages_actions';
+import {
+  fetchChannelUsers
+} from '../../../actions/users/users_actions';
 import ChannelFeed from './channel_feed';
 
 const channelMessages = (state, channelId) => {
@@ -19,12 +22,16 @@ const channelMessages = (state, channelId) => {
 
 const mapStateToProps = (state, props) => ({
   channel: state.entities.channels[props.match.params.channelId],
-  messages: channelMessages(state, props.match.params.channelId)
+  messages: channelMessages(state, props.match.params.channelId),
+  users: state.entities.users
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   fetchChannelMessages: channelId => dispatch(
     fetchChannelMessages(channelId)
+  ),
+  fetchChannelUsers: channelId => dispatch(
+    fetchChannelUsers(channelId)
   )
 });
 
