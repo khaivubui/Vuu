@@ -2,8 +2,14 @@
   background-color: rgba(#FFF, 1);
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 94vh;
   border-radius: 3px;
   padding: 15px;
   flex: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .channel-messages {
+    height: 84vh;
+  }
 }
