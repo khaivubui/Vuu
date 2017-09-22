@@ -25,7 +25,9 @@ export default class NewChannelForm extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.createChannel(this.state).then(this.props.closeModal);
+    this.props.createChannel(this.state)
+              .then(this.props.setSocket(this.state.channelname))
+              .then(this.props.closeModal);
   }
 
   handleKeyDown (e) {

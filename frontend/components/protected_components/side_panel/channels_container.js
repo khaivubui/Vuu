@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import Channels from './channels';
 import { fetchChannels } from '../../../actions/channels/channels_actions';
 import { receiveMessage } from '../../../actions/messages/messages_actions';
+import { setSocket } from '../../../actions/cable_actions';
 
 const arrayChannels = state => (
   Object.keys(state.entities.channels).map(
@@ -19,7 +20,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchChannels: () => dispatch(fetchChannels()),
-  receiveMessage: message => dispatch(receiveMessage(message))
+  receiveMessage: message => dispatch(receiveMessage(message)),
+  setSocket: channelName => dispatch(setSocket(channelName))
 });
 
 export default withRouter(connect(
