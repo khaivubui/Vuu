@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import {
   AuthRoute, ProtectedRoute
 } from './custom_routes/custom_routes';
+import RestrictedRoute from './custom_routes/restricted_route';
 
 // AuthRoutes
 import Splash from './auth_components/splash';
@@ -22,7 +23,7 @@ const App = () => (
 
     <div className='protected'>
       <ProtectedRoute path='/messages' component={SidePanel}/>
-      <ProtectedRoute path='/messages/channels/:channelId'
+      <RestrictedRoute path='/messages/channels/:channelId'
         component={ChannelMessages}/>
     </div>
     <Route path='/messages' render={() => <div className='logo'>Vuu</div>}/>
