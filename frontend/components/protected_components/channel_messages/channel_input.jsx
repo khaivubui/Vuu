@@ -1,18 +1,54 @@
 import React from 'react';
 
 export default class ChannelInput extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      body: ''
+    };
+  }
+
   componentDidMount () {
     this.refs.input.focus();
   }
 
+  handleSubmit (e) {
+    e.preventDefault();
+    console.log('EHERERERRERE');
+    this.props.createChannelMessage(
+      this.state,
+      this.props.match.params.channelId
+    );
+  }
+
+  updateBody (e) {
+    this.setState({
+      body: e.target.value
+    });
+  }
+
+  handleKeyDown (e) {
+    if (e.keyCode === 27) {
+      this.setState({
+        body: ''
+      });
+    }
+  }
+
   render () {
     return (
-      <div className='channel-input'>
+      <form
+        onSubmit={e => this.handleSubmit(e)}
+        onKeyDown={e => this.handleKeyDown(e)}
+        className='channel-input'>
         <input
           ref='input'
           type='text'
+          value={this.state.body}
+          onChange={e => this.updateBody(e)}
           placeholder='Enter a message...'/>
-      </div>
+        <input type='submit' value='Send'/>
+      </form>
     );
   }
 }

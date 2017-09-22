@@ -13,6 +13,10 @@ export const receiveMessages = messages => ({
   messages
 });
 
+export const createChannelMessage = (message, channelId) => dispatch => (
+  MessagesUtils.createChannelMessage(message, channelId)
+);
+
 export const fetchChannelMessages = channelId => dispatch => (
   MessagesUtils.fetchChannelMessages(channelId).then(
     messages => dispatch(receiveMessages(messages))
