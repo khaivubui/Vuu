@@ -22,8 +22,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
-  fetchChannelMessages: () => dispatch(
-    fetchChannelMessages(props.match.params.channelId)
+  fetchChannelMessages: channelId => dispatch(
+    fetchChannelMessages(channelId)
   )
 });
 
