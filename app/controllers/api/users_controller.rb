@@ -8,4 +8,12 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 422
     end
   end
+
+  def index
+    if params[:channel_id]
+      @context = Channel.find(params[:channel_id])
+    end
+    @users = @context.users
+    render :index
+  end
 end
