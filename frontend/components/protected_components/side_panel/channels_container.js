@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import Channels from './channels';
 import { fetchChannels } from '../../../actions/channels/channels_actions';
+import { receiveMessage } from '../../../actions/messages/messages_actions';
 
 const arrayChannels = state => (
   Object.keys(state.entities.channels).map(
@@ -17,7 +18,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannels: () => dispatch(fetchChannels())
+  fetchChannels: () => dispatch(fetchChannels()),
+  receiveMessage: message => dispatch(receiveMessage(message))
 });
 
 export default withRouter(connect(

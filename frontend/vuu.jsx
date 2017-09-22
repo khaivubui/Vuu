@@ -4,11 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // ------ testing ------
-import {
-  register, signIn, signOut
-} from './actions/session/session_actions';
-[window.register, window.signIn, window.signOut] =
-[register, signIn, signOut];
+import { createChannelMessage } from './actions/messages/messages_utils';
+window.createChannelMessage = createChannelMessage;
 // ------ testing ------
 
 document.addEventListener('DOMContentLoaded', () => {

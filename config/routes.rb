@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     # channels
-    resources :channels, except: [:new, :edit]
+    resources :channels, except: [:new, :edit] do
+      resources :messages, only: [:create, :index]
+      resources :users, only: :index
+    end
   end
 
   delete '/api/channels/leave/:id' => 'api/channels#leave',

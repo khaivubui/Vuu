@@ -4,6 +4,7 @@
                            :channelname,
                            :displayname,
                            :user_ids,
-                           :admin_ids
+                           :admin_ids,
+                           :message_ids
   end
 end

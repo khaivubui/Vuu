@@ -56,16 +56,16 @@ export default class Channels extends React.Component {
       connected: () => {},
       disconnected: () => {},
       received: (data) => {
-        this.props.store.dispatch(receiveMessage(data.message));
+        this.props.receiveMessage(data.message);
       }
     });
   }
 
   componentDidMount () {
-    this.props.fetchChannels();
+    this.props.fetchChannels().then(() =>
     this.props.channels.forEach(channel =>
       this.setSocket(channel.channelname)
-    );
+    ));
   }
 
   openNewChannelForm () {
