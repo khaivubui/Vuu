@@ -14,10 +14,13 @@ export default class ChannelInput extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    console.log('EHERERERRERE');
     this.props.createChannelMessage(
       this.state,
       this.props.match.params.channelId
+    ).then(
+      () => this.setState({
+        body: ''
+      })
     );
   }
 

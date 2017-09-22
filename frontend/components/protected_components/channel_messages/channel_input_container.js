@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createChannelMessage:
-  (message, channelId) => createChannelMessage(message, channelId)
+  (message, channelId) => dispatch(createChannelMessage(message, channelId))
 });
 
 export default withRouter(connect(
