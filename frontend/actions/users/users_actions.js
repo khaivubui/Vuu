@@ -7,8 +7,9 @@ export const receiveUsers = users => ({
   users
 });
 
-export const fetchChannelUsers = channelId => dispatch => (
-  UsersUtils.fetchChannelUsers(channelId).then(
-    users => dispatch(receiveUsers(users))
-  )
-);
+
+// export const fetchChannelUsers = channelId => dispatch => (
+//   UsersUtils.fetchChannelUsers(channelId).then(
+//     users => dispatch(receiveUsers(users))
+//   )
+// );

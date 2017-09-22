@@ -3,7 +3,7 @@ import React from 'react';
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
     this.props.fetchChannelMessages(this.props.match.params.channelId);
-    this.props.fetchChannelUsers(this.props.match.params.channelId);
+    // this.props.fetchChannelUsers(this.props.match.params.channelId);
   }
 
   componentWillReceiveProps (newProps) {

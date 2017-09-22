@@ -14,6 +14,7 @@ class Api::MessagesController < ApplicationController
       @context = Channel.find(params[:channel_id])
     end
     @messages = @context.messages
+    @users = @messages.map(&:user)
     render :index
   end
 
