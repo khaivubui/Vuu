@@ -30,7 +30,7 @@ const addSocket = (channelName, dispatch) => {
     disconnected: () => {},
     received: (data) => {
       dispatch(receiveMessage(data.message));
-      dispatch(fetchChannels());
+      dispatch(fetchChannels()); // make this front end
     }
   });
 };
