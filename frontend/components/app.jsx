@@ -11,8 +11,8 @@ import RegisterFormContainer from './auth_components/register_form_container';
 import SignInFormContainer from './auth_components/sign_in_form_container';
 
 // ProtectedRoutes
-import SidePanel
-from './protected_components/side_panel';
+import SidePanel from './protected_components/side_panel';
+import ChannelMessages from './protected_components/channel_messages';
 
 const App = () => (
   <div>
@@ -22,6 +22,8 @@ const App = () => (
 
     <div className='protected'>
       <ProtectedRoute path='/messages' component={SidePanel}/>
+      <ProtectedRoute path='/messages/channels/:channelId'
+        component={ChannelMessages}/>
     </div>
     <Route path='/messages' render={() => <div className='logo'>Vuu</div>}/>
 
