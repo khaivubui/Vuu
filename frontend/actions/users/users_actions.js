@@ -2,7 +2,7 @@ import * as UsersUtils from './users_utils.js';
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 
-const receiveUsers = users => ({
+export const receiveUsers = users => ({
   type: RECEIVE_USERS,
   users
 });
