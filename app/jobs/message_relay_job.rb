@@ -1,10 +1,15 @@
 class MessageRelayJob < ApplicationJob
   def perform(message, channel)
-    message = Api::MessagesController.render(
+    user_json = Api::UsersController.render(
+    partial: 'api/users/user',
+    locals: { user: message.user }
+    )
+    message_json = Api::MessagesController.render(
       partial: 'api/messages/message',
       locals: { message: message }
     )
     ActionCable.server.broadcast("channel_#{channel.channelname}",
-                                 message: JSON.parse(message))
+                                 message: JSON.parse(message_json),
+                                 users: { message.user.id => user_json})
   end
 end

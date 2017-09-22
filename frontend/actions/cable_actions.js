@@ -2,6 +2,9 @@ import {
   receiveMessage
 } from './messages/messages_actions';
 import {
+  receiveUsers
+} from './users/users_actions';
+import {
   fetchChannels
 } from './channels/channels_actions';
 
@@ -29,7 +32,12 @@ const addSocket = (channelName, dispatch) => {
     connected: () => {},
     disconnected: () => {},
     received: (data) => {
-      dispatch(receiveMessage(data.message));
+      if (data.message) {
+        dispatch(receiveMessage(data.message));
+      }
+      if (data.users) {
+        dispatch(receiveUsers(data.users));
+      }
       dispatch(fetchChannels()); // make this front end
     }
   });
