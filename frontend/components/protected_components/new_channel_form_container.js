@@ -6,7 +6,6 @@ import {
 import {
   clearErrors
 } from '../../actions/session/session_actions';
-import { setSocket } from '../../actions/cable_actions';
 import NewChannelForm from './new_channel_form';
 
 const mapStateToProps = state => ({
@@ -15,8 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createChannel: channel => dispatch(createChannel(channel)),
-  clearErrors: () => dispatch(clearErrors()),
-  setSocket: channelName => dispatch(setSocket(channelName))
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(
