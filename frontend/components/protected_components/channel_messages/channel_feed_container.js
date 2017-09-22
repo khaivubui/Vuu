@@ -8,7 +8,8 @@ import ChannelFeed from './channel_feed';
 
 const channelMessages = (state, channelId) => {
   if (state.entities.channels[channelId]) {
-    return state.entities.channels[channelId].messageIds.map(
+    return state.entities.channels[channelId].messageIds
+    .sort((a,b) => b - a).map(
       messageId => state.entities.messages[messageId]
     );
   } else {
