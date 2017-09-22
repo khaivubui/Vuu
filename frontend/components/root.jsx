@@ -3,6 +3,10 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import App from './app';
 
+import {
+  receiveMessage
+} from '../actions/messages/messages_actions';
+
 class Root extends React.Component {
   //...
 
@@ -15,19 +19,22 @@ class Root extends React.Component {
     this.addSocket(channelName);
   }
 
+  // helper
   removeSocket () {
     window.App.cable.subscriptions.remove(window.App.channel);
   }
 
+  // helper
   addSocket (channelName) {
     window.App.channel = window.App.cable.subscriptions.create(
       {
         channel: 'ChannelChannel',
         channel_name: channelName
       }, {
-        connected: () => {},
-        disconnected: () => {},
+        connected: () => { console.log('HELL YES CONNECTED');},
+        disconnected: () => { console.log('k then disconencted');},
         received: (data) => {
+          console.log('received something', data);
           this.props.store.dispatch(receiveMessage(data.message));
         }
       }
@@ -35,6 +42,7 @@ class Root extends React.Component {
   }
 
   render () {
+    debugger;
     return (
       <Provider store={ this.props.store }>
         <HashRouter>
