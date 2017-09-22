@@ -9,7 +9,7 @@ import ChannelFeed from './channel_feed';
 const channelMessages = (state, channelId) => {
   if (state.entities.channels[channelId]) {
     return state.entities.channels[channelId].messageIds
-    .sort((a,b) => b - a).map(
+    .sort((a,b) => a - b).map( // the sort is destructive
       messageId => state.entities.messages[messageId]
     );
   } else {
