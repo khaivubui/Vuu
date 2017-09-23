@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Message from '../message';
+
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
     this.props.fetchChannelMessages(this.props.match.params.channelId);
@@ -19,12 +21,9 @@ export default class ChannelFeed extends React.Component {
     const { channel } = this.props;
     const { users } = this.props;
     const messages = this.props.messages[0] && this.props.messages.map(
-      message =>
-      <li key={message.id}>
-        {users[message.userId].displayname ||
-          users[message.userId].displayname.username}
-        : {message.body}
-      </li>
+      message => <Message key={message.id}
+                          user={users[message.userId]}
+                          message={message}/>
     );
 
     if (channel) {
