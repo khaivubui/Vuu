@@ -7,8 +7,13 @@
 .channel-feed ul {
   width: 100%;
   flex: 1;
-  overflow: auto;
+  overflow-x: auto;
   padding-bottom: 20px;
+}
+
+.channel-feed ul li {
+  width: inherit;
+  word-wrap: break-word;
 }
 
 .channel-feed .channel-information {
