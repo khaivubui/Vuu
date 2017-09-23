@@ -8,6 +8,7 @@
   border: none;
   font-size: 1em;
   font-weight: 100;
+  background: transparent;
 }
 
 .channel-input input[type=text] {
@@ -24,7 +25,6 @@
 
 .channel-input input[type=submit] {
   color: #4294C1;
-  background: transparent;
   width: 60px;
   margin-left: 10px;
 }
