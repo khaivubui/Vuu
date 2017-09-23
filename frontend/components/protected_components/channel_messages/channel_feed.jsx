@@ -4,7 +4,9 @@ import Message from '../message';
 
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
-    this.props.fetchChannelMessagesWithUsers(this.props.match.params.channelId);
+    this.props.fetchChannelMessagesWithUsers(
+      this.props.match.params.channelId
+    ).then(() => this.refreshScroll());
   }
 
   componentWillReceiveProps (newProps) {
@@ -13,9 +15,13 @@ export default class ChannelFeed extends React.Component {
       this.props.fetchChannelMessagesWithUsers(newProps.match.params.channelId);
     }
     if (this.props.messages.length !== newProps.messages.length ||
-        this.props.messages[0] !== newProps.messages[0]) {
-      this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
+        this.props.messages[0] === undefined) {
+      this.refreshScroll();
     }
+  }
+
+  refreshScroll () {
+    this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
   }
 
   render () {
