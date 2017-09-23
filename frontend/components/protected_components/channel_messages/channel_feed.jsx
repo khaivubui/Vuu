@@ -16,7 +16,12 @@ export default class ChannelFeed extends React.Component {
         newProps.match.params.channelId
       ).then(() => this.refreshScroll());
     }
-    if (this.props.messages.length !== newProps.messages.length) {
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.channel.messageIds.length !==
+        prevProps.channel.messageIds.length) {
+      console.log('SCROLLLL');
       this.refreshScroll();
     }
   }
