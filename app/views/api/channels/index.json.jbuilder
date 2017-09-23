@@ -6,6 +6,6 @@
     #                        :user_ids,
     #                        :admin_ids,
     #                        :message_ids
-    json.partial! 'api/channels/channel', channel: @channel
+    json.partial! 'api/channels/channel', channel: channel
   end
 end

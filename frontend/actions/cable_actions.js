@@ -35,7 +35,6 @@ const addSocket = (channelName, dispatch) => {
     connected: () => {},
     disconnected: () => {},
     received: (data) => {
-      console.log(data);
       if (data.message) {
         dispatch(receiveMessage(data.message));
       }
@@ -45,7 +44,7 @@ const addSocket = (channelName, dispatch) => {
       if (data.channel) {
         dispatch(receiveChannel(data.channel));
       }
-      dispatch(fetchChannels()); // make this front end
+      // dispatch(fetchChannels()); // make this front end
     }
   });
 };

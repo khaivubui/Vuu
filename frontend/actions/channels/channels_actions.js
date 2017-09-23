@@ -20,7 +20,7 @@ export const fetchChannels = () => dispatch => (
   )
 );
 
-const receiveChannel = channel => ({
+export const receiveChannel = channel => ({
   type: RECEIVE_CHANNEL,
   channel
 });
