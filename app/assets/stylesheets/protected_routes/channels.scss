@@ -10,15 +10,20 @@
   justify-content: space-between;
 }
 
-.channels h1 i {
-  color: #4294C1;
-  cursor: pointer;
-  transition: text-shadow 0.3s;
+.channels h1 button {
+  margin: 0;
+  font-size: 0.8em;
 }
 
-.channels h1 i:hover {
-  text-shadow: 0.5px 0.5px 0.5px #666;
-}
+// .channels h1 i {
+//   color: #4294C1;
+//   cursor: pointer;
+//   transition: text-shadow 0.3s;
+// }
+//
+// .channels h1 i:hover {
+//   text-shadow: 0.5px 0.5px 0.5px #666;
+// }
 
 .channels li {
   display: flex;
