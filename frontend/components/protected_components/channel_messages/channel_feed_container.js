@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import {
-  fetchChannelMessages
+  fetchChannelMessagesWithUsers
 } from '../../../actions/messages/messages_actions';
 // import {
 //   fetchChannelUsers
@@ -27,8 +27,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
-  fetchChannelMessages: channelId => dispatch(
-    fetchChannelMessages(channelId)
+  fetchChannelMessagesWithUsers: channelId => dispatch(
+    fetchChannelMessagesWithUsers(channelId)
   ),
   // fetchChannelUsers: channelId => dispatch(
   //   fetchChannelUsers(channelId)
