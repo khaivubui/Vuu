@@ -12,10 +12,11 @@ export default class ChannelFeed extends React.Component {
   componentWillReceiveProps (newProps) {
     if (this.props.match.params.channelId !==
         newProps.match.params.channelId) {
-      this.props.fetchChannelMessagesWithUsers(newProps.match.params.channelId);
+      this.props.fetchChannelMessagesWithUsers(
+        newProps.match.params.channelId
+      ).then(() => this.refreshScroll());
     }
-    if (this.props.messages.length !== newProps.messages.length ||
-        this.props.messages[0] === undefined) {
+    if (this.props.messages.length !== newProps.messages.length) {
       this.refreshScroll();
     }
   }

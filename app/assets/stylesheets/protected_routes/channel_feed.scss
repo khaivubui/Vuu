@@ -1,11 +1,10 @@
 .channel-feed {
   display: flex;
   flex-direction: column;
-  flex: 1
+  flex: 1;
 }
 
 .channel-feed ul {
-  width: 100%;
   flex: 1;
   overflow-x: auto;
   padding-bottom: 20px;
