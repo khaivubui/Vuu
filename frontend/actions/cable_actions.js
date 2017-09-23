@@ -5,6 +5,9 @@ import {
   receiveUsers
 } from './users/users_actions';
 import {
+  receiveChannel
+} from './channels/channels_actions';
+import {
   fetchChannels
 } from './channels/channels_actions';
 
@@ -37,6 +40,9 @@ const addSocket = (channelName, dispatch) => {
       }
       if (data.users) {
         dispatch(receiveUsers(data.users));
+      }
+      if (data.channel) {
+        dispatch(receiveChannel(data.channel));
       }
       dispatch(fetchChannels()); // make this front end
     }
