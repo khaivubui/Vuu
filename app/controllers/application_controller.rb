@@ -5,11 +5,17 @@ class ApplicationController < ActionController::Base
   private
 
   def sign_in!(user)
-    session[:session_token] = user.reset_session_token!
+    if user_params[:username] == 'guest'
+      session[:session_token] = user.session_token
+    else
+      session[:session_token] = user.reset_session_token!
+    end
   end
 
   def sign_out!
-    current_user.reset_session_token!
+    unless current_user.username == 'guest'
+      current_user.reset_session_token!
+    end
     session[:session_token] = nil
   end
 
