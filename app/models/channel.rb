@@ -18,13 +18,15 @@ class Channel < ApplicationRecord
               message: "can only have lowercase alphanumeric characters"
             }
 
-  has_many :channel_memberships
+  has_many :channel_memberships,
+           dependent: :destroy
 
   has_many :users,
            through: :channel_memberships
 
   has_many :messages,
-           as: :context
+           as: :context,
+           dependent: :destroy
 
   def self.search(query)
     self.where("channelname ILIKE ?", "%#{query}%")
