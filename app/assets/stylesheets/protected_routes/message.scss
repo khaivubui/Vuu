@@ -1,0 +1,13 @@
+.message {
+  margin: 5px 0;
+}
+
+.message .user {
+  font-weight: 700;
+  color: #1e475d;
+  cursor: pointer;
+}
+
+.message .user:hover {
+  color: #4294C1;
+}
