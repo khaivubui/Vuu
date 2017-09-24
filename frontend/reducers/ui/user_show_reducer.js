@@ -1,7 +1,8 @@
 import merge from 'lodash/merge';
 
-const OPEN_USER_SHOW = 'OPEN_USER_SHOW';
-const CLOSE_USER_SHOW = 'CLOSE_USER_SHOW';
+import {
+  OPEN_USER_SHOW, CLOSE_USER_SHOW
+} from '../../actions/ui/user_show_actions';
 
 const initialState = { isOpen: false, userId: null};
 

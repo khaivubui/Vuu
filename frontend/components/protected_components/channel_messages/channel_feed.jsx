@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Message from '../message';
+import MessageContainer from '../message_container';
 
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
@@ -33,7 +33,7 @@ export default class ChannelFeed extends React.Component {
     const { channel } = this.props;
     const { users } = this.props;
     const messages = this.props.messages[0] && this.props.messages.map(
-      message => <Message key={message.id}
+      message => <MessageContainer key={message.id}
                           user={users[message.userId]}
                           message={message}/>
     );
