@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { fetchRoomsAndUsers } from '../../../actions/rooms/rooms_actions';
 import Rooms from './rooms';
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
   fetchRoomsAndUsers: () => dispatch(fetchRoomsAndUsers())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Rooms);
+)(Rooms));
