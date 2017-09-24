@@ -5,12 +5,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Channel.new(room_params)
-    if @room.save
-      current_user.become_admin(@room)
-      render :show
-    else
-      render json: @room.errors.full_messages, status: 422
-    end
+    @room = Room.create
+    @room.user_ids = [current_user.id, *params[:userIds]]
   end
 end
