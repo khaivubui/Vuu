@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default class Rooms extends React.Component {
   componentDidMount () {
-    this.props.fetchRooms();
+    this.props.fetchRoomsAndUsers();
     // .then(() =>
     // this.props.rooms.forEach(room =>
     //   this.props.setRoomSocket(room.roomname)

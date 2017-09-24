@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchRooms } from '../../../actions/rooms/rooms_actions';
+import { fetchRoomsAndUsers } from '../../../actions/rooms/rooms_actions';
 import Rooms from './rooms';
 
 const arrayRooms = state => (
@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRooms: () => dispatch(fetchRooms())
+  fetchRoomsAndUsers: () => dispatch(fetchRoomsAndUsers())
 });
 
 export default connect(

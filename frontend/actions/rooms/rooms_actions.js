@@ -1,21 +1,22 @@
 import * as RoomsUtils from './rooms_utils';
 
 export const RECEIVE_ROOM = 'RECEIVE_ROOM';
-export const RECEIVE_ROOMS = 'RECEIVE_ROOMS';
+export const RECEIVE_ROOMS_AND_USERS = 'RECEIVE_ROOMS_AND_USERS';
 
 const receiveRoom = room => ({
   type: RECEIVE_ROOM,
   room
 });
 
-const receiveRooms = rooms => ({
-  type: RECEIVE_ROOMS,
-  rooms
+const receiveRoomsAndUsers = (rooms, users) => ({
+  type: RECEIVE_ROOMS_AND_USERS,
+  rooms,
+  users
 });
 
-export const fetchRooms = () => dispatch => (
-  RoomsUtils.fetchRooms().then(
-    rooms => dispatch(receiveRooms(rooms))
+export const fetchRoomsAndUsers = () => dispatch => (
+  RoomsUtils.fetchRoomsAndUsers().then(
+    data => dispatch(receiveRoomsAndUsers(data.rooms, data.users))
   )
 );
 

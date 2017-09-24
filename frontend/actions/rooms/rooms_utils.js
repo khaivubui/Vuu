@@ -1,4 +1,4 @@
-export const fetchRooms = () => (
+export const fetchRoomsAndUsers = () => (
   $.ajax({
     url: `/api/rooms`
   })
