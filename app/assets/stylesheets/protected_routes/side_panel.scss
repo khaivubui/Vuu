@@ -13,7 +13,27 @@
 }
 
 .side-panel-component h1 {
-  font-size: 1.2em;
+  cursor: default;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side-panel-component li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-panel-component li i {
+  cursor: pointer;
+  color: #1e475d;
+}
+
+.side-panel-component li i:hover {
+  color: #4294C1;
 }
 
 .side-panel-component button {
