@@ -1,6 +1,6 @@
 import * as RoomsUtils from './rooms_utils';
 
-const RECEIVE_ROOM = 'RECEIVE_ROOM';
+export const RECEIVE_ROOM = 'RECEIVE_ROOM';
 
 const receiveRoom = room => ({
   type: RECEIVE_ROOM,
