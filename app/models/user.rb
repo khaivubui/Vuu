@@ -25,10 +25,17 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :channel_memberships
+  has_many :channel_memberships,
+           dependent: :destroy
 
   has_many :channels,
            through: :channel_memberships
+
+  has_many :room_memberships,
+           dependent: :destroy
+
+  has_many :rooms,
+           through: :room_memberships
 
   has_many :messages
 
