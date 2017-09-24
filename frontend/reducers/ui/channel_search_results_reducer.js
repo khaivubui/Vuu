@@ -1,6 +1,6 @@
 import {
   UPDATE_CHANNEL_SEARCH_RESULTS
-} from '../actions/channels/channels_actions';
+} from '../../actions/channels/channels_actions';
 import merge from 'lodash/merge';
 
 const channelSearchResultsReducer = (state = {}, action) => {
