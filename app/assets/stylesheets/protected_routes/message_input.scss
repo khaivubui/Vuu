@@ -1,8 +1,8 @@
-.channel-input {
+.message-input {
   display: flex;
 }
 
-.channel-input input {
+.message-input input {
   width: 100%;
   height: 30px;
   border: none;
@@ -11,19 +11,19 @@
   background: transparent;
 }
 
-.channel-input input[type=text] {
+.message-input input[type=text] {
   color: #666;
   border-bottom: 1px solid #4294C1;
   margin-bottom: 1px;
   flex: 1;
 }
 
-.channel-input input[type=text]:focus {
+.message-input input[type=text]:focus {
   border-width: 2px;
   margin-bottom: 0;
 }
 
-.channel-input input[type=submit] {
+.message-input input[type=submit] {
   color: #4294C1;
   width: 60px;
   margin-left: 10px;

@@ -15,6 +15,7 @@ import SignInFormContainer from './auth_components/sign_in_form_container';
 import SidePanel from './protected_components/side_panel';
 import UserShowContainer from './protected_components/user_show_container';
 import ChannelMessages from './protected_components/channel_messages';
+import RoomMessages from './protected_components/room_messages';
 
 const App = () => (
   <div>
@@ -27,6 +28,8 @@ const App = () => (
       <ProtectedRoute path='/messages' component={UserShowContainer}/>
       <RestrictedRoute path='/messages/channels/:channelId'
         component={ChannelMessages}/>
+      <RestrictedRoute path='/messages/rooms/:roomId'
+        component={RoomMessages}/>
     </div>
     <Route path='/messages' render={() => <div className='logo'>Vuu</div>}/>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ChannelInput extends React.Component {
+export default class MessageInput extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ export default class ChannelInput extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.createChannelMessage(
+    this.props.createMessage(
       this.state,
       this.props.match.params.channelId
     ).then(
@@ -43,7 +43,7 @@ export default class ChannelInput extends React.Component {
       <form
         onSubmit={e => this.handleSubmit(e)}
         onKeyDown={e => this.handleKeyDown(e)}
-        className='channel-input'>
+        className='message-input'>
         <input
           ref='input'
           type='text'
