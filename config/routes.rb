@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :index]
       resources :users, only: :index
     end
+
+    resources :rooms, only: [:index, :create] do
+      resources :messages, only: [:create, :index]
+      resources :users, only: :index
+    end
   end
 
   delete '/api/channels/leave/:id' => 'api/channels#leave',
