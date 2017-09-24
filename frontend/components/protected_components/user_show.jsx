@@ -14,7 +14,7 @@ const modalStyle = {
   }
 };
 
-export default ({ user, isOpen, closeUserShow }) =>
+export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) =>
 <Modal
   contentLabel='UserShow'
   isOpen={isOpen}
@@ -29,7 +29,10 @@ export default ({ user, isOpen, closeUserShow }) =>
           onClick={closeUserShow}></i>
       </h1>
       {user.username}
-      <button className='modal-button'>Direct Message</button>
+      <button className='modal-button'
+        onClick={() => createRoom(user.id)}>
+        Direct Message
+      </button>
     </div>
   ) }
 </Modal>;
