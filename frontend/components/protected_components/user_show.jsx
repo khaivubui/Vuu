@@ -14,25 +14,31 @@ const modalStyle = {
   }
 };
 
-export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) =>
-<Modal
-  contentLabel='UserShow'
-  isOpen={isOpen}
-  style={modalStyle}>
-  { user && (
-    <div className='user-show'>
-      <h1 className='modal-header'>
-        <span>{ user.displayname || user.username }</span>
-        <i
-          className="fa fa-times"
-          aria-hidden="true"
-          onClick={closeUserShow}></i>
-      </h1>
-      {user.username}
-      <button className='modal-button'
-        onClick={() => createRoom(user.id)}>
-        Direct Message
-      </button>
-    </div>
-  ) }
-</Modal>;
+export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) => {
+  return (
+    <Modal
+      contentLabel='UserShow'
+      isOpen={isOpen}
+      style={modalStyle}>
+      { user && (
+        <div className='user-show'>
+          <h1 className='modal-header'>
+            <span>{ user.displayname || user.username }</span>
+            <i
+              className="fa fa-times"
+              aria-hidden="true"
+              onClick={closeUserShow}></i>
+          </h1>
+          {user.username}
+          {currentUser.id !== user.id ?
+            <button className='modal-button'
+              onClick={() => createRoom(user.id)}>
+              Direct Message
+            </button> :
+            <div></div>
+          }
+        </div>
+      ) }
+    </Modal>
+  );
+};
