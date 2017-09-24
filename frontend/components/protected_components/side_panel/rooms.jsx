@@ -20,8 +20,9 @@ export default class Rooms extends React.Component {
           <NavLink
             to={`/messages/rooms/${room.id}`}>
             {
-              // room.userIds.map(userId => users[userId].username)
-              room.id
+              room.userIds.map(
+                userId => users[userId].displayname || users[userId].username
+              ).join(', ')
             }
           </NavLink>
         </div>
