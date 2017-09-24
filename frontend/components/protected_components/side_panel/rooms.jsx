@@ -2,12 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default class Rooms extends React.Component {
-  // componentDidMount () {
-  //   this.props.fetchRooms().then(() =>
-  //   this.props.rooms.forEach(room =>
-  //     this.props.setRoomSocket(room.roomname)
-  //   ));
-  // }
+  componentDidMount () {
+    this.props.fetchRooms();
+    // .then(() =>
+    // this.props.rooms.forEach(room =>
+    //   this.props.setRoomSocket(room.roomname)
+    // ));
+  }
 
   render () {
     const { users } = this.props;
@@ -18,7 +19,10 @@ export default class Rooms extends React.Component {
           <div className='room-display-name'>
           <NavLink
             to={`/messages/rooms/${room.id}`}>
-            {room.userIds.map(userId => users[userId].username)}
+            {
+              // room.userIds.map(userId => users[userId].username)
+              room.id
+            }
           </NavLink>
         </div>
         <i
