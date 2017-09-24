@@ -13,6 +13,7 @@ import SignInFormContainer from './auth_components/sign_in_form_container';
 
 // ProtectedRoutes
 import SidePanel from './protected_components/side_panel';
+import UserShowContainer from './protected_components/user_show_container';
 import ChannelMessages from './protected_components/channel_messages';
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
 
     <div className='protected'>
       <ProtectedRoute path='/messages' component={SidePanel}/>
+      <ProtectedRoute path='/messages' component={UserShowContainer}/>
       <RestrictedRoute path='/messages/channels/:channelId'
         component={ChannelMessages}/>
     </div>
