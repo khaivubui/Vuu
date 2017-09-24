@@ -15,6 +15,23 @@ const modalStyle = {
 };
 
 export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) => {
+  let dmButton = <div></div>;
+
+  if (user && currentUser.id !== user.id) {
+    if (currentUser.dmUserIds.includes(user.id)) {
+      dmButton =
+      <button className='modal-button'>
+        Open Conversation
+      </button>;
+    } else {
+      dmButton =
+      <button className='modal-button'
+        onClick={() => createRoom(user.id)}>
+        Start Conversation
+      </button>;
+    }
+  }
+
   return (
     <Modal
       contentLabel='UserShow'
@@ -30,13 +47,7 @@ export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) => {
               onClick={closeUserShow}></i>
           </h1>
           {user.username}
-          {currentUser.id !== user.id ?
-            <button className='modal-button'
-              onClick={() => createRoom(user.id)}>
-              Direct Message
-            </button> :
-            <div></div>
-          }
+          {dmButton}
         </div>
       ) }
     </Modal>
