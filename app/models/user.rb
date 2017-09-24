@@ -83,4 +83,16 @@ class User < ApplicationRecord
   def admined_channels
     self.channels.where(channel_memberships: {admin: true})
   end
+
+  # ---------- Room stuff ----------
+
+  def direct_message_rooms
+    self.rooms.select { |room| room.users.length == 2 }
+  end
+
+  def dm_user_ids
+    self.direct_message_rooms.map do |dmr|
+      dmr.user_ids.reject { |id| id == self.id }[0]
+    end
+  end
 end
