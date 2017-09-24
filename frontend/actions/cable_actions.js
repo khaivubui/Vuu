@@ -35,6 +35,7 @@ const addSocket = (channelName, dispatch) => {
     connected: () => {},
     disconnected: () => {},
     received: (data) => {
+      console.log(data);
       if (data.message) {
         dispatch(receiveMessage(data.message));
       }
