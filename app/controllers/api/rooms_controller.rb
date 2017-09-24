@@ -1,6 +1,7 @@
 class Api::RoomsController < ApplicationController
   def index
     @rooms = current_user.rooms
+    @users = @rooms.map(&:users).flatten.uniq
     render :index
   end
 
