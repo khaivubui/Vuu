@@ -2,8 +2,17 @@ import { connect } from 'react-redux';
 
 import Rooms from './rooms';
 
+const arrayRooms = state => (
+  Object.keys(state.entities.rooms).map(
+    id => state.entities.rooms[id]
+  )
+);
+
+
 const mapStateToProps = state => ({
-  rooms: state.entities.rooms
+  users: state.entities.users,
+  rooms: arrayRooms(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
