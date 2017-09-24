@@ -28,6 +28,8 @@ export default ({ user, isOpen, closeUserShow }) =>
           aria-hidden="true"
           onClick={closeUserShow}></i>
       </h1>
+      {user.username}
+      <button className='modal-button'>Direct Message</button>
     </div>
   ) }
 </Modal>;

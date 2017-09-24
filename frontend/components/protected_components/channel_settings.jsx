@@ -40,7 +40,7 @@ export default class ChannelSettings extends React.Component {
     const { channel } = this.props;
     const updateChannel =
           channel.adminIds.includes(this.props.currentUser.id) ?
-          <button className='updateChannel'
+          <button className='modal-button updateChannel'
             onClick={e => this.openUpdateForm()}>
             Update Channel
           </button> :
@@ -61,7 +61,7 @@ export default class ChannelSettings extends React.Component {
 
         {updateChannel}
 
-        <button className='leaveChannel'
+        <button className='modal-button leaveChannel'
           onClick={e => this.leaveChannel()}>
           Leave Channel
         </button>
