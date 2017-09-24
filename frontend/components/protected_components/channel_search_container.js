@@ -17,7 +17,6 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
-// TODO: deal with clearSearch bullshit
 const mapDispatchToProps = dispatch => ({
   searchChannels: (query) => dispatch(searchChannels(query)),
   clearSearch: () => dispatch({
