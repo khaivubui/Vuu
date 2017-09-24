@@ -7,5 +7,6 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create
     @room.user_ids = [current_user.id, *params[:userIds]]
+    render :show
   end
 end
