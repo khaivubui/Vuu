@@ -6,23 +6,6 @@
   width: 300px;
 }
 
-.new-channel-form h1 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.new-channel-form i {
-  color: #FF7979;
-  cursor: pointer;
-  transition: text-shadow 0.3s;
-}
-
-.new-channel-form i:hover {
-  text-shadow: 0.5px 0px 0.5px #666;
-}
-
 .errors {
   font-style: italic;
 }

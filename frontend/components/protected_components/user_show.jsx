@@ -19,7 +19,15 @@ export default ({ user, isOpen, closeUserShow }) =>
   contentLabel='UserShow'
   isOpen={isOpen}
   style={modalStyle}>
-  <div className='user-show'>
-    { user && (user.username || user.displayname) }
-  </div>
+  { user && (
+    <div className='user-show'>
+      <h1 className='modal-header'>
+        <span>{ user.displayname || user.username }</span>
+        <i
+          className="fa fa-times"
+          aria-hidden="true"
+          onClick={closeUserShow}></i>
+      </h1>
+    </div>
+  ) }
 </Modal>;

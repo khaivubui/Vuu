@@ -9,23 +9,6 @@
   min-width: 300px;
 }
 
-.channel-settings h1 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.channel-settings i {
-  color: #FF7979;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.channel-settings i:hover {
-  text-shadow: 0.5px 0px 0.5px #666;
-}
-
 .channel-settings button {
   margin: 10px auto 0 auto;
   height: 35px;

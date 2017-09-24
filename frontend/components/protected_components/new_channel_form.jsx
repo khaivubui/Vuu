@@ -42,7 +42,7 @@ export default class NewChannelForm extends React.Component {
         onSubmit={e => this.handleSubmit(e)}
         onKeyDown={e => this.handleKeyDown(e)}>
 
-        <h1>
+        <h1 className='modal-header'>
           <span>New Channel</span>
           <i
             className="fa fa-times"

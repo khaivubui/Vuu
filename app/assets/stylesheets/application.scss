@@ -29,6 +29,9 @@
 @import 'protected_routes/logo';
 @import 'protected_routes/current_user';
 @import 'protected_routes/channels';
+
+@import 'protected_routes/modal';
+
 @import 'protected_routes/new_channel_form';
 @import 'protected_routes/channel_settings';
 @import 'protected_routes/update_channel_form';

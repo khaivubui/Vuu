@@ -3,23 +3,6 @@
   flex-direction: column;
 }
 
-.channel-search h1 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.channel-search i {
-  color: #FF7979;
-  cursor: pointer;
-  transition: text-shadow 0.3s;
-}
-
-.channel-search i:hover {
-  text-shadow: 0.5px 0px 0.5px #666;
-}
-
 .channel-search input {
   font-size: 1em;
   text-align: center;

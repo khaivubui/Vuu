@@ -48,7 +48,8 @@ export default class ChannelSettings extends React.Component {
 
     return (
       <div className='channel-settings'>
-        <h1>{channel.displayname || channel.channelname}
+        <h1 className='modal-header'>
+          <span>{channel.displayname || channel.channelname}</span>
           <i
             className="fa fa-times"
             aria-hidden="true"

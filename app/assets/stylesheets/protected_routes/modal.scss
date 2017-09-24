@@ -1,0 +1,16 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.modal-header i {
+  color: #FF7979;
+  cursor: pointer;
+  transition: text-shadow 0.3s;
+}
+
+.modal-header i:hover {
+  text-shadow: 0.5px 0px 0.5px #666;
+}
