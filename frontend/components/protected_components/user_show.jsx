@@ -19,5 +19,7 @@ export default ({ user, isOpen, closeUserShow }) =>
   contentLabel='UserShow'
   isOpen={isOpen}
   style={modalStyle}>
-  Hi lol
+  <div className='user-show'>
+    { user && (user.username || user.displayname) }
+  </div>
 </Modal>;
