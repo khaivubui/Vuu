@@ -6,7 +6,7 @@ import ChannelInputContainer from
 './channel_messages/channel_input_container.js';
 
 const ChannelMessages = props => (
-  <div className='channel-messages'>
+  <div className='messages-area'>
     <ChannelFeedContainer/>
     <ChannelInputContainer/>
   </div>

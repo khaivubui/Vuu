@@ -6,7 +6,7 @@ import RoomInputContainer from
 './room_messages/room_input_container';
 
 const RoomMessages = props => (
-  <div className='room-messages'>
+  <div className='messages-area'>
     <RoomFeedContainer/>
     <RoomInputContainer/>
   </div>

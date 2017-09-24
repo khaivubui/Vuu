@@ -1,25 +1,25 @@
-.channel-feed {
+.feed {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.channel-feed ul {
+.feed ul {
   flex: 1;
   overflow-x: auto;
 }
 
-.channel-feed ul li {
+.feed ul li {
   width: inherit;
   word-wrap: break-word;
 }
 
-.channel-feed .channel-information {
+.feed .context-information {
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #CCC;
 }
 
-.channel-feed .channel-information h1 {
+.feed .context-information h1 {
   font-size: 1.5em;
 }

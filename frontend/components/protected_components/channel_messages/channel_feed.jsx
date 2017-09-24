@@ -40,8 +40,8 @@ export default class ChannelFeed extends React.Component {
 
     if (channel) {
       return (
-        <div className='channel-feed'>
-          <div className='channel-information'>
+        <div className='feed'>
+          <div className='context-information'>
             <h1>{channel.displayname || channel.channelname}</h1>
             #{channel.channelname}
           </div>
