@@ -29,7 +29,9 @@ class Channel < ApplicationRecord
            dependent: :destroy
 
   def self.search(query)
-    self.where("channelname ILIKE ?", "%#{query}%")
+    self.where("channelname ILIKE ? OR displayname ILIKE ?",
+               "%#{query}%",
+               "%#{query}%")
   end
 
   def add_admin(user)
