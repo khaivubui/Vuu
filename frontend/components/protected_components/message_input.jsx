@@ -16,7 +16,7 @@ export default class MessageInput extends React.Component {
     e.preventDefault();
     this.props.createMessage(
       this.state,
-      this.props.match.params.channelId
+      this.props.match.params.roomId
     ).then(
       () => this.setState({
         body: ''

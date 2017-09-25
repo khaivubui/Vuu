@@ -25,6 +25,10 @@ export const createChannelMessage = (message, channelId) => dispatch => (
   MessagesUtils.createChannelMessage(message, channelId)
 );
 
+export const createRoomMessage = (message, roomId) => dispatch => (
+  MessagesUtils.createRoomMessage(message, roomId)
+);
+
 export const fetchChannelMessagesWithUsers = channelId => dispatch => (
   MessagesUtils.fetchChannelMessagesWithUsers(channelId).then(
     data => dispatch(receiveMessagesWithUsers(data))
