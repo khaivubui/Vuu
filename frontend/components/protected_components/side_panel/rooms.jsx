@@ -20,7 +20,10 @@ export default class Rooms extends React.Component {
           <NavLink
             to={`/messages/rooms/${room.id}`}>
             {
-              room.userIds.map(
+              room.userIds
+              .filter(
+                userId => userId !== this.props.currentUser.id
+              ).map(
                 userId => users[userId].displayname || users[userId].username
               ).join(', ')
             }
@@ -36,6 +39,7 @@ export default class Rooms extends React.Component {
     } else {
       rooms = 'no rooms';
     }
+    
     return (
       <div className='rooms side-panel-component'>
         <h1>Direct Messages</h1>
