@@ -24,7 +24,12 @@
 }
 
 .message-input input[type=submit] {
-  color: #4294C1;
+  color: #2f6e90;
   width: 60px;
   margin-left: 10px;
+  cursor: pointer;
+}
+
+.message-input input[type=submit]:hover {
+  color: #4294C1;
 }
