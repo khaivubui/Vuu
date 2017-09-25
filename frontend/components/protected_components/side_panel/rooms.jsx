@@ -92,7 +92,8 @@ export default class Rooms extends React.Component {
       <div className='rooms side-panel-component'>
         <h1>Direct Messages
           <span onClick={e => this.openUsersSearch()}>
-            <i className="fa fa-plus" aria-hidden="true"></i>
+            <i className="fa fa-search" aria-hidden="true"></i>
+            <i className="fa fa-user" aria-hidden="true"></i>
           </span>
         </h1>
         <ul>
