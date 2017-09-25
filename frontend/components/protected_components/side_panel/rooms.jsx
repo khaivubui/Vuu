@@ -58,9 +58,7 @@ export default class Rooms extends React.Component {
             to={`/messages/rooms/${room.id}`}>
             {
               room.userIds
-              .filter(
-                userId => userId !== this.props.currentUser.id
-              ).map(
+              .map(
                 userId => users[userId].displayname || users[userId].username
               ).join(', ')
             }

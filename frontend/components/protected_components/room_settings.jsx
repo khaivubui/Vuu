@@ -24,7 +24,7 @@ export default class RoomSettings extends React.Component {
             leaveRoom(room.id);
             closeModal();
           }}>
-          Leave Room
+          Leave Direct Message
         </button>
       </div>
     );
