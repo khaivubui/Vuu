@@ -1,22 +1,3 @@
-.channel-search {
-  display: flex;
-  flex-direction: column;
-}
-
-.channel-search input {
-  font-size: 1em;
-  text-align: center;
-  height: 25px;
-  border: none;
-  border-bottom: #4294C1 solid 1px;
-  margin-bottom: 1px;
-}
-
-.channel-search input:focus {
-  border-width: 2px;
-  margin-bottom: 0;
-}
-
 .channel-search-item {
   display: flex;
   align-items: center;

@@ -32,10 +32,11 @@
 
 @import 'protected_routes/modal';
 @import 'protected_routes/settings';
+@import 'protected_routes/search';
 
 @import 'protected_routes/new_channel_form';
 @import 'protected_routes/update_channel_form';
-@import 'protected_routes/channel_search';
+@import 'protected_routes/channel_search_item';
 
 @import 'protected_routes/user_show';
 
