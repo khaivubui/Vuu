@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import {
   createChannel
@@ -17,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
   clearErrors: () => dispatch(clearErrors())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewChannelForm);
+)(NewChannelForm));

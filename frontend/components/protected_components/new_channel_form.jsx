@@ -26,7 +26,9 @@ export default class NewChannelForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.createChannel(this.state)
-              .then(this.props.closeModal);
+    .then(({ channel }) =>
+      this.props.history.push(`/messages/channels/${channel.id}`))
+    .then(this.props.closeModal);
   }
 
   handleKeyDown (e) {
