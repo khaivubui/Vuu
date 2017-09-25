@@ -1,0 +1,12 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings button.leaveChannel {
+  background: #FF7979;
+}
+
+.settings button.updateChannel {
+  background: #4294C1;
+}

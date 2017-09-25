@@ -5,7 +5,7 @@ export default class RoomSettings extends React.Component {
     const { room } = this.props;
 
     return (
-      <div className='room-settings'>
+      <div className='settings'>
         <h1 className='modal-header'>
           <span>STUFF</span>
           <i
