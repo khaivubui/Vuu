@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  // openUserShow: userId => dispatch(openUserShow(userId))
   createRoom: userId => dispatch(createRoom([userId])),
   closeUserShow: () => dispatch(closeUserShow())
 });
