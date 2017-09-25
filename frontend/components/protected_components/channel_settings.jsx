@@ -61,7 +61,7 @@ export default class ChannelSettings extends React.Component {
 
         {updateChannel}
 
-        <button className='modal-button leaveChannel'
+        <button className='modal-button leave'
           onClick={e => this.leaveChannel()}>
           Leave Channel
         </button>

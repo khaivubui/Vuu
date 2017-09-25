@@ -17,7 +17,7 @@ export default class RoomSettings extends React.Component {
         {room.userIds.length} users
 
         <button
-          className='modal-button'>
+          className='modal-button leave'>
           Leave Room
         </button>
       </div>
