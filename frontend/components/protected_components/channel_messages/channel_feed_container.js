@@ -4,9 +4,6 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchChannelMessagesWithUsers
 } from '../../../actions/messages/messages_actions';
-// import {
-//   fetchChannelUsers
-// } from '../../../actions/users/users_actions';
 import ChannelFeed from './channel_feed';
 
 const channelMessages = (state, channelId) => {

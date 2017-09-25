@@ -29,3 +29,9 @@ export const fetchChannelMessagesWithUsers = channelId => dispatch => (
     data => dispatch(receiveMessagesWithUsers(data))
   )
 );
+
+export const fetchRoomMessagesWithUsers = roomId => dispatch => (
+  MessagesUtils.fetchRoomMessagesWithUsers(roomId).then(
+    data => dispatch(receiveMessagesWithUsers(data))
+  )
+);

@@ -11,3 +11,9 @@ export const fetchChannelMessages = channelId => (
     url: `/api/channels/${channelId}/messages`
   })
 );
+
+export const fetchRoomMessagesWithUsers = roomId => (
+  $.ajax({
+    url: `/api/rooms/${roomId}/messages`
+  })
+);

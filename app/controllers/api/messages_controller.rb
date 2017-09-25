@@ -4,6 +4,8 @@ class Api::MessagesController < ApplicationController
     @message.user = current_user
     if params[:channel_id]
       @context = Channel.find(params[:channel_id])
+    elsif params[:room_id]
+      @context = Room.find(params[:room_id])
     end
     @message.context = @context
     @message.save
@@ -12,6 +14,8 @@ class Api::MessagesController < ApplicationController
   def index
     if params[:channel_id]
       @context = Channel.find(params[:channel_id])
+    elsif params[:room_id]
+      @context = Room.find(params[:room_id])
     end
     @messages = @context.messages
     @users = @messages.map(&:user).uniq
