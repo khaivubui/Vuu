@@ -7,6 +7,7 @@ import RoomSettings from './room_settings';
 
 const mapStateToProps = (state, ownProps) => ({
   room: state.entities.rooms[ownProps.roomId],
+  users: state.entities.users,
   currentUser: state.session.currentUser
 });
 
