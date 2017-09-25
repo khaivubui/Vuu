@@ -14,4 +14,13 @@ class Api::RoomsController < ApplicationController
     RoomRelayJob.perform_later(@room, @users)
     render :show
   end
+
+  def leave
+    @room = Room.find(params[:id])
+    @room.users.delete current_user
+    if @room.users.empty?
+      @room.delete
+    end
+    render json: params[:id]
+  end
 end
