@@ -3,6 +3,11 @@ import React from 'react';
 import SignOutButton from './sign_out_button';
 
 export default class CurrentUser extends React.Component {
+  componentDidMount () {
+    const { setSocket, currentUser } = this.props;
+    setSocket(currentUser.username);
+  }
+
   render () {
     const { currentUser } = this.props;
     return (

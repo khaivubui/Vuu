@@ -11,26 +11,23 @@ class MessageRelayJob < ApplicationJob
     )
 
     if message.context_type == 'Channel'
-      broadcasting_string = "channel_#{context.channelname}"
-
       context_json = Api::ChannelsController.render(
       partial: 'api/channels/channel',
       locals: { channel: message.context }
       )
     else
-      broadcasting_string = "room_#{context.id}"
-
       context_json = Api::ChannelsController.render(
       partial: 'api/rooms/room',
       locals: { room: message.context }
       )
     end
 
-
-    ActionCable.server.broadcast(
-    broadcasting_string,
-    message: JSON.parse(message_json),
-    users: { message.user.id => JSON.parse(user_json) },
-    message.context_type.downcase => JSON.parse(context_json))
+    context.users.each do |user|
+      ActionCable.server.broadcast(
+      "user_#{user.username}",
+      message: JSON.parse(message_json),
+      users: { message.user.id => JSON.parse(user_json) },
+      message.context_type.downcase => JSON.parse(context_json))
+    end
   end
 end

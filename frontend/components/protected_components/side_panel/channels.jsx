@@ -31,18 +31,7 @@ export default class Channels extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchChannels().then(() =>
-    this.props.channels.forEach(channel =>
-      this.props.setSocket(channel.channelname)
-    ));
-  }
-
-  componentWillReceiveProps (newProps) {
-    if (newProps.channels.length !== this.props.channels.length) {
-      newProps.channels.forEach(channel =>
-        this.props.setSocket(channel.channelname)
-      );
-    }
+    this.props.fetchChannels();
   }
 
   openNewChannelForm () {

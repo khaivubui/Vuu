@@ -11,29 +11,27 @@ import {
   receiveRoom
 } from './rooms/rooms_actions';
 
-export const setSocket = channelName => dispatch => {
-  if (window.App.channels && window.App.channels[channelName]) {
-    removeSocket(channelName);
+export const setSocket = username => dispatch => {
+  if (window.App.channel) {
+    removeSocket(username);
   }
-  addSocket(channelName, dispatch);
+  addSocket(username, dispatch);
 };
 
 // helper
-const removeSocket = channelName => {
-  window.App.cable.subscriptions.remove(window.App.channels[channelName]);
+const removeSocket = username => {
+  window.App.cable.subscriptions.remove(window.App.channel);
 };
 
 // helper
-const addSocket = (channelName, dispatch) => {
-  window.App.channels = window.App.channels || {};
-  window.App.channels[channelName] = window.App.cable.subscriptions.create({
-    channel: 'ChannelChannel',
-    channel_name: channelName
+const addSocket = (username, dispatch) => {
+  window.App.channel = window.App.cable.subscriptions.create({
+    channel: 'UserChannel',
+    username
   }, {
     connected: () => {},
     disconnected: () => {},
     received: (data) => {
-      console.log(data);
       if (data.message) {
         dispatch(receiveMessage(data.message));
       }
@@ -42,6 +40,9 @@ const addSocket = (channelName, dispatch) => {
       }
       if (data.channel) {
         dispatch(receiveChannel(data.channel));
+      }
+      if (data.room) {
+        dispatch(receiveRoom(data.room));
       }
     }
   });
