@@ -14,10 +14,7 @@ export default class MessageInput extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.createMessage(
-      this.state,
-      this.props.match.params.roomId
-    ).then(
+    this.props.createMessage(this.state).then(
       () => this.setState({
         body: ''
       })

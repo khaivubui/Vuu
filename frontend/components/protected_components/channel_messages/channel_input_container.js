@@ -9,9 +9,12 @@ import MessageInput from '../message_input';
 const mapStateToProps = state => ({
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   createMessage:
-  (message, channelId) => dispatch(createChannelMessage(message, channelId))
+  (message) => dispatch(createChannelMessage(
+    message,
+    ownProps.match.params.channelId
+  ))
 });
 
 export default withRouter(connect(

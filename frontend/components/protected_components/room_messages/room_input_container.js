@@ -9,9 +9,12 @@ import MessageInput from '../message_input';
 const mapStateToProps = state => ({
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   createMessage:
-  (message, roomId) => dispatch(createRoomMessage(message, roomId))
+  (message) => dispatch(createRoomMessage(
+    message,
+    ownProps.match.params.roomId
+  ))
 });
 
 export default withRouter(connect(
