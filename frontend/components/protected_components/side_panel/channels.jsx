@@ -97,9 +97,9 @@ export default class Channels extends React.Component {
     return (
       <div className='channels side-panel-component'>
         <h1>Channels
-          <button onClick={e => this.openNewChannelForm()}>
+          <span onClick={e => this.openNewChannelForm()}>
             <i className="fa fa-plus" aria-hidden="true"></i>
-          </button>
+          </span>
         </h1>
         <ul>
           {channels}
