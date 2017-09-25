@@ -48,7 +48,7 @@ export default class Rooms extends React.Component {
   }
 
   render () {
-    const { users } = this.props;
+    const { users, currentUser } = this.props;
     let rooms;
     if (this.props.rooms) {
       rooms = this.props.rooms.map(room =>
@@ -58,9 +58,10 @@ export default class Rooms extends React.Component {
             to={`/messages/rooms/${room.id}`}>
             {
               room.userIds
+              .filter(id => id !== currentUser.id)
               .map(
                 userId => users[userId].displayname || users[userId].username
-              ).join(', ')
+              ).join(', ') || '(Just Me)'
             }
           </NavLink>
         </div>
