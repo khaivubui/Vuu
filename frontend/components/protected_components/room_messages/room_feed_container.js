@@ -18,6 +18,7 @@ const roomMessages = (state, roomId) => {
 };
 
 const mapStateToProps = (state, props) => ({
+  currentUser: state.session.currentUser,
   room: state.entities.rooms[props.match.params.roomId],
   messages: roomMessages(state, props.match.params.roomId),
   users: state.entities.users

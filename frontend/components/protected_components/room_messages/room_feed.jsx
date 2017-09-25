@@ -14,20 +14,21 @@ export default class RoomFeed extends React.Component {
   }
 
   render () {
-    const { room } = this.props;
-    const { users } = this.props;
+    const { currentUser, room, users } = this.props;
     const messages = this.props.messages[0] && this.props.messages.map(
       message => <MessageContainer key={message.id}
                           user={users[message.userId]}
                           message={message}/>
     );
+    const roomUsers = room.userIds.filter(
+      id => id !== currentUser.id
+    ).map(id => users[id].displayname || users[id].username).join(', ');
 
     if (room) {
       return (
         <div className='feed'>
           <div className='context-information'>
-            <h1>BLAHHHH</h1>
-            #BLAHHH
+            <h1>{roomUsers}</h1>
           </div>
           <ul className='messages' ref='messages'>
             {messages}
