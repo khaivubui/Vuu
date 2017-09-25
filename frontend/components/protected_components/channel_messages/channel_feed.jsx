@@ -51,8 +51,10 @@ export default class ChannelFeed extends React.Component {
         </div>
       );
     } else {
+      // When just refreshed and channel isn't fetched yet.
+      // Not really necessary, now that we have RestrictedRoute
       return (
-        <div className='channel-feed'></div>
+        <div className='feed'></div>
       );
     }
   }

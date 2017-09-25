@@ -4,9 +4,6 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchRoomMessagesWithUsers
 } from '../../../actions/messages/messages_actions';
-// import {
-//   fetchRoomUsers
-// } from '../../../actions/users/users_actions';
 import RoomFeed from './room_feed';
 
 const roomMessages = (state, roomId) => {
