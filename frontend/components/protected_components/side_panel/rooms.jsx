@@ -3,16 +3,16 @@ import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
 
 import RoomSettingsContainer from '../room_settings_container';
+import UsersSearchContainer from '../users_search_container';
 
 export default class Rooms extends React.Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      // newFormIsOpen: false,
       settingsIsOpen: false,
       settingsRoomId: null,
-      // searchIsOpen: false,
+      usersSearchIsOpen: false,
       modalStyle: {
         content : {
           top                   : '50%',
@@ -47,6 +47,18 @@ export default class Rooms extends React.Component {
     });
   }
 
+  openUsersSearch (roomId) {
+    this.setState({
+      usersSearchIsOpen: true
+    });
+  }
+
+  closeUsersSearch () {
+    this.setState({
+      usersSearchIsOpen: false
+    });
+  }
+
   render () {
     const { users, currentUser } = this.props;
     let rooms;
@@ -78,7 +90,11 @@ export default class Rooms extends React.Component {
 
     return (
       <div className='rooms side-panel-component'>
-        <h1>Direct Messages</h1>
+        <h1>Direct Messages
+          <span onClick={e => this.openUsersSearch()}>
+            <i className="fa fa-plus" aria-hidden="true"></i>
+          </span>
+        </h1>
         <ul>
           {rooms}
         </ul>
@@ -90,6 +106,13 @@ export default class Rooms extends React.Component {
           <RoomSettingsContainer
             closeModal={() => this.closeRoomSettings()}
             roomId={this.state.settingsRoomId}/>
+        </Modal>
+        <Modal
+          contentLabel='UsersSearchContainer'
+          isOpen={this.state.usersSearchIsOpen}
+          style={this.state.modalStyle}>
+          <UsersSearchContainer
+            closeModal={() => this.closeUsersSearch()}/>
         </Modal>
       </div>
     );

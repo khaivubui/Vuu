@@ -22,6 +22,17 @@
   border-bottom: 1px solid #CCC;
 }
 
+.side-panel-component h1 i {
+  color: #1e475d;
+  margin: 0;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.side-panel-component h1 i:hover {
+  color: #4294C1;
+}
+
 .side-panel-component li {
   display: flex;
   flex-direction: row;
