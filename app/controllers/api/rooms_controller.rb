@@ -21,6 +21,11 @@ class Api::RoomsController < ApplicationController
     if @room.users.empty?
       @room.delete
     end
+
+    unless @room.users.empty?
+      RoomRelayJob.perform_later(@room, @room.users.to_a)
+    end
+
     render json: params[:id]
   end
 end

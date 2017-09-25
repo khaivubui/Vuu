@@ -5,13 +5,14 @@ import merge from 'lodash/merge';
 
 const roomsReducer = (state = {}, action) => {
   Object.freeze(state);
+  const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ROOMS_AND_USERS:
       return action.rooms || {};
     case RECEIVE_ROOM:
-      return merge({}, state, {[action.room.id]: action.room});
+      newState[action.room.id] = action.room;
+      return newState;
     case REMOVE_ROOM:
-      const newState = merge({}, state);
       delete newState[action.roomId];
       return newState;
     default:
