@@ -14,44 +14,55 @@ const modalStyle = {
   }
 };
 
-export default ({ currentUser, user, isOpen, createRoom, closeUserShow, history }) => {
-  let dmButton = <div></div>;
-
-  if (user && currentUser.id !== user.id) {
-    if (currentUser.dmUserIds.includes(user.id)) {
-      dmButton =
-      <button className='modal-button'
-        onClick={() =>
-          history.push(`/messages/rooms/${currentUser.dmsByUserIds[user.id].id}`)}>
-        Open Conversation
-      </button>;
-    } else {
-      dmButton =
-      <button className='modal-button'
-        onClick={() => createRoom(user.id)}>
-        Start Conversation
-      </button>;
-    }
+export default class UserShow extends React.Component {
+  openConversation () {
+    const { currentUser, user, history, closeUserShow } = this.props;
+    history.push(`/messages/rooms/${currentUser.dmsByUserIds[user.id].id}`);
+    closeUserShow();
   }
 
-  return (
-    <Modal
-      contentLabel='UserShow'
-      isOpen={isOpen}
-      style={modalStyle}>
-      { user && (
-        <div className='user-show'>
-          <h1 className='modal-header'>
-            <span>{ user.displayname || user.username }</span>
-            <i
-              className="fa fa-times"
-              aria-hidden="true"
-              onClick={closeUserShow}></i>
-          </h1>
-          {user.username}
-          {dmButton}
-        </div>
-      ) }
-    </Modal>
-  );
-};
+  render () {
+    const {
+      currentUser, user, isOpen, createRoom, closeUserShow
+    } = this.props;
+
+    let dmButton = <div></div>;
+
+    if (user && currentUser.id !== user.id) {
+      if (currentUser.dmUserIds.includes(user.id)) {
+        dmButton =
+        <button className='modal-button'
+          onClick={() => this.openConversation()}>
+          Open Conversation
+        </button>;
+      } else {
+        dmButton =
+        <button className='modal-button'
+          onClick={() => createRoom(user.id)}>
+          Start Conversation
+        </button>;
+      }
+    }
+
+    return (
+      <Modal
+        contentLabel='UserShow'
+        isOpen={isOpen}
+        style={modalStyle}>
+        { user && (
+          <div className='user-show'>
+            <h1 className='modal-header'>
+              <span>{ user.displayname || user.username }</span>
+              <i
+                className="fa fa-times"
+                aria-hidden="true"
+                onClick={closeUserShow}></i>
+            </h1>
+            {user.username}
+            {dmButton}
+          </div>
+        ) }
+      </Modal>
+    );
+  }
+}
