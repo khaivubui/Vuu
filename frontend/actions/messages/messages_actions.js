@@ -4,6 +4,7 @@ export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGES_WITH_USERS = 'RECEIVE_MESSAGES_WITH_USERS';
 
+// receiveMessage works for both channels and rooms
 export const receiveMessage = message => ({
   type: RECEIVE_MESSAGE,
   message

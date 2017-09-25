@@ -1,12 +1,15 @@
 import {
-  receiveMessage
+  receiveMessage // works for both channels and rooms
 } from './messages/messages_actions';
 import {
-  receiveUsers
+  receiveUsers // works for both channels and rooms
 } from './users/users_actions';
 import {
   receiveChannel
 } from './channels/channels_actions';
+import {
+  receiveRoom
+} from './rooms/rooms_actions';
 
 export const setSocket = channelName => dispatch => {
   if (window.App.channels && window.App.channels[channelName]) {
