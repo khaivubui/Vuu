@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import { withRouter } from 'react-router-dom';
 
 import Channels from './channels';
@@ -20,7 +19,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchChannels: () => dispatch(fetchChannels()),
-  receiveMessage: message => dispatch(receiveMessage(message)),
+  // receiveMessage: message => dispatch(receiveMessage(message)),
   setSocket: channelName => dispatch(setSocket(channelName))
 });
 
