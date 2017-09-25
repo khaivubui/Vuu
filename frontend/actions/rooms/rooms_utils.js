@@ -11,3 +11,10 @@ export const createRoom = (userIds) => (
     data: { userIds }
   })
 );
+
+export const leaveRoom = roomId => (
+  $.ajax({
+    url: `api/rooms/leave/${roomId}`,
+    method: 'DELETE'
+  })
+);

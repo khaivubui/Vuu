@@ -2,8 +2,7 @@ import React from 'react';
 
 export default class RoomSettings extends React.Component {
   render () {
-    console.log(this.props);
-    const { room, users } = this.props;
+    const { room, users, leaveRoom, closeModal } = this.props;
     const usersString = room.userIds.map(
       userId => users[userId].displayname || users[userId].username
     ).join(', ');
@@ -14,13 +13,17 @@ export default class RoomSettings extends React.Component {
           <i
             className="fa fa-times"
             aria-hidden="true"
-            onClick={this.props.closeModal}>
+            onClick={closeModal}>
           </i>
         </h1>
         {room.userIds.length} users: {usersString}
 
         <button
-          className='modal-button leave'>
+          className='modal-button leave'
+          onClick={() => {
+            leaveRoom(room.id);
+            closeModal();
+          }}>
           Leave Room
         </button>
       </div>

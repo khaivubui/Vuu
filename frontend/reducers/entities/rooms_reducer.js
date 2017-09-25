@@ -1,5 +1,5 @@
 import {
-  RECEIVE_ROOM, RECEIVE_ROOMS_AND_USERS
+  RECEIVE_ROOM, REMOVE_ROOM, RECEIVE_ROOMS_AND_USERS
 } from '../../actions/rooms/rooms_actions';
 import merge from 'lodash/merge';
 
@@ -10,6 +10,10 @@ const roomsReducer = (state = {}, action) => {
       return action.rooms || {};
     case RECEIVE_ROOM:
       return merge({}, state, {[action.room.id]: action.room});
+    case REMOVE_ROOM:
+      const newState = merge({}, state);
+      delete newState[action.roomId];
+      return newState;
     default:
       return state;
   }
