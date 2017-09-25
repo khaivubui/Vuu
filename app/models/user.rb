@@ -39,6 +39,12 @@ class User < ApplicationRecord
 
   has_many :messages
 
+  def self.search(query)
+    self.where("username ILIKE ? OR displayname ILIKE ?",
+               "%#{query}%",
+               "%#{query}%")
+  end
+
   # ---------- Auth stuff ----------
 
   def self.find_by_credentials(user_params)

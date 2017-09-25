@@ -16,4 +16,9 @@ class Api::UsersController < ApplicationController
     @users = @context.users
     render :index
   end
+
+  def search
+    @users = User.search params[:query]
+    render :index
+  end
 end
