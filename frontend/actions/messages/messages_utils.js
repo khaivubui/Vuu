@@ -6,7 +6,7 @@ export const createChannelMessage = (message, channelId) => (
   })
 );
 
-export const fetchChannelMessages = channelId => (
+export const fetchChannelMessagesWithUsers = channelId => (
   $.ajax({
     url: `/api/channels/${channelId}/messages`
   })
