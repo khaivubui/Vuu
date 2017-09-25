@@ -14,13 +14,15 @@ const modalStyle = {
   }
 };
 
-export default ({ currentUser, user, isOpen, createRoom, closeUserShow }) => {
+export default ({ currentUser, user, isOpen, createRoom, closeUserShow, history }) => {
   let dmButton = <div></div>;
 
   if (user && currentUser.id !== user.id) {
     if (currentUser.dmUserIds.includes(user.id)) {
       dmButton =
-      <button className='modal-button'>
+      <button className='modal-button'
+        onClick={() =>
+          history.push(`/messages/rooms/${currentUser.dmsByUserIds[user.id].id}`)}>
         Open Conversation
       </button>;
     } else {

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { createRoom } from '../../actions/rooms/rooms_actions';
 import { closeUserShow } from '../../actions/ui/user_show_actions';
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   closeUserShow: () => dispatch(closeUserShow())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserShow);
+)(UserShow));
