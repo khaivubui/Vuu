@@ -1,3 +1,5 @@
+import merge from 'lodash/merge';
+
 import {
   RECEIVE_USERS
 } from '../../actions/users/users_actions';
@@ -7,7 +9,9 @@ import {
 import {
   RECEIVE_ROOMS_AND_USERS
 } from '../../actions/rooms/rooms_actions';
-import merge from 'lodash/merge';
+import {
+  UPDATE_USERS_SEARCH_RESULTS
+} from '../../actions/users/users_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -17,6 +21,8 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, action.users);
     case RECEIVE_ROOMS_AND_USERS:
       return merge({}, state, action.users);
+    case UPDATE_USERS_SEARCH_RESULTS:
+      return merge({}, state, action.usersSearchResults);
     default:
       return state;
   }
