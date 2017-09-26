@@ -69,7 +69,6 @@ export default class RoomFeed extends React.Component {
           <h1>{roomUsers}</h1>
           <div className='users-search'>
             <span onClick={() => this.toggleUsersSearch()}>
-              <span hidden={usersSearchIsOpen} id='add-users'>Add Users</span>
               <i className="fa fa-users" aria-hidden="true"></i>
             </span>
             <RoomFeedUsersSearchContainer
