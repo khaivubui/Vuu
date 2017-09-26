@@ -53,6 +53,7 @@ export default class RoomFeed extends React.Component {
 
   render () {
     const { currentUser, room, users } = this.props;
+    const { usersSearchIsOpen } = this.state;
     const messages = this.props.messages[0] && this.props.messages.map(
       message => <MessageContainer key={message.id}
                           user={users[message.userId]}
@@ -68,12 +69,12 @@ export default class RoomFeed extends React.Component {
           <h1>{roomUsers}</h1>
           <div className='users-search'>
             <span onClick={() => this.toggleUsersSearch()}>
-              <i className="fa fa-plus" aria-hidden="true"></i>
-              <i className="fa fa-user" aria-hidden="true"></i>
+              <span hidden={usersSearchIsOpen} id='add-users'>Add Users</span>
+              <i className="fa fa-users" aria-hidden="true"></i>
             </span>
             <RoomFeedUsersSearchContainer
               ref='searchBox'
-              usersSearchIsOpen={this.state.usersSearchIsOpen}
+              usersSearchIsOpen={usersSearchIsOpen}
               room={room}/>
           </div>
         </div>
