@@ -5,24 +5,24 @@ import {
 } from '../../actions/users/users_actions';
 import UsersSearch from './users_search';
 
-// const arrayChannelSearchResults = state => (
-//   Object.keys(state.ui.channelSearchResults).map(
-//     id => state.ui.channelSearchResults[id]
-//   )
-// );
+const arrayUsersSearchResults = state => (
+  Object.keys(state.ui.usersSearchResults).map(
+    id => state.ui.usersSearchResults[id]
+  )
+);
 
 const mapStateToProps = state => ({
-  // channelSearchResults: arrayChannelSearchResults(state),
-  // currentUser: state.session.currentUser
+  usersSearchResults: arrayUsersSearchResults(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  // searchChannels: (query) => dispatch(searchChannels(query)),
-  // clearSearch: () => dispatch({
-  //   type: 'UPDATE_CHANNEL_SEARCH_RESULTS',
-  //   channelSearchResults: {}
-  // }),
-  // joinChannel: channelId => dispatch(joinChannel(channelId))
+  searchUsers: (query) => dispatch(searchUsers(query)),
+  clearSearch: () => dispatch({
+    type: 'UPDATE_USERS_SEARCH_RESULTS',
+    usersSearchResults: {}
+  }),
+  // joinUsers: usersId => dispatch(joinUsers(usersId))
 });
 
 export default connect(

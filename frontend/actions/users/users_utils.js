@@ -1,5 +1,5 @@
-// export const fetchChannelUsers = channelId => (
-//   $.ajax({
-//     url: `/api/channels/${channelId}/users`
-//   })
-// );
+export const searchUsers = query => (
+  $.ajax({
+    url: `api/users/search/${query}`
+  })
+);

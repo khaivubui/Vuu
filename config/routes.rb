@@ -36,5 +36,11 @@ Rails.application.routes.draw do
          as: 'api_room_leave',
          defaults: { format: :json }
 
+  # ---------- users_search ----------
+
+  get '/api/users/search/:query' => 'api/users#search',
+     as: 'api_users_search',
+     defaults: { format: :json }
+
   root to: 'static_pages#root'
 end
