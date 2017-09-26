@@ -18,3 +18,10 @@ export const leaveRoom = roomId => (
     method: 'DELETE'
   })
 );
+
+export const addUser = (roomId, userId) => (
+  $.ajax({
+    url: `/api/rooms/${roomId}/add/${userId}`,
+    method: 'POST'
+  })
+);

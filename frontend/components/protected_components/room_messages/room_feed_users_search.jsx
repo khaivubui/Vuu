@@ -17,6 +17,12 @@ export default class RoomFeedUsersSearch extends React.Component {
     }
   }
 
+  componentDidUpdate (prevProps) {
+    if (this.props.usersSearchIsOpen && !prevProps.usersSearchIsOpen) {
+      this.refs.searchBox.focus();
+    }
+  }
+
   searchUsers (e) {
     this.setState({
       query: e.target.value

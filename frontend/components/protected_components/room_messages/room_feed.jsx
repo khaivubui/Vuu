@@ -72,6 +72,7 @@ export default class RoomFeed extends React.Component {
               <i className="fa fa-user" aria-hidden="true"></i>
             </span>
             <RoomFeedUsersSearchContainer
+              ref='searchBox'
               usersSearchIsOpen={this.state.usersSearchIsOpen}
               room={room}/>
           </div>
