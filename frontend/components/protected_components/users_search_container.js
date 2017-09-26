@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 
-import {
-  searchUsers
-} from '../../actions/users/users_actions';
+import { searchUsers } from '../../actions/users/users_actions';
+import { openUserShow } from '../../actions/ui/user_show_actions';
 import UsersSearch from './users_search';
 
 const arrayUsersSearchResults = state => (
@@ -22,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
     type: 'UPDATE_USERS_SEARCH_RESULTS',
     usersSearchResults: {}
   }),
+  openUserShow: userId => dispatch(openUserShow(userId))
   // joinUsers: usersId => dispatch(joinUsers(usersId))
 });
 

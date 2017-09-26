@@ -1,5 +1,7 @@
 import React from 'react';
 
+import UsersSearchItem from './users_search_item';
+
 export default class UsersSearch extends React.Component {
   constructor (props) {
     super(props);
@@ -10,9 +12,9 @@ export default class UsersSearch extends React.Component {
 
   componentDidMount () {
     this.refs.searchBox.focus();
-    // if (this.state.query === '') {
-    //   this.props.clearSearch();
-    // }
+    if (this.state.query === '') {
+      this.props.clearSearch();
+    }
   }
 
   searchUsers (e) {
@@ -33,7 +35,7 @@ export default class UsersSearch extends React.Component {
   }
 
   render () {
-    const { closeModal } = this.props;
+    const { closeModal, usersSearchResults, openUserShow } = this.props;
     return (
       <div
         className='search'
@@ -52,7 +54,12 @@ export default class UsersSearch extends React.Component {
           value={this.state.query}
           onChange={e => this.searchUsers(e)}/>
         <ul className='users-search-results'>
-
+          {usersSearchResults.map(result =>
+            <UsersSearchItem key={result.id}
+              user={result}
+              openUserShow={openUserShow}
+              closeModal={closeModal}/>
+          )}
         </ul>
       </div>
     );
