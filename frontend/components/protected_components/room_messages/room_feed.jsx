@@ -1,9 +1,9 @@
 import React from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 
 import MessageContainer from '../message_container';
 import UsersSearchContainer from '../users_search_container';
-import UsersAddItem from '../users_add_item';
+// import UsersAddItem from '../users_add_item';
 
 export default class RoomFeed extends React.Component {
   constructor (props) {
@@ -11,18 +11,18 @@ export default class RoomFeed extends React.Component {
 
     this.state = {
       usersSearchIsOpen: false,
-      modalStyle: {
-        content : {
-          top                   : '50%',
-          left                  : '50%',
-          right                 : 'auto',
-          bottom                : 'auto',
-          marginRight           : '-50%',
-          transform             : 'translate(-50%, -50%)',
-          'border'              : 'none',
-          'boxShadow'           : '1px 1px 3px #666'
-        }
-      }
+      // modalStyle: {
+      //   content : {
+      //     top                   : '50%',
+      //     left                  : '50%',
+      //     right                 : 'auto',
+      //     bottom                : 'auto',
+      //     marginRight           : '-50%',
+      //     transform             : 'translate(-50%, -50%)',
+      //     'border'              : 'none',
+      //     'boxShadow'           : '1px 1px 3px #666'
+      //   }
+      // }
     };
   }
 
@@ -52,15 +52,9 @@ export default class RoomFeed extends React.Component {
     this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
   }
 
-  openUsersSearch (roomId) {
+  toggleUsersSearch (roomId) {
     this.setState({
-      usersSearchIsOpen: true
-    });
-  }
-
-  closeUsersSearch () {
-    this.setState({
-      usersSearchIsOpen: false
+      usersSearchIsOpen: !this.state.usersSearchIsOpen
     });
   }
 
@@ -79,23 +73,19 @@ export default class RoomFeed extends React.Component {
       <div className='feed'>
         <div className='context-information'>
           <h1>{roomUsers}</h1>
-          <span onClick={() => this.openUsersSearch()}>
-            <i className="fa fa-plus" aria-hidden="true"></i>
-            <i className="fa fa-user" aria-hidden="true"></i>
-          </span>
+          <div className='users-search'>
+            <span onClick={() => this.toggleUsersSearch()}>
+              <i className="fa fa-plus" aria-hidden="true"></i>
+              <i className="fa fa-user" aria-hidden="true"></i>
+            </span>
+            <input
+              hidden={!this.state.usersSearchIsOpen}
+              placeholder='Search users...'/>
+          </div>
         </div>
         <ul className='messages' ref='messages'>
           {messages}
         </ul>
-
-        <Modal
-          contentLabel='UsersSearchContainer'
-          isOpen={this.state.usersSearchIsOpen}
-          style={this.state.modalStyle}>
-          <UsersSearchContainer
-            UsersSearchItem={UsersAddItem}
-            closeModal={() => this.closeUsersSearch()}/>
-        </Modal>
       </div>
     );
   }

@@ -25,7 +25,6 @@ const App = () => (
 
     <div className='protected'>
       <ProtectedRoute path='/messages' component={SidePanel}/>
-      <ProtectedRoute path='/messages' component={UserShowContainer}/>
 
       <RestrictedRoute
         path='/messages/channels/:channelId'
@@ -33,6 +32,8 @@ const App = () => (
       <RestrictedRoute
         path='/messages/rooms/:roomId'
         component={RoomMessages}/>
+      
+      <ProtectedRoute path='/messages' component={UserShowContainer}/>
     </div>
     <Route path='/messages' render={() => <div className='logo'>Vuu</div>}/>
 

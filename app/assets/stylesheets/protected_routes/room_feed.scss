@@ -1,0 +1,15 @@
+.feed .context-information .users-search input {
+  margin-left: 10px;
+  height: 25px;
+  border: none;
+  font-size: 1em;
+  font-weight: 100;
+  background: transparent;
+  border-bottom: 1px solid #4294C1;
+  margin-bottom: 1px;
+}
+
+.feed .context-information .users-search input:focus {
+  border-width: 2px;
+  margin-bottom: 0;
+}
