@@ -18,6 +18,17 @@
   font-weight: 100;
 }
 
+.splash div i {
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.splash div i:hover {
+  // color: #4294C1;
+  text-shadow: 0px 0px 15px #4294C1;
+}
+
 .splash div div {
   display: flex;
   flex-direction: row;

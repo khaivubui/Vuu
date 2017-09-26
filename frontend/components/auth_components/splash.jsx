@@ -7,7 +7,12 @@ export default class Splash extends React.Component {
       <div className='splash'>
         <h1>Vuu</h1>
         <div>
-          Your one stop for all group chat solutions
+          <span>
+            Your one stop for all group chat solutions
+            <a href='https://github.com/khaivubui/Vuu' target='_blank'>
+              <i className="fa fa-info-circle" aria-hidden="true"></i>
+            </a>
+          </span>
           <div>
             <Link to='/register'><button>Register</button></Link>
             <Link to='/signin'><button>Sign In</button></Link>
