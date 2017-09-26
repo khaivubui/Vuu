@@ -12,6 +12,7 @@ class Api::RoomsController < ApplicationController
       User.find(user_id)
     end
     RoomRelayJob.perform_later(@room, @users)
+    CurrentUserRelayJob.perform_later(current_user)
     render :show
   end
 
