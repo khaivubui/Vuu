@@ -18,6 +18,13 @@ export default class RoomFeed extends React.Component {
     }
   }
 
+  componentDidUpdate (prevProps) {
+    if (this.props.room.messageIds.length !==
+        prevProps.room.messageIds.length) {
+      this.refreshScroll();
+    }
+  }
+
   refreshScroll () {
     this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
   }
