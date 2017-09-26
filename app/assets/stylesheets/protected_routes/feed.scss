@@ -15,6 +15,10 @@
 }
 
 .feed .context-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #CCC;
@@ -22,4 +26,15 @@
 
 .feed .context-information h1 {
   font-size: 1.5em;
+}
+
+.feed .context-information span {
+  color: #1e475d;
+  margin: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.feed .context-information span:hover {
+  color: #4294C1;
 }

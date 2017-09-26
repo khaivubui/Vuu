@@ -45,6 +45,10 @@ export default class RoomFeed extends React.Component {
         <div className='feed'>
           <div className='context-information'>
             <h1>{roomUsers}</h1>
+            <span>
+              <i className="fa fa-plus" aria-hidden="true"></i>
+              <i className="fa fa-user" aria-hidden="true"></i>
+            </span>
           </div>
           <ul className='messages' ref='messages'>
             {messages}
