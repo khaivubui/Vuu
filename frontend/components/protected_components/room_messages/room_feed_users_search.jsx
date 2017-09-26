@@ -29,7 +29,8 @@ export default class RoomFeedUsersSearch extends React.Component {
   }
 
   render () {
-    const { usersSearchResults } = this.props;
+    console.log(this.props);
+    const { usersSearchResults, room } = this.props;
     return (
       <div>
         <input
@@ -41,7 +42,13 @@ export default class RoomFeedUsersSearch extends React.Component {
           placeholder='Search users...'/>
         <ul>
           {usersSearchResults.map(result =>
-            <li key={result.id}>{result.username}</li>
+            <li key={result.id}>
+              {result.username}
+              {room.userIds.includes(result.id) ?
+                <button disabled='true'>Joined</button> :
+                <button>Add User</button>
+              }
+            </li>
           )}
         </ul>
       </div>
