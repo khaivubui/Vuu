@@ -40,7 +40,7 @@ export default class RoomFeedUsersSearch extends React.Component {
           onChange={e => this.searchUsers(e)}
           hidden={!this.props.usersSearchIsOpen}
           placeholder='Search users...'/>
-        <ul>
+        <ul className='search-results'>
           {usersSearchResults.map(result =>
             <li key={result.id}>
               {result.username}
