@@ -32,9 +32,13 @@ export default class UsersSearch extends React.Component {
     }
   }
 
+  closeModal () {
+    this.props.clearSearch();
+    this.props.closeModal();
+  }
+
   render () {
     const {
-      closeModal,
       usersSearchResults,
       openUserShow,
       UsersSearchItem
@@ -48,7 +52,7 @@ export default class UsersSearch extends React.Component {
           <i
             className="fa fa-times"
             aria-hidden="true"
-            onClick={closeModal}></i>
+            onClick={() => this.closeModal()}></i>
         </h1>
         <input
           ref='searchBox'
@@ -61,7 +65,7 @@ export default class UsersSearch extends React.Component {
             <UsersSearchItem key={result.id}
               user={result}
               openUserShow={openUserShow}
-              closeModal={closeModal}/>
+              closeModal={() => this.closeModal()}/>
           )}
         </ul>
       </div>
