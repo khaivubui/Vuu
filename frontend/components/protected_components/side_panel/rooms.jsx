@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import RoomSettingsContainer from '../room_settings_container';
 import UsersSearchContainer from '../users_search_container';
+import UsersSearchItem from '../users_search_item';
 
 export default class Rooms extends React.Component {
   constructor (props) {
@@ -112,6 +113,7 @@ export default class Rooms extends React.Component {
           isOpen={this.state.usersSearchIsOpen}
           style={this.state.modalStyle}>
           <UsersSearchContainer
+            UsersSearchItem={UsersSearchItem}
             closeModal={() => this.closeUsersSearch()}/>
         </Modal>
       </div>

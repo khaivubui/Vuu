@@ -1,7 +1,5 @@
 import React from 'react';
 
-import UsersSearchItem from './users_search_item';
-
 export default class UsersSearch extends React.Component {
   constructor (props) {
     super(props);
@@ -35,7 +33,12 @@ export default class UsersSearch extends React.Component {
   }
 
   render () {
-    const { closeModal, usersSearchResults, openUserShow } = this.props;
+    const {
+      closeModal,
+      usersSearchResults,
+      openUserShow,
+      UsersSearchItem
+    } = this.props;
     return (
       <div
         className='search'
