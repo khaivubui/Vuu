@@ -1,6 +1,6 @@
-.feed .context-information .users-search input {
+.users-search input {
   margin-left: 10px;
-  height: 25px;
+  height: 20px;
   border: none;
   font-size: 1em;
   font-weight: 100;
@@ -9,7 +9,15 @@
   margin-bottom: 1px;
 }
 
-.feed .context-information .users-search input:focus {
+.users-search input:focus {
   border-width: 2px;
   margin-bottom: 0;
+}
+
+.users-search {
+  display: flex;
+}
+
+.users-search ul {
+  position: absolute;
 }

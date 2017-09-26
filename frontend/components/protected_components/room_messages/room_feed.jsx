@@ -3,6 +3,7 @@ import React from 'react';
 
 import MessageContainer from '../message_container';
 import UsersSearchContainer from '../users_search_container';
+import RoomFeedUsersSearchContainer from './room_feed_users_search_container';
 // import UsersAddItem from '../users_add_item';
 
 export default class RoomFeed extends React.Component {
@@ -10,19 +11,7 @@ export default class RoomFeed extends React.Component {
     super(props);
 
     this.state = {
-      usersSearchIsOpen: false,
-      // modalStyle: {
-      //   content : {
-      //     top                   : '50%',
-      //     left                  : '50%',
-      //     right                 : 'auto',
-      //     bottom                : 'auto',
-      //     marginRight           : '-50%',
-      //     transform             : 'translate(-50%, -50%)',
-      //     'border'              : 'none',
-      //     'boxShadow'           : '1px 1px 3px #666'
-      //   }
-      // }
+      usersSearchIsOpen: false
     };
   }
 
@@ -33,15 +22,19 @@ export default class RoomFeed extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
+    // check for change in url
     if (this.props.match.params.roomId !==
         newProps.match.params.roomId) {
+      // refetch
       this.props.fetchRoomMessagesWithUsers(
         newProps.match.params.roomId
+      // refresh scroll
       ).then(() => this.refreshScroll());
     }
   }
 
   componentDidUpdate (prevProps) {
+    // check for new message
     if (this.props.room.messageIds.length !==
         prevProps.room.messageIds.length) {
       this.refreshScroll();
@@ -78,9 +71,8 @@ export default class RoomFeed extends React.Component {
               <i className="fa fa-plus" aria-hidden="true"></i>
               <i className="fa fa-user" aria-hidden="true"></i>
             </span>
-            <input
-              hidden={!this.state.usersSearchIsOpen}
-              placeholder='Search users...'/>
+            <RoomFeedUsersSearchContainer
+              usersSearchIsOpen={this.state.usersSearchIsOpen}/>
           </div>
         </div>
         <ul className='messages' ref='messages'>
