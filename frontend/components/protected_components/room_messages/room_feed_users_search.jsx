@@ -35,8 +35,7 @@ export default class RoomFeedUsersSearch extends React.Component {
   }
 
   render () {
-    console.log(this.props);
-    const { usersSearchResults, room } = this.props;
+    const { usersSearchResults, room, addUser } = this.props;
     return (
       <div>
         <input
@@ -52,7 +51,9 @@ export default class RoomFeedUsersSearch extends React.Component {
               {result.username}
               {room.userIds.includes(result.id) ?
                 <button disabled='true'>Joined</button> :
-                <button>Add User</button>
+                <button onClick={() => addUser(room.id, result.id)}>
+                  Add User
+                </button>
               }
             </li>
           )}
