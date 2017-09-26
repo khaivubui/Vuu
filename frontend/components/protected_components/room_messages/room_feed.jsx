@@ -1,8 +1,31 @@
 import React from 'react';
+import Modal from 'react-modal';
 
 import MessageContainer from '../message_container';
+import UsersSearchContainer from '../users_search_container';
+import UsersAddItem from '../users_add_item';
 
 export default class RoomFeed extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      usersSearchIsOpen: false,
+      modalStyle: {
+        content : {
+          top                   : '50%',
+          left                  : '50%',
+          right                 : 'auto',
+          bottom                : 'auto',
+          marginRight           : '-50%',
+          transform             : 'translate(-50%, -50%)',
+          'border'              : 'none',
+          'boxShadow'           : '1px 1px 3px #666'
+        }
+      }
+    };
+  }
+
   componentDidMount () {
     this.props.fetchRoomMessagesWithUsers(
       this.props.match.params.roomId
@@ -29,6 +52,18 @@ export default class RoomFeed extends React.Component {
     this.refs.messages.scrollTop = this.refs.messages.scrollHeight;
   }
 
+  openUsersSearch (roomId) {
+    this.setState({
+      usersSearchIsOpen: true
+    });
+  }
+
+  closeUsersSearch () {
+    this.setState({
+      usersSearchIsOpen: false
+    });
+  }
+
   render () {
     const { currentUser, room, users } = this.props;
     const messages = this.props.messages[0] && this.props.messages.map(
@@ -44,7 +79,7 @@ export default class RoomFeed extends React.Component {
       <div className='feed'>
         <div className='context-information'>
           <h1>{roomUsers}</h1>
-          <span>
+          <span onClick={() => this.openUsersSearch()}>
             <i className="fa fa-plus" aria-hidden="true"></i>
             <i className="fa fa-user" aria-hidden="true"></i>
           </span>
@@ -52,6 +87,15 @@ export default class RoomFeed extends React.Component {
         <ul className='messages' ref='messages'>
           {messages}
         </ul>
+
+        <Modal
+          contentLabel='UsersSearchContainer'
+          isOpen={this.state.usersSearchIsOpen}
+          style={this.state.modalStyle}>
+          <UsersSearchContainer
+            UsersSearchItem={UsersAddItem}
+            closeModal={() => this.closeUsersSearch()}/>
+        </Modal>
       </div>
     );
   }
