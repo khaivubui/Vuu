@@ -25,6 +25,7 @@ class Api::RoomsController < ApplicationController
     unless @room.users.empty?
       RoomRelayJob.perform_later(@room, @room.users.to_a)
     end
+    CurrentUserRelayJob.perform_later(current_user)
 
     render json: params[:id]
   end

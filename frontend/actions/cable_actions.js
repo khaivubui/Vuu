@@ -10,6 +10,9 @@ import {
 import {
   receiveRoom
 } from './rooms/rooms_actions';
+import {
+  receiveCurrentUser
+} from './session/session_actions';
 
 export const setSocket = username => dispatch => {
   if (window.App.channel) {
@@ -43,6 +46,9 @@ const addSocket = (username, dispatch) => {
       }
       if (data.room) {
         dispatch(receiveRoom(data.room));
+      }
+      if (data.currentUser) {
+        dispatch(receiveCurrentUser(data.currentUser));
       }
     }
   });
