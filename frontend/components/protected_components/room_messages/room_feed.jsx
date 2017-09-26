@@ -40,28 +40,19 @@ export default class RoomFeed extends React.Component {
       id => id !== currentUser.id
     ).map(id => users[id].displayname || users[id].username).join(', ');
 
-    if (room) {
-      return (
-        <div className='feed'>
-          <div className='context-information'>
-            <h1>{roomUsers}</h1>
-            <span>
-              <i className="fa fa-plus" aria-hidden="true"></i>
-              <i className="fa fa-user" aria-hidden="true"></i>
-            </span>
-          </div>
-          <ul className='messages' ref='messages'>
-            {messages}
-          </ul>
+    return (
+      <div className='feed'>
+        <div className='context-information'>
+          <h1>{roomUsers}</h1>
+          <span>
+            <i className="fa fa-plus" aria-hidden="true"></i>
+            <i className="fa fa-user" aria-hidden="true"></i>
+          </span>
         </div>
-      );
-    } else {
-      // When just refreshed and room isn't fetched yet.
-      // Not really necessary, now that we have RestrictedRoute
-      return (
-        <div className='feed'>
-        </div>
-      );
-    }
+        <ul className='messages' ref='messages'>
+          {messages}
+        </ul>
+      </div>
+    );
   }
 }
