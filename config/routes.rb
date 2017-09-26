@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   delete '/api/rooms/leave/:id' => 'api/rooms#leave',
          as: 'api_room_leave',
          defaults: { format: :json }
+  post '/api/rooms/:room_id/add/:id' => 'api/rooms#add',
+         as: 'api_room_add',
+         defaults: { format: :json }
 
   # ---------- users_search ----------
 

@@ -30,4 +30,14 @@ class Api::RoomsController < ApplicationController
 
     render json: params[:id]
   end
+
+  def add
+    @room = Room.find(params[:room_id])
+    @user = User.find(params[:id])
+    @room.users << @user
+    RoomRelayJob.perform_later(@room, @room.users.to_a)
+    @room.users.each do |user|
+      CurrentUserRelayJob.perform_later(user)
+    end
+  end
 end
