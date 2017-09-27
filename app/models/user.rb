@@ -20,7 +20,9 @@ class User < ApplicationRecord
             format: {
               with: /\A[a-z0-9_]+\Z/,
               message: "can only have lowercase alphanumeric characters"
-            }
+            },
+            length: { maximum: 16 }
+  validates :displayname, length: { maximum: 24 }
 
   attr_reader :password
   after_initialize :ensure_session_token
