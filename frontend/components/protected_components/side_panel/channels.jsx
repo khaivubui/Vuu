@@ -94,7 +94,7 @@ export default class Channels extends React.Component {
           {channels}
         </ul>
         <button onClick={() => this.openChannelSearch()}>
-          Join a channel
+          Join a Channel
         </button>
 
         <div className='modals'>
