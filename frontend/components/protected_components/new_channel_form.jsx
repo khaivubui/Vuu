@@ -45,7 +45,7 @@ export default class NewChannelForm extends React.Component {
         onKeyDown={e => this.handleKeyDown(e)}>
 
         <h1 className='modal-header'>
-          <span>New Channel</span>
+          <span>Create a Channel</span>
           <i
             className="fa fa-times"
             aria-hidden="true"
