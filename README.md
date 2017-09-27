@@ -164,13 +164,13 @@ const mapDispatchToProps = dispatch => ({
 ```javascript
 export const setSocket = username => dispatch => {
   if (window.App.channel) {
-    removeSocket(username);
+    removeSocket();
   }
   addSocket(username, dispatch);
 };
 
 // helper
-const removeSocket = username => {
+const removeSocket = () => {
   window.App.cable.subscriptions.remove(window.App.channel);
 };
 
