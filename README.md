@@ -261,7 +261,8 @@ export default class UsersSearch extends React.Component {
 ```
 
 ## Direct Messages
-To start a Direct Message with someone, simply click on their `displayname` or `username`, then click on 'Start Conversation'. You can access a list of users by invoking 'User Search', mentioned above, or you can click on any user in the
+To start a Direct Message with someone, simply click on their `displayname` or `username`, then click on 'Start Conversation'. You can access a list of users by invoking 'User Search', mentioned above, or you can click on any user you come across in a Channel or group.
+
 #### Start a message by clicking on username
 Vuu Redux store has a slice for `ui.userShow`
 ```javascript
