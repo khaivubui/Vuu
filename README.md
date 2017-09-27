@@ -311,7 +311,7 @@ export default class UserShow extends React.Component {
 }
 ```
 
-Through this `Modal`, the current user can start a DM with anyone.
+Through this `Modal`, the current user can start a DM.
 
 ## Group Messages
 You can add more people to your Direct Message, making it a private group message. First, open a Direct Message, then simply by clicking on the people symbol (👥) on the top right of your Direct Message to access User Search. Through User Search you can find people by `username` or `displayname` to add to your Group.
