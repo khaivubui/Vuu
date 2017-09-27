@@ -101,7 +101,8 @@ class Message < ApplicationRecord
   after_commit { MessageRelayJob.perform_later(self, self.context) }
   # ...
 end
-
+```
+```ruby
 class MessageRelayJob < ApplicationJob
   def perform(message, context)
     message_json = Api::MessagesController.render(
@@ -138,7 +139,71 @@ end
 ```
 This pattern enables the front end to have only 1 WebSockets channel open at all times. This pattern puts less work on the front end and is more secure than having a WebSockets channel open for each Channel/DM.
 
-When the `MessageRelayJob` broadcasts to all users in the Channel/DM
+On the front-end, a client subscribes to a WebSockets channel as soon as a user is signed in:
+
+```javascript
+export default class CurrentUser extends React.Component {
+  componentDidMount () {
+    const { setSocket, currentUser } = this.props;
+    setSocket(currentUser.username);
+  }
+  // ...
+}
+```
+
+This `setSocket` function is a thunk action-creator, mapped to the `CurrentUser` component using React-Redux:
+
+```javascript
+// ...
+const mapDispatchToProps = dispatch => ({
+  // ...
+  setSocket: username => dispatch(setSocket(username))
+});
+// ...
+```
+```javascript
+export const setSocket = username => dispatch => {
+  if (window.App.channel) {
+    removeSocket(username);
+  }
+  addSocket(username, dispatch);
+};
+
+// helper
+const removeSocket = username => {
+  window.App.cable.subscriptions.remove(window.App.channel);
+};
+
+// helper
+const addSocket = (username, dispatch) => {
+  window.App.channel = window.App.cable.subscriptions.create({
+    channel: 'UserChannel',
+    username
+  }, {
+    connected: () => {},
+    disconnected: () => {},
+    received: (data) => {
+      if (data.message) {
+        dispatch(receiveMessage(data.message));
+      }
+      if (data.users) {
+        dispatch(receiveUsers(data.users));
+      }
+      if (data.channel) {
+        dispatch(receiveChannel(data.channel));
+      }
+      if (data.room) {
+        dispatch(receiveRoom(data.room));
+      }
+      if (data.currentUser) {
+        dispatch(receiveCurrentUser(data.currentUser));
+      }
+    }
+  });
+};
+```
+
+This pattern sets up the WebSockets subscription to have direct access to the Redux store on the front end, manipulating it based on whatever data is coming back from the server. In other words, this enables real time data from the server to manipulate the Redux store in real time. This enables live messaging and other features below.
 
 ## Channels
 Channels are public. Anyone can create a Channel, and anyone can join a Channel. Channels enable live communication between all members in the same Channel. Users can create a Channel using the plus symbol (➕) in the Channels section. When creating a Channel, `channelname` is required and has to be unique, while `displayname` is not required and does not have to be unique. Users can search through existing Channels by clicking 'Join a Channel'. A user can leave a Channel anytime by clicking the settings icon next to the Channel.
