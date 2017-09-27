@@ -44,7 +44,11 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update_last_read
-    
+    @channel = Channel.find(params[:id])
+    @channel
+      .channel_memberships
+      .where(user: user)[0]
+      .last_read_message_id = @channel.messages.last
   end
 
   private
