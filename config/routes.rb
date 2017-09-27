@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get '/api/channels/search/:query' => 'api/channels#search',
       as: 'api_channel_search',
       defaults: { format: :json }
+  post '/api/channels/update_last_read/:id' => 'api/channels#update_last_read',
+       as: 'api_channel_update_last_read',
+       defaults: { format: :json }
 
   # ---------- rooms ----------
 
@@ -38,6 +41,9 @@ Rails.application.routes.draw do
   post '/api/rooms/:room_id/add/:id' => 'api/rooms#add',
          as: 'api_room_add',
          defaults: { format: :json }
+  post '/api/rooms/update_last_read/:id' => 'api/rooms#update_last_read',
+      as: 'api_room_update_last_read',
+      defaults: { format: :json }
 
   # ---------- users_search ----------
 

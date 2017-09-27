@@ -43,6 +43,10 @@ class Api::ChannelsController < ApplicationController
     render :index
   end
 
+  def update_last_read
+    
+  end
+
   private
 
   def channel_params
