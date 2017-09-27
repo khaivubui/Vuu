@@ -203,7 +203,7 @@ const addSocket = (username, dispatch) => {
 };
 ```
 
-This pattern sets up the WebSockets subscription to have direct access to the Redux store on the front end, manipulating it based on whatever data is coming back from the server. In other words, this enables real time data from the server to manipulate the Redux store in real time. This enables live messaging and other features below.
+This pattern sets up the WebSockets subscription to have direct access to the Redux store on the front end, manipulating it based on whatever data is coming from the server in real time. In other words, this enables data from the server to manipulate the Redux store in real time, enabling live messaging and other live features referenced below.
 
 ## Channels
 Channels are public. Anyone can create a Channel, and anyone can join a Channel. Channels enable live communication between all members in the same Channel. Users can create a Channel using the plus symbol (➕) in the Channels section. When creating a Channel, `channelname` is required and has to be unique, while `displayname` is not required and does not have to be unique. Users can search through existing Channels by clicking 'Join a Channel'. A user can leave a Channel anytime by clicking the settings icon next to the Channel.
@@ -226,8 +226,161 @@ class User < ApplicationRecord
 end
 ```
 
+#### Sends Ajax requests to the server on idle
+When a user types something into the input field, the component sets time out for 200 milliseconds. If no more input is given from the user within that 200 milliseconds, an Ajax request is sent to the server for the search. This avoids overloading the server with requests while still ensuring a smooth user experience.
+
+```javascript
+export default class UsersSearch extends React.Component {
+  searchUsers (e) {
+    this.setState({
+      query: e.target.value
+    });
+    clearTimeout(this.searching);
+    this.searching = setTimeout(
+      () => this.props.searchUsers(this.state.query),
+      200
+    );
+  }
+
+  // ....
+
+  render () {
+    // ...
+    return (
+      // ...
+      <input
+        ref='searchBox'
+        type='text'
+        placeholder='Search...'
+        value={this.state.query}
+        onChange={e => this.searchUsers(e)}/>
+      // ...
+    )
+  }
+}
+```
+
 ## Direct Messages
-To start a Direct Message with someone, simply click on their `displayname` or `username`, then click on 'Start Conversation'. You can access a list of users by invoking 'User Search', mentioned above, or you can click on any user in the same Channel as you.
+To start a Direct Message with someone, simply click on their `displayname` or `username`, then click on 'Start Conversation'. You can access a list of users by invoking 'User Search', mentioned above, or you can click on any user in the
+#### Start a message by clicking on username
+Vuu Redux store has a slice for `ui.userShow`
+```javascript
+const initialState = { isOpen: false, userId: null};
+
+const userShowReducer = (state = initialState, action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case OPEN_USER_SHOW:
+      return { isOpen: true, userId: action.userId };
+    case CLOSE_USER_SHOW:
+      return initialState;
+    default:
+      return state;
+  }
+};
+```
+
+Whenever a username is clicked, `isOpen` is changed to `true` and `userId` is updated to be the `userId` that was clicked on. At the top level of Vuu, there is a `UserShowContainer` that maps the Redux state to `UserShow`, which is only a `Modal`. This `Modal` opens and closes depending on the Redux state, allowing `UserShow` to be accessible anywhere.
+```javascript
+export default class UserShow extends React.Component {
+  // ...
+  render () {
+    // ...
+    return (
+      <Modal
+        contentLabel='UserShow'
+        isOpen={isOpen}
+        style={modalStyle}>
+        { user && (
+          <div className='user-show'>
+            <h1 className='modal-header'>
+              <span>{ user.displayname || user.username }</span>
+              <i
+                className="fa fa-times"
+                aria-hidden="true"
+                onClick={closeUserShow}></i>
+            </h1>
+            {user.username}
+            {dmButton}
+          </div>
+        ) }
+      </Modal>
+    );
+  }
+}
+```
+
+Through this `Modal`, the current user can start a DM with anyone.
 
 ## Group Messages
 You can add more people to your Direct Message, making it a private group message. First, open a Direct Message, then simply by clicking on the people symbol (👥) on the top right of your Direct Message to access User Search. Through User Search you can find people by `username` or `displayname` to add to your Group.
+
+#### Adding more users to the group
+
+Adding more users to the group uses the same search functionality as [User Search](#user-search) mentioned above, but with a different UI. Through this UI, a user can send an Ajax request to the server to add another user to the group. When the request hits the server, the server sends out updated group information to all users in the same group, updating all users of the group in real time
+
+```ruby
+class Api::RoomsController < ApplicationController
+  def add
+    @room = Room.find(params[:room_id])
+    @user = User.find(params[:id])
+    @room.users << @user
+    RoomRelayJob.perform_later(@room, @room.users.to_a)
+    # ...
+  end
+end
+```
+
+#### Leaving a group
+A user can leave a group by clicking the 'Leave' button in settings. This sends an Ajax request to the server to modify the room, and subsequently broadcasting to all users of the same group about the new room status, updating everyone in real time.
+```ruby
+class Api::RoomsController < ApplicationController
+  def leave
+    @room = Room.find(params[:id])
+    @room.users.delete current_user
+    if @room.users.empty?
+      @room.delete
+    end
+
+    unless @room.users.empty?
+      RoomRelayJob.perform_later(@room, @room.users.to_a)
+    end
+    CurrentUserRelayJob.perform_later(current_user)
+
+    render json: params[:id]
+  end
+end
+```
+
+#### Group information is updated in real time
+Group information is updated in real time using `RoomRelayJob`.
+
+```ruby
+class RoomRelayJob < ApplicationJob
+  def perform(room, users)
+    room_json = Api::ChannelsController.render(
+    partial: 'api/rooms/room',
+    locals: { room: room }
+    )
+
+    users_hash = {}
+
+    users.each do |user|
+      users_hash[user.id] = JSON.parse(
+        Api::UsersController.render(
+          partial: 'api/users/user',
+          locals: { user: user }
+        )
+      )
+    end
+
+    users.each do |user|
+      ActionCable.server.broadcast(
+      "user_#{user.username}",
+      room: JSON.parse(room_json),
+      users: users_hash
+      )
+    end
+  end
+end
+```
