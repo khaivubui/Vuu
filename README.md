@@ -29,11 +29,11 @@ Vuu is a messaging solution with 6 key features:
 - [Live Chat](#live-chat)
 - [Channels](#channels) (with Channel Search)
 - [User Search](#user-search)
-- [Direct Messages](#direct-messages)
+- [Direct Messages(DM)](#direct-messages)
 - [Group Messages](#group-messages)
 
 ## User Authentication
-Users are able to register for an account, sign in, and sign out. Using `BCrypt`, Vuu securely stores passwords in the database. Using `SecureRandom`, users are ensured to have a unique `session_token`, identifying that the session belongs to the correct user. This `session_token` is reset on sign in and on sign out.
+Users are able to register for an account, sign in, and sign out.
 
 #### Username validation
 `username` is required to be unique, lowercase alphanumeric only to ensure consistency across the site
@@ -51,7 +51,7 @@ end
 ```
 
 #### Password encryption
-Plain passwords are not stored in the database. Vuu uses BCrypt to store passwords
+Plain passwords are not stored in the database. Vuu uses `BCrypt` to securely encrypt and store passwords
 ```ruby
 class User < ApplicationRecord
   # ...
@@ -67,8 +67,78 @@ class User < ApplicationRecord
 end
 ```
 
+#### Unique session tokens
+Using `SecureRandom`, users are ensured to have a unique `session_token`, identifying that the session belongs to the correct user. This `session_token` is reset on sign in and on sign out.
+
 ## Live Chat
 Live communication is enabled using Action Cable, the default solution to WebSockets in Rails 5.
+
+#### Messages are relayed on creation
+Vuu front end creates messages by sending `POST` requests to the server. When each request hits the server, it creates a message in the database:
+```ruby
+class Api::MessagesController < ApplicationController
+  # ...
+  def create
+    @message = Message.new(message_params)
+    @message.user = current_user
+    if params[:channel_id]
+      @context = Channel.find(params[:channel_id])
+    elsif params[:room_id]
+      @context = Room.find(params[:room_id])
+    end
+    @message.context = @context
+    @message.save
+  end
+  # ...
+end
+```
+*Note*: `message` is polymorphic. A `message` belongs to a `context` and this `context` can either be a `channel` or `room` (`room` is the same as Direct Message).
+
+After a message is created in the database, it is then broadcasted to all users in the context of the message (be it a Channel or a Direct Message).
+```ruby
+class Message < ApplicationRecord
+  # ...
+  after_commit { MessageRelayJob.perform_later(self, self.context) }
+  # ...
+end
+
+class MessageRelayJob < ApplicationJob
+  def perform(message, context)
+    message_json = Api::MessagesController.render(
+      partial: 'api/messages/message',
+      locals: { message: message }
+    )
+
+    user_json = Api::UsersController.render(
+      partial: 'api/users/user',
+      locals: { user: message.user }
+    )
+
+    if message.context_type == 'Channel'
+      context_json = Api::ChannelsController.render(
+      partial: 'api/channels/channel',
+      locals: { channel: message.context }
+      )
+    else
+      context_json = Api::ChannelsController.render(
+      partial: 'api/rooms/room',
+      locals: { room: message.context }
+      )
+    end
+
+    context.users.each do |user|
+      ActionCable.server.broadcast(
+      "user_#{user.username}",
+      message: JSON.parse(message_json),
+      users: { message.user.id => JSON.parse(user_json) },
+      message.context_type.downcase => JSON.parse(context_json))
+    end
+  end
+end
+```
+This pattern enables the front end to have only 1 WebSockets channel open at all times. This pattern puts less work on the front end and is more secure than having a WebSockets channel open for each Channel/DM.
+
+When the `MessageRelayJob` broadcasts to all users in the Channel/DM
 
 ## Channels
 Channels are public. Anyone can create a Channel, and anyone can join a Channel. Channels enable live communication between all members in the same Channel. Users can create a Channel using the plus symbol (➕) in the Channels section. When creating a Channel, `channelname` is required and has to be unique, while `displayname` is not required and does not have to be unique. Users can search through existing Channels by clicking 'Join a Channel'. A user can leave a Channel anytime by clicking the settings icon next to the Channel.
