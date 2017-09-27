@@ -30,7 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-top: 1px solid #EEE;
 }
 
@@ -58,6 +58,10 @@
   border: 0.5px solid;
   cursor: default;
   box-shadow:none;
+}
+
+.users-search ul li div {
+  line-height: 1.4em;
 }
 
 #add-users {
