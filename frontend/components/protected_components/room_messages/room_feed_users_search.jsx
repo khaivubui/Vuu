@@ -48,9 +48,12 @@ export default class RoomFeedUsersSearch extends React.Component {
         <ul className='search-results'>
           {usersSearchResults.map(result =>
             <li key={result.id}>
-              {result.username}
+              <div>
+                {result.displayname || result.username}<br/>
+                {result.username}
+              </div>
               {room.userIds.includes(result.id) ?
-                <button disabled='true'>Joined</button> :
+                <button disabled='true'>Added</button> :
                 <button onClick={() => addUser(room.id, result.id)}>
                   Add User
                 </button>
