@@ -75,6 +75,12 @@ export default class Rooms extends React.Component {
                 userId => users[userId].displayname || users[userId].username
               ).join(', ') || '(Just Me)'
             }
+            <span className='new-message-count'>
+              {room.messageIds.filter(
+                messageId =>
+                messageId > currentUser.lastReadByRoomIds[room.id]
+              ).length || ''}
+            </span>
           </NavLink>
         </div>
         <i
