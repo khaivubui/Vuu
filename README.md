@@ -74,6 +74,8 @@ Using `SecureRandom`, users are ensured to have a unique `session_token`, identi
 ## Live Chat
 Live communication is enabled using Action Cable, the default solution to WebSockets in Rails 5.
 
+![Live Chat](https://github.com/khaivubui/Vuu/blob/master/docs/live_chat.gif)
+
 #### Messages are relayed on creation
 Vuu front end creates messages by sending `POST` requests to the server. When each request hits the server, it creates a message in the database:
 ```ruby
@@ -212,7 +214,7 @@ Channels are public. Anyone can create a Channel, and anyone can join a Channel.
 ## User Search
 Enabled throughout Vuu is a User Search feature. It is accessible by clicking the 🔎👤 symbol in Direct Messages section.
 
-![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/user_search.gif)
+![User Search](https://github.com/khaivubui/Vuu/blob/master/docs/user_search.gif)
 
 #### Implemented on the model level
 User Search functionality is enabled on the model level using SQL `WHERE`. `ILIKE` is preferred over `LIKE` for case-insensitive search.
@@ -321,7 +323,7 @@ You can add more people to your Direct Message, making it a private group messag
 
 #### Adding more users to the group
 
-![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/group_chat_user_search.gif)
+![Group Chat User Search](https://github.com/khaivubui/Vuu/blob/master/docs/group_chat_user_search.gif)
 
 Adding more users to the group uses the same search functionality as [User Search](#user-search) mentioned above, but with a different UI. Through this UI, a user can send an Ajax request to the server to add another user to the group. When the request hits the server, the server sends out updated group information to all users in the same group, updating all users of the group in real time
 
