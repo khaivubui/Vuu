@@ -41,3 +41,7 @@ export const leaveRoom = roomId => dispatch => (
 export const addUser = (roomId, userId) => dispatch => (
   RoomsUtils.addUser(roomId, userId)
 );
+
+export const updateLastRead = roomId => dispatch => (
+  RoomsUtils.updateLastRead(roomId)
+);

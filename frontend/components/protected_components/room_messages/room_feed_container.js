@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchRoomMessagesWithUsers
 } from '../../../actions/messages/messages_actions';
+import {
+  updateLastRead
+} from '../../../actions/rooms/rooms_actions';
 import RoomFeed from './room_feed';
 
 const roomMessages = (state, roomId) => {
@@ -28,6 +31,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   fetchRoomMessagesWithUsers: roomId => dispatch(
     fetchRoomMessagesWithUsers(roomId)
   ),
+  updateLastRead: roomId => dispatch(updateLastRead(roomId))
   // fetchRoomUsers: roomId => dispatch(
   //   fetchRoomUsers(roomId)
   // )

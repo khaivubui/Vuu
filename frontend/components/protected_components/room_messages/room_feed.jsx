@@ -14,20 +14,39 @@ export default class RoomFeed extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchRoomMessagesWithUsers(
-      this.props.match.params.roomId
+    const {
+      fetchRoomMessagesWithUsers, updateLastRead, match
+    } = this.props;
+
+    fetchRoomMessagesWithUsers(
+      match.params.roomId
     ).then(() => this.refreshScroll());
+
+    this.updateLastReadTimeout = setTimeout(
+      () => updateLastRead(match.params.roomId),
+      2000
+    );
   }
 
   componentWillReceiveProps (newProps) {
+    const {
+      fetchRoomMessagesWithUsers, updateLastRead, match
+    } = this.props;
     // check for change in url
-    if (this.props.match.params.roomId !==
+    if (match.params.roomId !==
         newProps.match.params.roomId) {
       // refetch
-      this.props.fetchRoomMessagesWithUsers(
+      fetchRoomMessagesWithUsers(
         newProps.match.params.roomId
       // refresh scroll
       ).then(() => this.refreshScroll());
+
+      // updateLastRead
+      clearTimeout(this.updateLastReadTimeout);
+      this.updateLastReadTimeout = setTimeout(
+        () => updateLastRead(newProps.match.params.roomId),
+        2000
+      );
     }
   }
 

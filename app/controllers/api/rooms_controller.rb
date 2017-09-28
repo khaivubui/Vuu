@@ -42,4 +42,13 @@ class Api::RoomsController < ApplicationController
       CurrentUserRelayJob.perform_later(user)
     end
   end
+
+  def update_last_read
+    @room = Room.find(params[:id])
+    @room
+      .room_memberships
+      .where(user: current_user)[0]
+      .update(last_read_message_id: @room.messages.last.id)
+    CurrentUserRelayJob.perform_later(current_user)
+  end
 end

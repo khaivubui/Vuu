@@ -52,7 +52,7 @@ class Api::ChannelsController < ApplicationController
     @channel
       .channel_memberships
       .where(user: current_user)[0]
-      .last_read_message_id = @channel.messages.last
+      .update(last_read_message_id: @channel.messages.last.id)
     CurrentUserRelayJob.perform_later(current_user)
   end
 

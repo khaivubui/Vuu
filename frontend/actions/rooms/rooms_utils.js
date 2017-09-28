@@ -25,3 +25,10 @@ export const addUser = (roomId, userId) => (
     method: 'POST'
   })
 );
+
+export const updateLastRead = roomId => (
+  $.ajax({
+    url: `/api/rooms/update_last_read/${roomId}`,
+    method: 'PATCH'
+  })
+);
