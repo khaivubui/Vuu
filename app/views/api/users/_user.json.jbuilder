@@ -24,7 +24,7 @@ end
 json.last_read_by_room_ids do
   user.rooms.each do |room|
     json.set! room.id,
-              room.channel_memberships.where(
+              room.room_memberships.where(
                 user: user
               )[0].last_read_message_id
   end
