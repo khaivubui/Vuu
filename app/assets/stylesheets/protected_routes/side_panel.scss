@@ -4,14 +4,16 @@
   margin-right: 20px;
   max-width: 450px;
   min-width: 400px;
+  max-height: 94vh;
+  overflow-y: auto;
 }
 
 .side-panel-component {
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 3px;
-  max-height: 250px;
-  overflow-y: auto;
+  // max-height: 250px;
+  // overflow-y: auto;
 }
 
 .side-panel-component h1 {
