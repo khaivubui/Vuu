@@ -55,12 +55,13 @@ export default class ChannelFeed extends React.Component {
   }
 
   render () {
-    const { channel } = this.props;
-    const { users } = this.props;
+    const { channel, users, currentUser } = this.props;
     const messages = this.props.messages[0] && this.props.messages.map(
-      message => <MessageContainer key={message.id}
-                          user={users[message.userId]}
-                          message={message}/>
+      message =>
+      <MessageContainer key={message.id}
+        user={users[message.userId]}
+        message={message}
+        isNew={currentUser.lastReadByChannelIds[channel.id] < message.id}/>
     );
 
     if (channel) {

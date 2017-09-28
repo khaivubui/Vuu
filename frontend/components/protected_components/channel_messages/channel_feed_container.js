@@ -23,7 +23,8 @@ const channelMessages = (state, channelId) => {
 const mapStateToProps = (state, props) => ({
   channel: state.entities.channels[props.match.params.channelId],
   messages: channelMessages(state, props.match.params.channelId),
-  users: state.entities.users
+  users: state.entities.users,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
