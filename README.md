@@ -321,6 +321,8 @@ You can add more people to your Direct Message, making it a private group messag
 
 #### Adding more users to the group
 
+![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/group_chat_user_search.gif)
+
 Adding more users to the group uses the same search functionality as [User Search](#user-search) mentioned above, but with a different UI. Through this UI, a user can send an Ajax request to the server to add another user to the group. When the request hits the server, the server sends out updated group information to all users in the same group, updating all users of the group in real time
 
 ```ruby
