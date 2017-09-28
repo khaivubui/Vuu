@@ -35,6 +35,12 @@ export default class ChannelFeed extends React.Component {
         1500
       );
     }
+
+    // check for new message
+    if (this.props.channel.messageIds.length !==
+        newProps.channel.messageIds.length) {
+      updateLastRead(match.params.channelId);
+    }
   }
 
   componentDidUpdate (prevProps) {
