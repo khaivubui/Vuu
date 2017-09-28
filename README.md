@@ -211,6 +211,8 @@ This pattern sets up the WebSockets subscription to have direct access to the Re
 ## Channels
 Channels are public. Anyone can create a Channel, and anyone can join a Channel. Channels enable live communication between all members in the same Channel. Users can create a Channel using the plus symbol (➕) in the Channels section. When creating a Channel, `channelname` is required and has to be unique, while `displayname` is not required and does not have to be unique. Users can search through existing Channels by clicking 'Join a Channel'. A user can leave a Channel anytime by clicking the settings icon next to the Channel.
 
+![Channels](https://github.com/khaivubui/Vuu/blob/master/docs/channels.gif)
+
 ## User Search
 Enabled throughout Vuu is a User Search feature. It is accessible by clicking the 🔎👤 symbol in Direct Messages section.
 
