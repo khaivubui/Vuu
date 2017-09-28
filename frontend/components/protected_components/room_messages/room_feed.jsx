@@ -24,7 +24,7 @@ export default class RoomFeed extends React.Component {
 
     this.updateLastReadTimeout = setTimeout(
       () => updateLastRead(match.params.roomId),
-      2000
+      1500
     );
   }
 
@@ -45,7 +45,7 @@ export default class RoomFeed extends React.Component {
       clearTimeout(this.updateLastReadTimeout);
       this.updateLastReadTimeout = setTimeout(
         () => updateLastRead(newProps.match.params.roomId),
-        2000
+        1500
       );
     }
 
