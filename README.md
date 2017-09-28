@@ -24,7 +24,7 @@ Things you may want to cover:
 * ... -->
 # [Vuu](http://vuu.herokuapp.com/)
 
-Vuu is a messaging solution with 6 key features:
+Vuu is a messaging solution with 7 key features:
 - [User Authentication](#user-authentication)
 - [Live Chat](#live-chat)
 - [Channels](#channels) (with Channel Search)
@@ -211,6 +211,8 @@ Channels are public. Anyone can create a Channel, and anyone can join a Channel.
 
 ## User Search
 Enabled throughout Vuu is a User Search feature. It is accessible by clicking the 🔎👤 symbol in Direct Messages section.
+
+![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/user_search.gif)
 
 #### Implemented on the model level
 User Search functionality is enabled on the model level using SQL `WHERE`. `ILIKE` is preferred over `LIKE` for case-insensitive search.
