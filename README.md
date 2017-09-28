@@ -31,6 +31,7 @@ Vuu is a messaging solution with 6 key features:
 - [User Search](#user-search)
 - [Direct Messages(DM)](#direct-messages)
 - [Group Messages](#group-messages)
+- [Notification](#notification)
 
 ## User Authentication
 Users are able to register for an account, sign in, and sign out.
@@ -385,3 +386,6 @@ class RoomRelayJob < ApplicationJob
   end
 end
 ```
+
+## Notification
+![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/notification.gif)
