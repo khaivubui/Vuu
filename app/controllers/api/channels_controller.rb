@@ -47,8 +47,9 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
     @channel
       .channel_memberships
-      .where(user: user)[0]
+      .where(user: current_user)[0]
       .last_read_message_id = @channel.messages.last
+    CurrentUserRelayJob.perform_later(current_user)
   end
 
   private
