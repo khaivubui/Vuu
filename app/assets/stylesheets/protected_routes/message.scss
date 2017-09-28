@@ -1,9 +1,10 @@
 .message {
   padding: 7.5px 0;
+  transition: background-color 2s;
 }
 
 .message.is-new {
-  background: rgba(#fff0f0, 1);
+  background: rgba(#ffcece, 1);
 }
 
 .message .user {
