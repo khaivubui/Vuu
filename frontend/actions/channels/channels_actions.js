@@ -71,3 +71,7 @@ export const searchChannels = query => dispatch => {
     });
   }
 };
+
+export const updateLastRead = channelId => dispatch => (
+  ChannelsUtils.updateLastRead(channelId)
+);

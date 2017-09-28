@@ -39,3 +39,10 @@ export const searchChannels = query => (
     url: `api/channels/search/${query}`
   })
 );
+
+export const updateLastRead = channelId => (
+  $.ajax({
+    url: `/api/channels/update_last_read/${channelId}`,
+    method: 'PATCH'
+  })
+);
