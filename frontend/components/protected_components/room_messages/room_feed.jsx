@@ -55,6 +55,7 @@ export default class RoomFeed extends React.Component {
     if (this.props.room.messageIds.length !==
         prevProps.room.messageIds.length) {
       this.refreshScroll();
+      this.props.updateLastRead(this.props.match.params.roomId);
     }
   }
 
