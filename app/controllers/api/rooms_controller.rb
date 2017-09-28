@@ -12,7 +12,9 @@ class Api::RoomsController < ApplicationController
       User.find(user_id)
     end
     RoomRelayJob.perform_later(@room, @users)
-    CurrentUserRelayJob.perform_later(current_user)
+    @room.users.each do |user|
+      CurrentUserRelayJob.perform_later(user)
+    end
     render :show
   end
 

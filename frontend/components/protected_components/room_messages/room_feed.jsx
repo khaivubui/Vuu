@@ -1,10 +1,8 @@
 import React from 'react';
-// import Modal from 'react-modal';
 
 import MessageContainer from '../message_container';
 import UsersSearchContainer from '../users_search_container';
 import RoomFeedUsersSearchContainer from './room_feed_users_search_container';
-// import UsersAddItem from '../users_add_item';
 
 export default class RoomFeed extends React.Component {
   constructor (props) {

@@ -12,6 +12,9 @@ class Api::ChannelsController < ApplicationController
     else
       render json: @channel.errors.full_messages, status: 422
     end
+    @channel.users.each do |user|
+      CurrentUserRelayJob.perform_later(user)
+    end
   end
 
   def update
@@ -36,6 +39,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
     @channel.users << current_user
     render :show
+    CurrentUserRelayJob.perform_later(current_user)
   end
 
   def search
