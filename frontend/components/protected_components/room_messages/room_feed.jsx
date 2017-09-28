@@ -33,7 +33,7 @@ export default class RoomFeed extends React.Component {
       fetchRoomMessagesWithUsers, updateLastRead, match
     } = this.props;
 
-    // check for change in url
+    // check for change in roomId url
     if (match.params.roomId !==
         newProps.match.params.roomId) {
       // refetch

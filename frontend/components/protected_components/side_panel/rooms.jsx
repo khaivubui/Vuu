@@ -75,7 +75,11 @@ export default class Rooms extends React.Component {
                 userId => users[userId].displayname || users[userId].username
               ).join(', ') || '(Just Me)'
             }
-            <span className='new-message-count'>
+            <span
+              className='new-message-count'
+              hidden={
+                parseInt(this.props.location.pathname.slice(16)) === room.id
+              }>
               {room.messageIds.filter(
                 messageId =>
                 messageId > currentUser.lastReadByRoomIds[room.id]
