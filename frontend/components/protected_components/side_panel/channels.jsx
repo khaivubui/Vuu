@@ -72,7 +72,11 @@ export default class Channels extends React.Component {
           <NavLink
             to={`/messages/channels/${channel.id}`}>
             {channel.displayname || channel.channelname}
-            <span className='new-message-count'>
+            <span
+              className='new-message-count'
+              hidden={
+                parseInt(this.props.location.pathname.slice(19)) === channel.id
+              }>
               {channel.messageIds.filter(
                 messageId =>
                 messageId > currentUser.lastReadByChannelIds[channel.id]

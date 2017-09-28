@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchChannelMessagesWithUsers
 } from '../../../actions/messages/messages_actions';
+import {
+  updateLastRead
+} from '../../../actions/channels/channels_actions';
 import ChannelFeed from './channel_feed';
 
 const channelMessages = (state, channelId) => {
@@ -27,6 +30,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   fetchChannelMessagesWithUsers: channelId => dispatch(
     fetchChannelMessagesWithUsers(channelId)
   ),
+  updateLastRead: channelId => dispatch(updateLastRead(channelId))
   // fetchChannelUsers: channelId => dispatch(
   //   fetchChannelUsers(channelId)
   // )

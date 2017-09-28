@@ -4,17 +4,36 @@ import MessageContainer from '../message_container';
 
 export default class ChannelFeed extends React.Component {
   componentDidMount () {
-    this.props.fetchChannelMessagesWithUsers(
-      this.props.match.params.channelId
+    const {
+      fetchChannelMessagesWithUsers, updateLastRead, match
+    } = this.props;
+
+    fetchChannelMessagesWithUsers(
+      match.params.channelId
     ).then(() => this.refreshScroll());
+
+    this.updateLastReadTimeout = setTimeout(
+      () => updateLastRead(match.params.channelId),
+      1500
+    );
   }
 
   componentWillReceiveProps (newProps) {
-    if (this.props.match.params.channelId !==
+    const {
+      fetchChannelMessagesWithUsers, updateLastRead, match
+    } = this.props;
+
+    if (match.params.channelId !==
         newProps.match.params.channelId) {
-      this.props.fetchChannelMessagesWithUsers(
+      fetchChannelMessagesWithUsers(
         newProps.match.params.channelId
       ).then(() => this.refreshScroll());
+
+      clearTimeout(this.updateLastReadTimeout);
+      this.updateLastReadTimeout = setTimeout(
+        () => updateLastRead(newProps.match.params.channelId),
+        1500
+      );
     }
   }
 
