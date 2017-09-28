@@ -32,6 +32,7 @@ export default class RoomFeed extends React.Component {
     const {
       fetchRoomMessagesWithUsers, updateLastRead, match
     } = this.props;
+
     // check for change in url
     if (match.params.roomId !==
         newProps.match.params.roomId) {
@@ -40,13 +41,18 @@ export default class RoomFeed extends React.Component {
         newProps.match.params.roomId
       // refresh scroll
       ).then(() => this.refreshScroll());
-
       // updateLastRead
       clearTimeout(this.updateLastReadTimeout);
       this.updateLastReadTimeout = setTimeout(
         () => updateLastRead(newProps.match.params.roomId),
         2000
       );
+    }
+
+    // check for new message
+    if (this.props.room.messageIds.length !==
+        newProps.room.messageIds.length) {
+      updateLastRead(match.params.roomId);
     }
   }
 
@@ -55,7 +61,6 @@ export default class RoomFeed extends React.Component {
     if (this.props.room.messageIds.length !==
         prevProps.room.messageIds.length) {
       this.refreshScroll();
-      this.props.updateLastRead(this.props.match.params.roomId);
     }
   }
 
