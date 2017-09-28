@@ -62,6 +62,8 @@ export default class Channels extends React.Component {
   }
 
   render () {
+    const { currentUser } = this.props;
+
     let channels;
     if (this.props.channels) {
       channels = this.props.channels.map(channel =>
@@ -70,6 +72,12 @@ export default class Channels extends React.Component {
           <NavLink
             to={`/messages/channels/${channel.id}`}>
             {channel.displayname || channel.channelname}
+            <span className='new-message-count'>
+              {channel.messageIds.filter(
+                messageId =>
+                messageId > currentUser.lastReadByChannelIds[channel.id]
+              ).length || ''}
+            </span>
           </NavLink>
         </div>
         <i
