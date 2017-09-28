@@ -78,9 +78,11 @@ export default class RoomFeed extends React.Component {
     const { currentUser, room, users } = this.props;
     const { usersSearchIsOpen } = this.state;
     const messages = this.props.messages[0] && this.props.messages.map(
-      message => <MessageContainer key={message.id}
-                          user={users[message.userId]}
-                          message={message}/>
+      message =>
+      <MessageContainer key={message.id}
+        user={users[message.userId]}
+        message={message}
+        isNew={currentUser.lastReadByRoomIds[room.id] < message.id}/>
     );
     const roomUsers = room.userIds.filter(
       id => id !== currentUser.id

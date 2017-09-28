@@ -1,5 +1,9 @@
 .message {
-  margin: 7.5px 0;
+  padding: 7.5px 0;
+}
+
+.message.is-new {
+  background: rgba(#fff0f0, 1);
 }
 
 .message .user {

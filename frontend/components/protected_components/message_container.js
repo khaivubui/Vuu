@@ -4,7 +4,7 @@ import { openUserShow } from '../../actions/ui/user_show_actions';
 import Message from './message';
 
 const mapStateToProps = (state, ownProps) => ({
-  isCurrentUser: ownProps.user.id === state.session.currentUser.id
+  // isCurrentUser: ownProps.user.id === state.session.currentUser.id
 });
 
 const mapDispatchToProps = dispatch => ({

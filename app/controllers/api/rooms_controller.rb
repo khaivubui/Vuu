@@ -45,10 +45,12 @@ class Api::RoomsController < ApplicationController
 
   def update_last_read
     @room = Room.find(params[:id])
-    @room
+    unless @room.messages.empty?
+      @room
       .room_memberships
       .where(user: current_user)[0]
       .update(last_read_message_id: @room.messages.last.id)
-    CurrentUserRelayJob.perform_later(current_user)
+      CurrentUserRelayJob.perform_later(current_user)
+    end
   end
 end
