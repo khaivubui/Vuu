@@ -15,8 +15,7 @@ export const fetchChannels = () => dispatch => (
     channels => dispatch({
       type: RECEIVE_CHANNELS,
       channels
-    }),
-    error => console.log(error)
+    })
   )
 );
 
