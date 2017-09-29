@@ -9,7 +9,7 @@ export default class ChannelFeed extends React.Component {
       loader: ''
     };
     if (!props.messages[0]) {
-      this.state.loader = 'Loading Messages...';
+      this.state.loader = <div className="loader"></div>;
     }
   }
 
@@ -40,7 +40,7 @@ export default class ChannelFeed extends React.Component {
     if (match.params.channelId !==
         newProps.match.params.channelId) {
       if (!newProps.messages[0]) {
-        this.setState({ loader: 'Loading Messages...' });
+        this.setState({ loader: <div className="loader"></div> });
       }
 
       fetchChannelMessagesWithUsers(

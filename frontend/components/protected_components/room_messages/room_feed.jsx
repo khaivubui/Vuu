@@ -13,7 +13,7 @@ export default class RoomFeed extends React.Component {
       loader: ''
     };
     if (!props.messages[0]) {
-      this.state.loader = 'Loading Messages...';
+      this.state.loader = <div className="loader"></div>;
     }
   }
 
@@ -46,7 +46,7 @@ export default class RoomFeed extends React.Component {
         newProps.match.params.roomId) {
 
       if (!newProps.messages[0]) {
-        this.setState({ loader: 'Loading Messages...' });
+        this.setState({ loader: <div className="loader"></div> });
       }
 
       // refetch
