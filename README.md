@@ -24,7 +24,7 @@ Things you may want to cover:
 * ... -->
 # [Vuu](http://vuu.herokuapp.com/)
 
-Vuu is a messaging solution with 7 key features:
+Vuu is a messaging solution with 8 key features:
 - [User Authentication](#user-authentication)
 - [Live Chat](#live-chat)
 - [Channels](#channels) (with Channel Search)
@@ -32,6 +32,7 @@ Vuu is a messaging solution with 7 key features:
 - [Direct Messages(DM)](#direct-messages)
 - [Group Messages](#group-messages)
 - [Notification](#notification)
+- [Mobile Friendly](#mobile-friendly)
 
 ## User Authentication
 Users are able to register for an account, sign in, and sign out.
@@ -397,3 +398,6 @@ end
 
 ## Notification
 ![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/notification.gif)
+
+## Mobile Friendly
+![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/responsive.gif)
