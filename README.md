@@ -72,6 +72,8 @@ end
 #### Unique session tokens
 Using `SecureRandom`, users are ensured to have a unique `session_token`, identifying that the session belongs to the correct user. This `session_token` is reset on sign in and on sign out.
 
+[Back to top](#vuu)
+
 ## Live Chat
 Live communication is enabled using Action Cable, the default solution to WebSockets in Rails 5.
 
@@ -214,6 +216,8 @@ Channels are public. Anyone can create a Channel, and anyone can join a Channel.
 
 ![Channels](https://github.com/khaivubui/Vuu/blob/master/docs/channels.gif)
 
+[Back to top](#vuu)
+
 ## User Search
 Enabled throughout Vuu is a User Search feature. It is accessible by clicking the 🔎👤 symbol in Direct Messages section.
 
@@ -268,6 +272,8 @@ export default class UsersSearch extends React.Component {
 }
 ```
 
+[Back to top](#vuu)
+
 ## Direct Messages
 To start a Direct Message with someone, simply click on their `displayname` or `username`, then click on 'Start Conversation'. You can access a list of users by invoking 'User Search', mentioned above, or you can click on any user you come across in a Channel or group.
 
@@ -320,6 +326,8 @@ export default class UserShow extends React.Component {
 ```
 
 Through this `Modal`, the current user can start a DM.
+
+[Back to top](#vuu)
 
 ## Group Messages
 You can add more people to your Direct Message, making it a private group message. First, open a Direct Message, then simply by clicking on the people symbol (👥) on the top right of your Direct Message to access User Search. Through User Search you can find people by `username` or `displayname` to add to your Group.
@@ -396,8 +404,12 @@ class RoomRelayJob < ApplicationJob
 end
 ```
 
+[Back to top](#vuu)
+
 ## Notification
 ![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/notification.gif)
+
+[Back to top](#vuu)
 
 ## Mobile Friendly
 ![Notification](https://github.com/khaivubui/Vuu/blob/master/docs/responsive.gif)
