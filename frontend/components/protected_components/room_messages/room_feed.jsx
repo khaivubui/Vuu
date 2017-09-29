@@ -115,6 +115,7 @@ export default class RoomFeed extends React.Component {
         </div>
         <ul className='messages' ref='messages'>
           {messages}
+          {this.state.loader}
         </ul>
       </div>
     );
