@@ -13,6 +13,9 @@ json.dms_by_user_ids do
 end
 
 json.last_read_by_channel_ids do
+  # because jbuilder bug that won't render empty hash
+  json.placeholder 'placeholder'
+  
   user.channels.each do |channel|
     json.set! channel.id,
               channel.channel_memberships.where(
@@ -22,6 +25,9 @@ json.last_read_by_channel_ids do
 end
 
 json.last_read_by_room_ids do
+  # because jbuilder bug that won't render empty hash
+  json.placeholder 'placeholder'
+
   user.rooms.each do |room|
     json.set! room.id,
               room.room_memberships.where(
