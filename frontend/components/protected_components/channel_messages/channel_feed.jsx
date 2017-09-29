@@ -3,6 +3,13 @@ import React from 'react';
 import MessageContainer from '../message_container';
 
 export default class ChannelFeed extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      loader: 'Loading Messages...'
+    };
+  }
+
   componentDidMount () {
     const {
       fetchChannelMessagesWithUsers, updateLastRead, match
@@ -10,7 +17,11 @@ export default class ChannelFeed extends React.Component {
 
     fetchChannelMessagesWithUsers(
       match.params.channelId
-    ).then(() => this.refreshScroll());
+    ).then(
+      () => this.refreshScroll()
+    ).then(
+      () => this.setState({ loader: '' })
+    );
 
     this.updateLastReadTimeout = setTimeout(
       () => updateLastRead(match.params.channelId),
@@ -73,6 +84,7 @@ export default class ChannelFeed extends React.Component {
           </div>
           <ul className='messages' ref='messages'>
             {messages}
+            {this.state.loader}
           </ul>
         </div>
       );
