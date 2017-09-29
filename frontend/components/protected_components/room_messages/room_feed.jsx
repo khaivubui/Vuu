@@ -9,9 +9,13 @@ export default class RoomFeed extends React.Component {
     super(props);
 
     this.state = {
-      loader: 'Loading Messages...',
       usersSearchIsOpen: false
     };
+    if (!props.messages[0]) {
+      this.state = {
+        loader: 'Loading Messages...'
+      };
+    }
   }
 
   componentDidMount () {

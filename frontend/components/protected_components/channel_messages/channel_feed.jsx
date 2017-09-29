@@ -5,9 +5,11 @@ import MessageContainer from '../message_container';
 export default class ChannelFeed extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      loader: 'Loading Messages...'
-    };
+    if (!props.messages[0]) {
+      this.state = {
+        loader: 'Loading Messages...'
+      };
+    }
   }
 
   componentDidMount () {
