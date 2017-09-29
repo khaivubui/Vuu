@@ -1,7 +1,9 @@
+import merge from 'lodash/merge';
+
 import {
   RECEIVE_ROOM, REMOVE_ROOM, RECEIVE_ROOMS_AND_USERS
 } from '../../actions/rooms/rooms_actions';
-import merge from 'lodash/merge';
+import { RECEIVE_CURRENT_USER } from '../../actions/session/session_actions';
 
 const roomsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +17,12 @@ const roomsReducer = (state = {}, action) => {
     case REMOVE_ROOM:
       delete newState[action.roomId];
       return newState;
+    case RECEIVE_CURRENT_USER:
+      if (!action.user) {
+        return {};
+      } else {
+        return state;
+      }
     default:
       return state;
   }
