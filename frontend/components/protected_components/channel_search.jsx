@@ -35,6 +35,14 @@ export default class ChannelSearch extends React.Component {
   }
 
   render () {
+    const {
+      channelSearchResults,
+      joinChannel,
+      searchChannels,
+      currentUser,
+      closeModal
+    } = this.props;
+    const { query } = this.state;
     return (
       <div
         className='search'
@@ -44,24 +52,24 @@ export default class ChannelSearch extends React.Component {
           <i
             className="fa fa-times"
             aria-hidden="true"
-            onClick={this.props.closeModal}></i>
+            onClick={closeModal}></i>
         </h1>
         <input
           ref='searchBox'
           type='text'
           placeholder='Search...'
-          value={this.state.query}
+          value={query}
           onChange={e => this.searchChannels(e)}/>
         <ul className='channel-search-results'>
-          {this.props.channelSearchResults.map(result =>
+          {channelSearchResults.map(result =>
             <ChannelSearchItem
               key={result.id}
               channel={result}
               joinChannel={() =>
-                this.props.joinChannel(result.id).then(
-                  () => this.props.searchChannels(this.state.query)
+                joinChannel(result.id).then(
+                  () => searchChannels(query)
                 )}
-              currentUser={this.props.currentUser}/>
+              currentUser={currentUser}/>
           )}
         </ul>
       </div>
