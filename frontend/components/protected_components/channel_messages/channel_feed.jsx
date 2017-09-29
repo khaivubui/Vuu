@@ -36,9 +36,15 @@ export default class ChannelFeed extends React.Component {
 
     if (match.params.channelId !==
         newProps.match.params.channelId) {
+      this.setState({ loader: 'Loading Messages...' });
+
       fetchChannelMessagesWithUsers(
         newProps.match.params.channelId
-      ).then(() => this.refreshScroll());
+      ).then(
+        () => this.refreshScroll()
+      ).then(
+        () => this.setState({ loader: '' })
+      );
 
       clearTimeout(this.updateLastReadTimeout);
       this.updateLastReadTimeout = setTimeout(
