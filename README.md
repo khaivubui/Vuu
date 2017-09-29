@@ -416,3 +416,5 @@ end
 
 ## Mobile Friendly
 ![Mobile Friendly](https://github.com/khaivubui/Vuu/blob/master/docs/responsive.gif)
+
+[Back to top](#vuu)
