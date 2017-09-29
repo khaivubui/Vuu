@@ -1,4 +1,6 @@
 .message {
+  display: flex;
+  flex-direction: column;
   padding: 5px 0;
   transition: background-color 2s;
 }
@@ -15,4 +17,10 @@
 
 .message .user:hover {
   color: #4294C1;
+}
+
+.message .timestamp {
+  font-size: 0.8em;
+  color: #CCC;
+  font-style: italic;
 }
