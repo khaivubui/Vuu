@@ -9,6 +9,7 @@ export default class RoomFeed extends React.Component {
     super(props);
 
     this.state = {
+      loader: 'Loading Messages...',
       usersSearchIsOpen: false
     };
   }
@@ -20,7 +21,11 @@ export default class RoomFeed extends React.Component {
 
     fetchRoomMessagesWithUsers(
       match.params.roomId
-    ).then(() => this.refreshScroll());
+    ).then(
+      () => this.refreshScroll()
+    ).then(
+      () => this.setState({ loader: '' })
+    );
 
     this.updateLastReadTimeout = setTimeout(
       () => updateLastRead(match.params.roomId),
@@ -36,11 +41,17 @@ export default class RoomFeed extends React.Component {
     // check for change in roomId url
     if (match.params.roomId !==
         newProps.match.params.roomId) {
+      this.setState({ loader: 'Loading Messages...' });
+
       // refetch
       fetchRoomMessagesWithUsers(
         newProps.match.params.roomId
       // refresh scroll
-      ).then(() => this.refreshScroll());
+      ).then(
+        () => this.refreshScroll()
+      ).then(
+        () => this.setState({ loader: '' })
+      );
       // updateLastRead
       clearTimeout(this.updateLastReadTimeout);
       this.updateLastReadTimeout = setTimeout(
