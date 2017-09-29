@@ -13,6 +13,10 @@ export default class ChannelFeed extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    clearTimeout(this.updateLastReadTimeout);
+  }
+
   componentDidMount () {
     const {
       fetchChannelMessagesWithUsers, updateLastRead, match

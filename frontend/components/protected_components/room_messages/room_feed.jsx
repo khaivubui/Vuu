@@ -17,6 +17,10 @@ export default class RoomFeed extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    clearTimeout(this.updateLastReadTimeout);
+  }
+
   componentDidMount () {
     const {
       fetchRoomMessagesWithUsers, updateLastRead, match
