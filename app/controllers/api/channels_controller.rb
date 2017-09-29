@@ -49,11 +49,13 @@ class Api::ChannelsController < ApplicationController
 
   def update_last_read
     @channel = Channel.find(params[:id])
-    @channel
-      .channel_memberships
-      .where(user: current_user)[0]
-      .update(last_read_message_id: @channel.messages.last.id)
-    CurrentUserRelayJob.perform_later(current_user)
+    unless @channel.messages.empty?
+      @channel
+        .channel_memberships
+        .where(user: current_user)[0]
+        .update(last_read_message_id: @channel.messages.last.id)
+      CurrentUserRelayJob.perform_later(current_user)
+    end
   end
 
   private
