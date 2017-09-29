@@ -41,7 +41,10 @@ export default class RoomFeed extends React.Component {
     // check for change in roomId url
     if (match.params.roomId !==
         newProps.match.params.roomId) {
-      this.setState({ loader: 'Loading Messages...' });
+
+      if (!newProps.messages[0]) {
+        this.setState({ loader: 'Loading Messages...' });
+      }
 
       // refetch
       fetchRoomMessagesWithUsers(

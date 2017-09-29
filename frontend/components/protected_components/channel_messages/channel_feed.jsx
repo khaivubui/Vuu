@@ -36,7 +36,9 @@ export default class ChannelFeed extends React.Component {
 
     if (match.params.channelId !==
         newProps.match.params.channelId) {
-      this.setState({ loader: 'Loading Messages...' });
+      if (!newProps.messages[0]) {
+        this.setState({ loader: 'Loading Messages...' });
+      }
 
       fetchChannelMessagesWithUsers(
         newProps.match.params.channelId
